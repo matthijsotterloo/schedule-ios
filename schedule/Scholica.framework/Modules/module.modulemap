@@ -1,6 +1,0 @@
-framework module Scholica {
-  umbrella header "Scholica.h"
-
-  export *
-  module * { export * }
-}

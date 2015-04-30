@@ -1,6 +1,9 @@
 //
 //  ScholicaLoginController.h
-//  Created by Tom Schoffelen on 21-04-14.
+//  Scholica
+//
+//  Created by Thomas Schoffelen on 30/04/15.
+//  Copyright (c) 2015 Scholica. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -1,9 +1,11 @@
 //
 //  ScholicaRequestResult.h
-//  Created by Tom Schoffelen on 21-04-14.
+//  Scholica
+//
+//  Created by Thomas Schoffelen on 30/04/15.
+//  Copyright (c) 2015 Scholica. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "Scholica.h"
 
 @class ScholicaRequestResult, ScholicaRequestError;
@@ -14,7 +16,6 @@
 @property (nonatomic) NSDictionary* meta;
 @property (nonatomic) ScholicaRequestError* error;
 @property (nonatomic) ScholicaRequestStatus status;
-//@property (nonatomic) NSString* requestToken;
 
 - (id) initWithData:(NSData*)data;
 

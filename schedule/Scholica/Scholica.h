@@ -6,17 +6,8 @@
 //  Copyright (c) 2015 Scholica. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-//! Project version number for Scholica.
-FOUNDATION_EXPORT double ScholicaVersionNumber;
-
-//! Project version string for Scholica.
-FOUNDATION_EXPORT const unsigned char ScholicaVersionString[];
-
-
-#import "ScholicaLoginController.h"
 #import "ScholicaConstants.h"
+#import "ScholicaLoginController.h"
 #import "ScholicaRequestResult.h"
 #import "ScholicaRequestError.h"
 
@@ -32,6 +23,8 @@ FOUNDATION_EXPORT const unsigned char ScholicaVersionString[];
 
 @property (nonatomic) NSString* accessToken;
 @property (nonatomic) NSString* requestToken;
+
+@property (nonatomic) NSInteger requestTimeout;
 
 - (id) initWithConsumerKey:(NSString*)consumerKey secret:(NSString*)consumerSecret;
 

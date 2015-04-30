@@ -40,11 +40,11 @@
         self.title = @"MY SCHEDULE";
         
         self.data = [NSDictionary alloc];
+        
+        deltaTime = 0;
+        baseTime = 0;
+        userImageFromFile = NO;
     }
-    
-    deltaTime = 0;
-    baseTime = 0;
-    userImageFromFile = NO;
     
     return self;
 }
@@ -359,7 +359,7 @@
 
 - (NSDictionary *)getItem:(NSInteger)num forDay:(NSInteger)day {
     id items = [[[self getDays] objectAtIndex:day] objectForKey:@"items"];
-    NSArray *objects = [NSArray alloc];
+    NSArray *objects;
     
     if([items isKindOfClass:[NSDictionary class]]){
         NSArray *sortedKeys = [items keysSortedByValueUsingComparator: ^(id obj1, id obj2) {
