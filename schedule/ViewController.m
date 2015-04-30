@@ -307,7 +307,7 @@
     }
     
     if([appDelegate.user objectForKey:@"community"]){
-        [appDelegate.scholica request:[NSString stringWithFormat:@"/communities/%@/calendar/schedule", [appDelegate.user objectForKey:@"community"]] withFields:@{@"time":time, @"show_week":@1, @"show_tasks":@0} callback:^(ScholicaRequestResult *result) {
+        [appDelegate.scholica request:[NSString stringWithFormat:@"/communities/%@/calendar/schedule", [appDelegate.user objectForKey:@"community"]] withFields:@{@"time":deltaTime==0?[NSNumber numberWithInteger:deltaTime]:time, @"show_week":@1, @"show_tasks":@0} callback:^(ScholicaRequestResult *result) {
             
             [self stopSync];
             
@@ -428,16 +428,16 @@
 
 - (UIColor *)backgroundColorForParentCellAtIndex:(NSInteger)parentIndex {
     
-    switch (parentIndex) {
-        case 0:
-            return [UIColor colorWithRed:0.929 green:0.290 blue:0.392 alpha:1];
+    switch ([[[self getDay:parentIndex] objectForKey:@"day_ofweek"] integerValue]) {
         case 1:
-            return [UIColor colorWithRed:0.455 green:0.424 blue:0.906 alpha:1];
+            return [UIColor colorWithRed:0.929 green:0.290 blue:0.392 alpha:1];
         case 2:
-            return [UIColor colorWithRed:0.180 green:0.616 blue:0.969 alpha:1];
+            return [UIColor colorWithRed:0.455 green:0.424 blue:0.906 alpha:1];
         case 3:
-            return [UIColor colorWithRed:0.443 green:0.875 blue:0.443 alpha:1];
+            return [UIColor colorWithRed:0.180 green:0.616 blue:0.969 alpha:1];
         case 4:
+            return [UIColor colorWithRed:0.443 green:0.875 blue:0.443 alpha:1];
+        case 5:
             return [UIColor colorWithRed:0.925 green:0.882 blue:0.373 alpha:1];
             
         default:

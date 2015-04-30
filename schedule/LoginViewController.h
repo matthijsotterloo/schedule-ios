@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Scholica.h"
+#import <Scholica/Scholica.h>
 
 @interface LoginViewController : UIViewController
 

@@ -10,7 +10,7 @@
 #import "ParentTableView.h"
 #import "LoginViewController.h"
 
-#import "Scholica.h"
+#import <Scholica/Scholica.h>
 
 @interface ViewController : UIViewController <SubTableViewDelegate, SubTableViewDataSource, UIAlertViewDelegate>
 

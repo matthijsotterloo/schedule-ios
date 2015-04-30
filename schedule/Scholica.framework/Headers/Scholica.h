@@ -1,7 +1,19 @@
 //
 //  Scholica.h
-//  Created by Tom Schoffelen on 21-04-14.
+//  Scholica
 //
+//  Created by Thomas Schoffelen on 30/04/15.
+//  Copyright (c) 2015 Scholica. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+//! Project version number for Scholica.
+FOUNDATION_EXPORT double ScholicaVersionNumber;
+
+//! Project version string for Scholica.
+FOUNDATION_EXPORT const unsigned char ScholicaVersionString[];
+
 
 #import "ScholicaLoginController.h"
 #import "ScholicaConstants.h"

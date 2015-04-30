@@ -134,12 +134,13 @@
 
     NSInteger count = [self.delegate numberOfChildrenUnderParentIndex:self.parentIndex];
     
-    float ma = (1.0-([indexPath row]/10.0));
-    if(ma < 0.5){
-        ma = 0.5;
-    }
+    //    float ma = (1.0-([indexPath row]/10.0));
+    //    if(ma < 0.5){
+    //        ma = 0.5;
+    //    }
+    //    [fgColor colorWithAlphaComponent:ma]
     
-    [cell setCellForegroundColor:[fgColor colorWithAlphaComponent:ma]];
+    [cell setCellForegroundColor:fgColor];
     
     if (count > 0) {
         
