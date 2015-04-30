@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="ProximaNova-Reg.otf">
+            <string>ProximaNova-Regular</string>
+        </mutableArray>
+        <mutableArray key="ProximaNova-Sbold.otf">
+            <string>ProximaNova-Semibold</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--MY SCHEDULE-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" title="MY SCHEDULE" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Zey-VV-cOJ" customClass="ParentTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Zey-VV-cOJ" secondAttribute="bottom" id="WKY-TR-5TH"/>
+                            <constraint firstItem="Zey-VV-cOJ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="idj-0A-tKt"/>
+                            <constraint firstItem="Zey-VV-cOJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="rXG-1c-ADJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zey-VV-cOJ" secondAttribute="trailing" constant="-16" id="wBX-ic-8e7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Zey-VV-cOJ" id="P0T-Pv-Gqc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--SIGN IN-->
+        <scene sceneID="tp3-ur-VDL">
+            <objects>
+                <viewController storyboardIdentifier="Login" title="SIGN IN" id="2Ay-qR-4LL" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="itT-hz-mpu"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Ib-IQ-sfG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qzc-JT-SNj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eJ-BF-yhV">
+                                <rect key="frame" x="276" y="286" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="53" id="LxA-yh-LKg">
+                                        <variation key="heightClass=regular" constant="45"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
+                                <state key="normal" title="SIGN IN WITH SCHOLICA" backgroundImage="btn-large">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LxA-yh-LKg"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="42" y="518" width="291" height="45"/>
+                                    <mask key="constraints">
+                                        <include reference="LxA-yh-LKg"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="120" y="512" width="134" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="2Ay-qR-4LL" eventType="touchUpInside" id="M4P-L4-IhU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN IN TO VIEW YOUR SCHEDULE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAK-Wv-UtC">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="465" width="375" height="21"/>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plant" translatesAutoresizingMaskIntoConstraints="NO" id="WDK-lG-ByY">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="6cN-st-SxX">
+                                        <variation key="heightClass=regular" constant="150"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="247" id="FPK-P8-oQZ"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="245" id="f8J-9j-Dq0"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="irb-R7-ffy"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6cN-st-SxX"/>
+                                        <exclude reference="FPK-P8-oQZ"/>
+                                        <exclude reference="f8J-9j-Dq0"/>
+                                        <exclude reference="irb-R7-ffy"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="65" y="117" width="245" height="245"/>
+                                    <mask key="constraints">
+                                        <include reference="6cN-st-SxX"/>
+                                        <include reference="FPK-P8-oQZ"/>
+                                        <include reference="f8J-9j-Dq0"/>
+                                        <include reference="irb-R7-ffy"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92941176470588238" green="0.29019607843137257" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9Ib-IQ-sfG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1eJ-BF-yhV" secondAttribute="bottom" constant="25" id="2Jq-0j-HhO"/>
+                            <constraint firstItem="KAK-Wv-UtC" firstAttribute="centerX" secondItem="WDK-lG-ByY" secondAttribute="centerX" id="3kz-LZ-deM"/>
+                            <constraint firstItem="KAK-Wv-UtC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WDK-lG-ByY" secondAttribute="bottom" constant="50" id="BiN-IT-yg7"/>
+                            <constraint firstItem="WDK-lG-ByY" firstAttribute="top" relation="lessThanOrEqual" secondItem="itT-hz-mpu" secondAttribute="bottom" constant="97" id="EXP-rX-wyv"/>
+                            <constraint firstItem="WDK-lG-ByY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="itT-hz-mpu" secondAttribute="bottom" constant="25" id="O0D-7p-yDx">
+                                <variation key="heightClass=regular" constant="25"/>
+                            </constraint>
+                            <constraint firstItem="1eJ-BF-yhV" firstAttribute="top" secondItem="KAK-Wv-UtC" secondAttribute="bottom" constant="32" id="Qka-xV-ycD"/>
+                            <constraint firstItem="1eJ-BF-yhV" firstAttribute="leading" secondItem="qzc-JT-SNj" secondAttribute="leadingMargin" constant="26" id="ZKD-Ca-aEG"/>
+                            <constraint firstItem="KAK-Wv-UtC" firstAttribute="top" relation="lessThanOrEqual" secondItem="WDK-lG-ByY" secondAttribute="bottom" constant="103" id="b55-DF-Feu">
+                                <variation key="heightClass=regular" constant="103"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="KAK-Wv-UtC" secondAttribute="trailing" constant="-16" id="f4t-F4-BJi"/>
+                            <constraint firstItem="KAK-Wv-UtC" firstAttribute="centerX" secondItem="1eJ-BF-yhV" secondAttribute="centerX" id="lXN-ae-8do"/>
+                            <constraint firstItem="KAK-Wv-UtC" firstAttribute="leading" secondItem="qzc-JT-SNj" secondAttribute="leadingMargin" constant="-16" id="wUb-i1-h3M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1eJ-BF-yhV" secondAttribute="trailing" constant="26" id="xKT-Pw-mmA"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="KAK-Wv-UtC"/>
+                                <exclude reference="WDK-lG-ByY"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="EXP-rX-wyv"/>
+                                <exclude reference="O0D-7p-yDx"/>
+                                <exclude reference="3kz-LZ-deM"/>
+                                <exclude reference="BiN-IT-yg7"/>
+                                <exclude reference="b55-DF-Feu"/>
+                                <exclude reference="f4t-F4-BJi"/>
+                                <exclude reference="lXN-ae-8do"/>
+                                <exclude reference="wUb-i1-h3M"/>
+                                <exclude reference="Qka-xV-ycD"/>
+                                <exclude reference="ZKD-Ca-aEG"/>
+                                <exclude reference="xKT-Pw-mmA"/>
+                                <exclude reference="2Jq-0j-HhO"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="KAK-Wv-UtC"/>
+                                <include reference="WDK-lG-ByY"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="EXP-rX-wyv"/>
+                                <include reference="O0D-7p-yDx"/>
+                                <include reference="3kz-LZ-deM"/>
+                                <include reference="BiN-IT-yg7"/>
+                                <include reference="b55-DF-Feu"/>
+                                <include reference="f4t-F4-BJi"/>
+                                <include reference="lXN-ae-8do"/>
+                                <include reference="wUb-i1-h3M"/>
+                                <include reference="Qka-xV-ycD"/>
+                                <include reference="ZKD-Ca-aEG"/>
+                                <include reference="xKT-Pw-mmA"/>
+                                <include reference="2Jq-0j-HhO"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="loginButton" destination="1eJ-BF-yhV" id="BO8-OU-CEb"/>
+                        <outlet property="loginLabel" destination="KAK-Wv-UtC" id="YYj-Lb-2hF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0G-Sq-akH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050.5" y="295.875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btn-large" width="38" height="33"/>
+        <image name="plant" width="245" height="246"/>
+    </resources>
+</document>

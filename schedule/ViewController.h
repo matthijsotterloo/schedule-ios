@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ParentTableView.h"
+#import "LoginViewController.h"
 
-@interface ViewController : UIViewController
+#import "Scholica.h"
 
+@interface ViewController : UIViewController <SubTableViewDelegate, SubTableViewDataSource, UIAlertViewDelegate>
+
+- (void) synchronize;
+
+@property (strong, nonatomic) NSDictionary *data;
+
+@property (strong, nonatomic) IBOutlet ParentTableView *tableView;
+
+@property (strong, nonatomic) UIImageView *footericon;
 
 @end
-

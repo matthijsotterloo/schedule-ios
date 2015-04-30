@@ -7,11 +7,29 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Scholica.h"
+#import "ViewController.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (strong, nonatomic) Scholica *scholica;
+
+@property (strong, nonatomic) UIStoryboard *mainStoryboard;
+
+@property (strong, nonatomic) ViewController *controller;
+
+@property (nonatomic) double cellSize;
+
+@property (strong, nonatomic) UINavigationController *navigationController;
+
+@property (retain) NSDictionary *user;
+
+- (void)getUser;
+- (void)login:(BOOL)animated;
+- (void)logout;
 
 @end
 

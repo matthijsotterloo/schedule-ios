@@ -14,32 +14,99 @@
 
 @implementation AppDelegate
 
+@synthesize navigationController;
+@synthesize mainStoryboard;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    
+    self.controller = (ViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"MainViewController"];
+    
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.controller];
+    [navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [navigationController.navigationBar setShadowImage:[UIImage new]];
+    [navigationController.navigationBar setBackgroundColor:[UIColor whiteColor]];
+    [navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"ProximaNova-Regular" size:17], NSFontAttributeName, [UIColor colorWithWhite:0.2 alpha:1.0],NSForegroundColorAttributeName, nil]];
+    
+    UIView *statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, -20, navigationController.navigationBar.frame.size.width, 22)];
+    statusBarView.backgroundColor = [UIColor whiteColor];
+    [navigationController.navigationBar addSubview:statusBarView];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window setRootViewController:navigationController];
+    [self.window setBackgroundColor:[UIColor whiteColor]];
+    [self.window makeKeyAndVisible];
+    
+    self.scholica = [[Scholica alloc] initWithConsumerKey:@"262weE1HRXdOVWRXV0d4VVYwZWRWRmw0ZEhk561WcHpWMjFHVjJKR2JETl666Up3" secret:@"2lSMmhXVm14a2IxSkdj7f9a4jBaVVVsUldXbGRyWkc5VWJVVjRZMFZvVjFKc2NGaFdha1po4WpGa4NsZHNV4WxTVlhCd4ZtM"];
+    
+    // Check if access token is available
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"ScholicaAccessToken"];
+    if(!accessToken){
+        // Show login screen
+        [self login:YES];
+    }else{
+        // Set access token
+        self.scholica.accessToken = accessToken;
+        [self getUser];
+    }
+    
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+- (void)login:(BOOL)animated {
+    LoginViewController *vc = [self.mainStoryboard instantiateViewControllerWithIdentifier:@"Login"];
+    [self.navigationController presentViewController:vc animated:NO completion:nil];
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+- (void)logout {
+    // Remove access token
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"ScholicaAccessToken"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    // Remove cache files
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSError *error = nil;
+    for (NSString *file in [fileManager contentsOfDirectoryAtPath:documentsDirectory error:&error]) {
+        [fileManager removeItemAtPath:[NSString stringWithFormat:@"%@/%@", documentsDirectory, file] error:&error];
+    }
+    
+    // Show login dialog
+    [self login:YES];
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+- (void)getUser {
+    NSLog(@"Getting user...");
+    
+    [self.scholica request:@"/me" callback:^(ScholicaRequestResult *result) {
+        if(result.status == ScholicaRequestStatusOK){
+            // Got user data, save it and start synchronisation
+            self.user = result.data;
+            
+            // Synchronize data
+            if(self.controller) {
+                [self.controller synchronize];
+            }
+        }else if(result.error.code > 900){
+            // Show login dialog, but only if the error is a Scholica error, not a network error
+            NSLog(@"Scholica error, present login view.");
+            [self login:YES];
+        }else{
+            // Network error, so try again in a couple of seconds
+            NSLog(@"Network error, will try again soon.");
+            [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(getUser) userInfo:nil repeats:NO];
+        }
+    }];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    if(self.user && self.controller){
+        [self.controller synchronize];
+    }else if(self.controller && self.scholica.accessToken){
+        [self getUser];
+    }
 }
 
 @end
