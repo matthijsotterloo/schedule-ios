@@ -17,9 +17,7 @@
 - (void) synchronize;
 
 @property (strong, nonatomic) NSDictionary *data;
-
 @property (strong, nonatomic) IBOutlet ParentTableView *tableView;
-
 @property (strong, nonatomic) UIImageView *footericon;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  ScholicaRequestError.h
+//  SARequestError.h
 //  Scholica
 //
 //  Created by Thomas Schoffelen on 30/04/15.
@@ -8,7 +8,7 @@
 
 #import "Scholica.h"
 
-@interface ScholicaRequestError : NSObject
+@interface SARequestError : NSObject
 
 @property (nonatomic) NSDictionary* data;
 @property (nonatomic) int code;

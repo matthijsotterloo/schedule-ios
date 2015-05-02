@@ -14,18 +14,13 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) Scholica *scholica;
-
 @property (strong, nonatomic) UIStoryboard *mainStoryboard;
-
+@property (strong, nonatomic) UINavigationController *navigationController;
 @property (strong, nonatomic) ViewController *controller;
 
 @property (nonatomic) double cellSize;
 
-@property (strong, nonatomic) UINavigationController *navigationController;
-
-@property (retain) NSDictionary *user;
+@property (retain) SAUserObject *user;
 
 - (void)getUser;
 - (void)login:(BOOL)animated;

@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0517575E9C44010D22002F94 /* SAJSONRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = E8379252E6156BB3EC8571C4 /* SAJSONRequest.h */; };
+		06A84119647041B5030E3EA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8B39E06E30BDD63B4981D4 /* UIKit.framework */; };
+		1126C8ED9C61F0A31D47D38D /* SAUserObject.h in Headers */ = {isa = PBXBuildFile; fileRef = F2C2408722182D0067E99936 /* SAUserObject.h */; };
+		129EFD36422E2FC1F415EB9E /* SASingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = BAEC326A4FCC560DEA23EA68 /* SASingleton.h */; };
+		2005C9A2B1F08A4492CB8B0A /* SAJSONRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C4771038140E6DA6E8C2581E /* SAJSONRequest.m */; };
+		2173F9AA6ECEA7F6E109603B /* SARequestError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FCBEA36042C0E34509A22 /* SARequestError.m */; };
+		258112D3363E97E675FA9CD0 /* SARequestError.h in Headers */ = {isa = PBXBuildFile; fileRef = 99DB0673EDA272FA095F6153 /* SARequestError.h */; };
+		2590288B542A2DAFF454BDF9 /* Pods-schedule-Scholica-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEF23FEE16B083BA0CB190 /* Pods-schedule-Scholica-dummy.m */; };
+		28D399D3B5A0D5F28A16611A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9B685102D2D780688F1662 /* Foundation.framework */; };
+		2F64A38593F8EF3462CAF1F1 /* SARequestResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DED3E96739A3023CF4C32ED /* SARequestResult.m */; };
+		3060A680821563EDB8DEA5B2 /* Pods-schedule-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1795C30702F01AB1FC5248B0 /* Pods-schedule-dummy.m */; };
+		35AA8734870D4CE8ABD5E853 /* SASession.h in Headers */ = {isa = PBXBuildFile; fileRef = E22A8589F00C8B2CE9094D40 /* SASession.h */; };
+		4AD710FC578EF0FFB2132196 /* SAWebLoginController.h in Headers */ = {isa = PBXBuildFile; fileRef = AEEC09FA3EBEB1942FED9BD2 /* SAWebLoginController.h */; };
+		5D7182B9FC35796DED14B21B /* SAWebLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBB13A5AC427F0AF35B2DB1 /* SAWebLoginController.m */; };
+		66C738EA6F5A4668053D8965 /* Scholica.m in Sources */ = {isa = PBXBuildFile; fileRef = CA25431219997137D9300A31 /* Scholica.m */; };
+		787D05BF0A0DBD028B988ACC /* SAUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = F54EF2EF876F8BCC4E5CA00A /* SAUtilities.h */; };
+		7E44212FF6DDDE9EEAB888F8 /* SAUserObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB4974620C26D9C6B564CF2 /* SAUserObject.m */; };
+		8433B90D75BEC36F101A8FD3 /* SASession.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A16A450AAC420924F79DB /* SASession.m */; };
+		87A5E201E62A200F4C09BB05 /* SAConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = C804A754F616AB8C34F500A0 /* SAConstants.h */; };
+		AB44F454ABB0EB6A050F6A6E /* Scholica.h in Headers */ = {isa = PBXBuildFile; fileRef = FDDFF39A5C20F0AD83845D79 /* Scholica.h */; };
+		ADBC24180207F83DFCE42BEA /* SASingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C3C0E963C4D5665FF18659 /* SASingleton.m */; };
+		BAC5AFF0AD2DC05EEAF0B6DD /* SAUtilties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8250C461A839E7AC70BCA1A3 /* SAUtilties.m */; };
+		D53B8B4F76FB8FBACE056369 /* SANativeLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34001148DA522D9FC8DB8797 /* SANativeLoginController.m */; };
+		D8A46DF21A8930DCAA179390 /* SANativeLoginController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3247AEDED619996864EA249E /* SANativeLoginController.h */; };
+		DF07FBE42AF1718AE599756A /* SARequestResult.h in Headers */ = {isa = PBXBuildFile; fileRef = B01744B3B380B2E7E1C27976 /* SARequestResult.h */; };
+		E4B23746E7F16D1F5CB68A95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9B685102D2D780688F1662 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B5E3C6358C713ECEB59D715C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 499FCEB4B4B81804BE27682F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1439C446254CD32FB12ECBA8;
+			remoteInfo = "Pods-schedule-Scholica";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0DED3E96739A3023CF4C32ED /* SARequestResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SARequestResult.m; path = Scholica/SARequestResult.m; sourceTree = "<group>"; };
+		0F9B685102D2D780688F1662 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		1795C30702F01AB1FC5248B0 /* Pods-schedule-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-schedule-dummy.m"; sourceTree = "<group>"; };
+		1AC0CB9097A04D970539E05F /* Pods-schedule-Scholica-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-schedule-Scholica-Private.xcconfig"; sourceTree = "<group>"; };
+		1AD6F8B5654FF5AC4D6A5924 /* Pods-schedule-Scholica.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-schedule-Scholica.xcconfig"; sourceTree = "<group>"; };
+		1E2FCBEA36042C0E34509A22 /* SARequestError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SARequestError.m; path = Scholica/SARequestError.m; sourceTree = "<group>"; };
+		2BA42D6A6E78148E61BBDA6D /* Pods-schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-schedule.debug.xcconfig"; sourceTree = "<group>"; };
+		3247AEDED619996864EA249E /* SANativeLoginController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SANativeLoginController.h; path = Scholica/SANativeLoginController.h; sourceTree = "<group>"; };
+		34001148DA522D9FC8DB8797 /* SANativeLoginController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SANativeLoginController.m; path = Scholica/SANativeLoginController.m; sourceTree = "<group>"; };
+		3A077A2F82EC9BFEB8F5A319 /* Pods-schedule-Scholica-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-schedule-Scholica-prefix.pch"; sourceTree = "<group>"; };
+		4CEEF23FEE16B083BA0CB190 /* Pods-schedule-Scholica-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-schedule-Scholica-dummy.m"; sourceTree = "<group>"; };
+		5078941034F975D4C036EB91 /* Pods-schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-schedule.release.xcconfig"; sourceTree = "<group>"; };
+		68C3C0E963C4D5665FF18659 /* SASingleton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SASingleton.m; path = Scholica/SASingleton.m; sourceTree = "<group>"; };
+		77220346D73757A3A8053EBA /* libPods-schedule-Scholica.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-schedule-Scholica.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C8DAE8DD61CF68D08D4A61C /* Pods-schedule-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-schedule-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8250C461A839E7AC70BCA1A3 /* SAUtilties.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SAUtilties.m; path = Scholica/SAUtilties.m; sourceTree = "<group>"; };
+		858EA045560602862B53B513 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8AB4974620C26D9C6B564CF2 /* SAUserObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SAUserObject.m; path = Scholica/SAUserObject.m; sourceTree = "<group>"; };
+		99DB0673EDA272FA095F6153 /* SARequestError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SARequestError.h; path = Scholica/SARequestError.h; sourceTree = "<group>"; };
+		AEEC09FA3EBEB1942FED9BD2 /* SAWebLoginController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAWebLoginController.h; path = Scholica/SAWebLoginController.h; sourceTree = "<group>"; };
+		B01744B3B380B2E7E1C27976 /* SARequestResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SARequestResult.h; path = Scholica/SARequestResult.h; sourceTree = "<group>"; };
+		B0784FBFD72E8B87840199C8 /* Pods-schedule-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-schedule-resources.sh"; sourceTree = "<group>"; };
+		BAEC326A4FCC560DEA23EA68 /* SASingleton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SASingleton.h; path = Scholica/SASingleton.h; sourceTree = "<group>"; };
+		C4651087CDA05CA9B7885E55 /* Pods-schedule-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-schedule-acknowledgements.plist"; sourceTree = "<group>"; };
+		C4771038140E6DA6E8C2581E /* SAJSONRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SAJSONRequest.m; path = Scholica/SAJSONRequest.m; sourceTree = "<group>"; };
+		C804A754F616AB8C34F500A0 /* SAConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAConstants.h; path = Scholica/SAConstants.h; sourceTree = "<group>"; };
+		CA25431219997137D9300A31 /* Scholica.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Scholica.m; path = Scholica/Scholica.m; sourceTree = "<group>"; };
+		CA94A2E79F96BC187B7D67F0 /* libPods-schedule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-schedule.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFADD4A72AEE1543B6529930 /* Pods-schedule-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-schedule-environment.h"; sourceTree = "<group>"; };
+		D43A16A450AAC420924F79DB /* SASession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SASession.m; path = Scholica/SASession.m; sourceTree = "<group>"; };
+		E22A8589F00C8B2CE9094D40 /* SASession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SASession.h; path = Scholica/SASession.h; sourceTree = "<group>"; };
+		E8379252E6156BB3EC8571C4 /* SAJSONRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAJSONRequest.h; path = Scholica/SAJSONRequest.h; sourceTree = "<group>"; };
+		EC8B39E06E30BDD63B4981D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		F2C2408722182D0067E99936 /* SAUserObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAUserObject.h; path = Scholica/SAUserObject.h; sourceTree = "<group>"; };
+		F54EF2EF876F8BCC4E5CA00A /* SAUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAUtilities.h; path = Scholica/SAUtilities.h; sourceTree = "<group>"; };
+		FDBB13A5AC427F0AF35B2DB1 /* SAWebLoginController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SAWebLoginController.m; path = Scholica/SAWebLoginController.m; sourceTree = "<group>"; };
+		FDDFF39A5C20F0AD83845D79 /* Scholica.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Scholica.h; path = Scholica/Scholica.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		436E59F22AAF548CE3BDCEFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D399D3B5A0D5F28A16611A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AC6531538BF58E1B4267CA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4B23746E7F16D1F5CB68A95 /* Foundation.framework in Frameworks */,
+				06A84119647041B5030E3EA8 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05B2345930B09E7CD042F46A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA94A2E79F96BC187B7D67F0 /* libPods-schedule.a */,
+				77220346D73757A3A8053EBA /* libPods-schedule-Scholica.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D435EB8C2CCA82DC870F44D /* Scholica */ = {
+			isa = PBXGroup;
+			children = (
+				C804A754F616AB8C34F500A0 /* SAConstants.h */,
+				E8379252E6156BB3EC8571C4 /* SAJSONRequest.h */,
+				C4771038140E6DA6E8C2581E /* SAJSONRequest.m */,
+				3247AEDED619996864EA249E /* SANativeLoginController.h */,
+				34001148DA522D9FC8DB8797 /* SANativeLoginController.m */,
+				99DB0673EDA272FA095F6153 /* SARequestError.h */,
+				1E2FCBEA36042C0E34509A22 /* SARequestError.m */,
+				B01744B3B380B2E7E1C27976 /* SARequestResult.h */,
+				0DED3E96739A3023CF4C32ED /* SARequestResult.m */,
+				E22A8589F00C8B2CE9094D40 /* SASession.h */,
+				D43A16A450AAC420924F79DB /* SASession.m */,
+				BAEC326A4FCC560DEA23EA68 /* SASingleton.h */,
+				68C3C0E963C4D5665FF18659 /* SASingleton.m */,
+				F2C2408722182D0067E99936 /* SAUserObject.h */,
+				8AB4974620C26D9C6B564CF2 /* SAUserObject.m */,
+				F54EF2EF876F8BCC4E5CA00A /* SAUtilities.h */,
+				8250C461A839E7AC70BCA1A3 /* SAUtilties.m */,
+				AEEC09FA3EBEB1942FED9BD2 /* SAWebLoginController.h */,
+				FDBB13A5AC427F0AF35B2DB1 /* SAWebLoginController.m */,
+				FDDFF39A5C20F0AD83845D79 /* Scholica.h */,
+				CA25431219997137D9300A31 /* Scholica.m */,
+				462452A463C31F7F2CD5281E /* Support Files */,
+			);
+			path = Scholica;
+			sourceTree = "<group>";
+		};
+		24029C721461637A11D8BB4E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				427F8235C036F798409D83FA /* Pods-schedule */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		3AA92D78CA591A159076EC9F = {
+			isa = PBXGroup;
+			children = (
+				858EA045560602862B53B513 /* Podfile */,
+				CFF01FB39D8DCAAB4E604512 /* Frameworks */,
+				43B72E7B543A2711A8501D03 /* Pods */,
+				05B2345930B09E7CD042F46A /* Products */,
+				24029C721461637A11D8BB4E /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		427F8235C036F798409D83FA /* Pods-schedule */ = {
+			isa = PBXGroup;
+			children = (
+				7C8DAE8DD61CF68D08D4A61C /* Pods-schedule-acknowledgements.markdown */,
+				C4651087CDA05CA9B7885E55 /* Pods-schedule-acknowledgements.plist */,
+				1795C30702F01AB1FC5248B0 /* Pods-schedule-dummy.m */,
+				CFADD4A72AEE1543B6529930 /* Pods-schedule-environment.h */,
+				B0784FBFD72E8B87840199C8 /* Pods-schedule-resources.sh */,
+				2BA42D6A6E78148E61BBDA6D /* Pods-schedule.debug.xcconfig */,
+				5078941034F975D4C036EB91 /* Pods-schedule.release.xcconfig */,
+			);
+			name = "Pods-schedule";
+			path = "Target Support Files/Pods-schedule";
+			sourceTree = "<group>";
+		};
+		43B72E7B543A2711A8501D03 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D435EB8C2CCA82DC870F44D /* Scholica */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		462452A463C31F7F2CD5281E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AD6F8B5654FF5AC4D6A5924 /* Pods-schedule-Scholica.xcconfig */,
+				1AC0CB9097A04D970539E05F /* Pods-schedule-Scholica-Private.xcconfig */,
+				4CEEF23FEE16B083BA0CB190 /* Pods-schedule-Scholica-dummy.m */,
+				3A077A2F82EC9BFEB8F5A319 /* Pods-schedule-Scholica-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-schedule-Scholica";
+			sourceTree = "<group>";
+		};
+		CFF01FB39D8DCAAB4E604512 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF791D6E581AC5886AFE706B /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF791D6E581AC5886AFE706B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0F9B685102D2D780688F1662 /* Foundation.framework */,
+				EC8B39E06E30BDD63B4981D4 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BE87CF9084A392012C534866 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87A5E201E62A200F4C09BB05 /* SAConstants.h in Headers */,
+				0517575E9C44010D22002F94 /* SAJSONRequest.h in Headers */,
+				D8A46DF21A8930DCAA179390 /* SANativeLoginController.h in Headers */,
+				258112D3363E97E675FA9CD0 /* SARequestError.h in Headers */,
+				DF07FBE42AF1718AE599756A /* SARequestResult.h in Headers */,
+				35AA8734870D4CE8ABD5E853 /* SASession.h in Headers */,
+				129EFD36422E2FC1F415EB9E /* SASingleton.h in Headers */,
+				1126C8ED9C61F0A31D47D38D /* SAUserObject.h in Headers */,
+				787D05BF0A0DBD028B988ACC /* SAUtilities.h in Headers */,
+				4AD710FC578EF0FFB2132196 /* SAWebLoginController.h in Headers */,
+				AB44F454ABB0EB6A050F6A6E /* Scholica.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		01E7721FBB13EC7F7B363E01 /* Pods-schedule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3185D9E03D9585428DE9253B /* Build configuration list for PBXNativeTarget "Pods-schedule" */;
+			buildPhases = (
+				D209FF869038F6EFDDD47668 /* Sources */,
+				436E59F22AAF548CE3BDCEFB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67C0D27006F81C565C56A59E /* PBXTargetDependency */,
+			);
+			name = "Pods-schedule";
+			productName = "Pods-schedule";
+			productReference = CA94A2E79F96BC187B7D67F0 /* libPods-schedule.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		1439C446254CD32FB12ECBA8 /* Pods-schedule-Scholica */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70683AD168693E0CFE23A8EA /* Build configuration list for PBXNativeTarget "Pods-schedule-Scholica" */;
+			buildPhases = (
+				17A0F8DA0F42DB985BAC8E88 /* Sources */,
+				8AC6531538BF58E1B4267CA1 /* Frameworks */,
+				BE87CF9084A392012C534866 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-schedule-Scholica";
+			productName = "Pods-schedule-Scholica";
+			productReference = 77220346D73757A3A8053EBA /* libPods-schedule-Scholica.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		499FCEB4B4B81804BE27682F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = 1A425B305529D6AA5460B33D /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3AA92D78CA591A159076EC9F;
+			productRefGroup = 05B2345930B09E7CD042F46A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01E7721FBB13EC7F7B363E01 /* Pods-schedule */,
+				1439C446254CD32FB12ECBA8 /* Pods-schedule-Scholica */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17A0F8DA0F42DB985BAC8E88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2590288B542A2DAFF454BDF9 /* Pods-schedule-Scholica-dummy.m in Sources */,
+				2005C9A2B1F08A4492CB8B0A /* SAJSONRequest.m in Sources */,
+				D53B8B4F76FB8FBACE056369 /* SANativeLoginController.m in Sources */,
+				2173F9AA6ECEA7F6E109603B /* SARequestError.m in Sources */,
+				2F64A38593F8EF3462CAF1F1 /* SARequestResult.m in Sources */,
+				8433B90D75BEC36F101A8FD3 /* SASession.m in Sources */,
+				ADBC24180207F83DFCE42BEA /* SASingleton.m in Sources */,
+				7E44212FF6DDDE9EEAB888F8 /* SAUserObject.m in Sources */,
+				BAC5AFF0AD2DC05EEAF0B6DD /* SAUtilties.m in Sources */,
+				5D7182B9FC35796DED14B21B /* SAWebLoginController.m in Sources */,
+				66C738EA6F5A4668053D8965 /* Scholica.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D209FF869038F6EFDDD47668 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3060A680821563EDB8DEA5B2 /* Pods-schedule-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		67C0D27006F81C565C56A59E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-schedule-Scholica";
+			target = 1439C446254CD32FB12ECBA8 /* Pods-schedule-Scholica */;
+			targetProxy = B5E3C6358C713ECEB59D715C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1E9E5E2E01B7A4C90EE1B1D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AC0CB9097A04D970539E05F /* Pods-schedule-Scholica-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-schedule-Scholica/Pods-schedule-Scholica-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		251146B4E6045880D8DC95FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AC0CB9097A04D970539E05F /* Pods-schedule-Scholica-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-schedule-Scholica/Pods-schedule-Scholica-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3909C4E924006690414CC230 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BA42D6A6E78148E61BBDA6D /* Pods-schedule.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8AFBF4B48134F0902F47F779 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5078941034F975D4C036EB91 /* Pods-schedule.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C7976F0ED6110BFEE80D5B6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		F57F7A869F03357630B04696 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A425B305529D6AA5460B33D /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7976F0ED6110BFEE80D5B6E /* Debug */,
+				F57F7A869F03357630B04696 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3185D9E03D9585428DE9253B /* Build configuration list for PBXNativeTarget "Pods-schedule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3909C4E924006690414CC230 /* Debug */,
+				8AFBF4B48134F0902F47F779 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70683AD168693E0CFE23A8EA /* Build configuration list for PBXNativeTarget "Pods-schedule-Scholica" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E9E5E2E01B7A4C90EE1B1D8 /* Debug */,
+				251146B4E6045880D8DC95FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 499FCEB4B4B81804BE27682F /* Project object */;
+}

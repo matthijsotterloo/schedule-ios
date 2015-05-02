@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1ECC14C679BBB91B042030 /* libPods-schedule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A02035D1FFF85F5B05D7850 /* libPods-schedule.a */; };
 		E23F1D531AEEEE7A00381349 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1D521AEEEE7A00381349 /* main.m */; };
 		E23F1D561AEEEE7A00381349 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1D551AEEEE7A00381349 /* AppDelegate.m */; };
 		E23F1D591AEEEE7A00381349 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1D581AEEEE7A00381349 /* ViewController.m */; };
@@ -18,10 +19,6 @@
 		E23F1D8A1AEEF1D500381349 /* SubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1D831AEEF1D500381349 /* SubTableViewCell.m */; };
 		E23F1D8B1AEEF1D500381349 /* ExpandedContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1D851AEEF1D500381349 /* ExpandedContainer.m */; };
 		E23F1D8C1AEEF1D500381349 /* SubTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1D871AEEF1D500381349 /* SubTableView.m */; };
-		E242B1801AF2614600D62A5E /* Scholica.m in Sources */ = {isa = PBXBuildFile; fileRef = E242B1781AF2614600D62A5E /* Scholica.m */; };
-		E242B1811AF2614600D62A5E /* ScholicaLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = E242B17B1AF2614600D62A5E /* ScholicaLoginController.m */; };
-		E242B1821AF2614600D62A5E /* ScholicaRequestError.m in Sources */ = {isa = PBXBuildFile; fileRef = E242B17D1AF2614600D62A5E /* ScholicaRequestError.m */; };
-		E242B1831AF2614600D62A5E /* ScholicaRequestResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E242B17F1AF2614600D62A5E /* ScholicaRequestResult.m */; };
 		E25C4B391AF1767800D691F9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E25C4B371AF1767800D691F9 /* Localizable.strings */; };
 		E25C4B3C1AF176C000D691F9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E25C4B3E1AF176C000D691F9 /* InfoPlist.strings */; };
 		E25C4B431AF176F100D691F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25C4B421AF176F100D691F9 /* Main.storyboard */; };
@@ -44,6 +41,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3FBFC70C76EDA5084BD32BCA /* Pods-schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedule.release.xcconfig"; path = "Pods/Target Support Files/Pods-schedule/Pods-schedule.release.xcconfig"; sourceTree = "<group>"; };
+		4249ED5D960B6A9D97A612C2 /* Pods-schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-schedule/Pods-schedule.debug.xcconfig"; sourceTree = "<group>"; };
+		9A02035D1FFF85F5B05D7850 /* libPods-schedule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-schedule.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23F1D4D1AEEEE7A00381349 /* schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23F1D521AEEEE7A00381349 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E23F1D541AEEEE7A00381349 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -63,15 +63,6 @@
 		E23F1D851AEEF1D500381349 /* ExpandedContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandedContainer.m; sourceTree = "<group>"; };
 		E23F1D861AEEF1D500381349 /* SubTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubTableView.h; sourceTree = "<group>"; };
 		E23F1D871AEEF1D500381349 /* SubTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubTableView.m; sourceTree = "<group>"; };
-		E242B1771AF2614600D62A5E /* Scholica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scholica.h; path = Scholica/Scholica.h; sourceTree = "<group>"; };
-		E242B1781AF2614600D62A5E /* Scholica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Scholica.m; path = Scholica/Scholica.m; sourceTree = "<group>"; };
-		E242B1791AF2614600D62A5E /* ScholicaConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScholicaConstants.h; path = Scholica/ScholicaConstants.h; sourceTree = "<group>"; };
-		E242B17A1AF2614600D62A5E /* ScholicaLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScholicaLoginController.h; path = Scholica/ScholicaLoginController.h; sourceTree = "<group>"; };
-		E242B17B1AF2614600D62A5E /* ScholicaLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScholicaLoginController.m; path = Scholica/ScholicaLoginController.m; sourceTree = "<group>"; };
-		E242B17C1AF2614600D62A5E /* ScholicaRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScholicaRequestError.h; path = Scholica/ScholicaRequestError.h; sourceTree = "<group>"; };
-		E242B17D1AF2614600D62A5E /* ScholicaRequestError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScholicaRequestError.m; path = Scholica/ScholicaRequestError.m; sourceTree = "<group>"; };
-		E242B17E1AF2614600D62A5E /* ScholicaRequestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScholicaRequestResult.h; path = Scholica/ScholicaRequestResult.h; sourceTree = "<group>"; };
-		E242B17F1AF2614600D62A5E /* ScholicaRequestResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScholicaRequestResult.m; path = Scholica/ScholicaRequestResult.m; sourceTree = "<group>"; };
 		E25C4B381AF1767800D691F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E25C4B3D1AF176C000D691F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E25C4B421AF176F100D691F9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -91,17 +82,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1ECC14C679BBB91B042030 /* libPods-schedule.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07A6AF5ECB818F7590AF2F28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A02035D1FFF85F5B05D7850 /* libPods-schedule.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		19FB431DF8042957E1290087 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4249ED5D960B6A9D97A612C2 /* Pods-schedule.debug.xcconfig */,
+				3FBFC70C76EDA5084BD32BCA /* Pods-schedule.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E23F1D441AEEEE7A00381349 = {
 			isa = PBXGroup;
 			children = (
 				E23F1D4F1AEEEE7A00381349 /* schedule */,
 				E23F1D4E1AEEEE7A00381349 /* Products */,
+				19FB431DF8042957E1290087 /* Pods */,
+				07A6AF5ECB818F7590AF2F28 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,7 +135,6 @@
 				E2EE99391AEF87170092C428 /* LoginViewController.m */,
 				E25C4B421AF176F100D691F9 /* Main.storyboard */,
 				E23F1D5D1AEEEE7A00381349 /* Images.xcassets */,
-				E242B1841AF2614A00D62A5E /* Scholica */,
 				E25C4B4C1AF1777100D691F9 /* Helpers */,
 				E23F1D7A1AEEF1D500381349 /* SubTable */,
 				E23F1D501AEEEE7A00381349 /* Supporting Files */,
@@ -184,22 +194,6 @@
 			path = ChildCell;
 			sourceTree = "<group>";
 		};
-		E242B1841AF2614A00D62A5E /* Scholica */ = {
-			isa = PBXGroup;
-			children = (
-				E242B1771AF2614600D62A5E /* Scholica.h */,
-				E242B1781AF2614600D62A5E /* Scholica.m */,
-				E242B1791AF2614600D62A5E /* ScholicaConstants.h */,
-				E242B17A1AF2614600D62A5E /* ScholicaLoginController.h */,
-				E242B17B1AF2614600D62A5E /* ScholicaLoginController.m */,
-				E242B17C1AF2614600D62A5E /* ScholicaRequestError.h */,
-				E242B17D1AF2614600D62A5E /* ScholicaRequestError.m */,
-				E242B17E1AF2614600D62A5E /* ScholicaRequestResult.h */,
-				E242B17F1AF2614600D62A5E /* ScholicaRequestResult.m */,
-			);
-			name = Scholica;
-			sourceTree = "<group>";
-		};
 		E25C4B4A1AF1774900D691F9 /* Translations */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,10 +230,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E23F1D701AEEEE7B00381349 /* Build configuration list for PBXNativeTarget "schedule" */;
 			buildPhases = (
+				A9905C5609F552AE9D71D1D6 /* Check Pods Manifest.lock */,
 				E23F1D491AEEEE7A00381349 /* Sources */,
 				E23F1D4A1AEEEE7A00381349 /* Frameworks */,
 				E23F1D4B1AEEEE7A00381349 /* Resources */,
 				E242B13D1AF2599A00D62A5E /* Embed Frameworks */,
+				F3FE0E506357DAAB2D71E9CD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,23 +295,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A9905C5609F552AE9D71D1D6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F3FE0E506357DAAB2D71E9CD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-schedule/Pods-schedule-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E23F1D491AEEEE7A00381349 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E23F1D591AEEEE7A00381349 /* ViewController.m in Sources */,
-				E242B1811AF2614600D62A5E /* ScholicaLoginController.m in Sources */,
-				E242B1821AF2614600D62A5E /* ScholicaRequestError.m in Sources */,
 				E2EE993A1AEF87170092C428 /* LoginViewController.m in Sources */,
 				E23F1D891AEEF1D500381349 /* ParentTableView.m in Sources */,
-				E242B1801AF2614600D62A5E /* Scholica.m in Sources */,
 				E23F1D8B1AEEF1D500381349 /* ExpandedContainer.m in Sources */,
 				E23F1D8A1AEEF1D500381349 /* SubTableViewCell.m in Sources */,
 				E23F1D881AEEF1D500381349 /* ParentTableViewCell.m in Sources */,
 				E25C4B551AF21C5900D691F9 /* MMMaterialDesignSpinner.m in Sources */,
 				E281B9451AF16ADB00BAAE16 /* Reachability.m in Sources */,
-				E242B1831AF2614600D62A5E /* ScholicaRequestResult.m in Sources */,
 				E23F1D561AEEEE7A00381349 /* AppDelegate.m in Sources */,
 				E23F1D8C1AEEF1D500381349 /* SubTableView.m in Sources */,
 				E23F1D531AEEEE7A00381349 /* main.m in Sources */,
@@ -428,6 +453,7 @@
 		};
 		E23F1D711AEEEE7B00381349 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4249ED5D960B6A9D97A612C2 /* Pods-schedule.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -451,6 +477,7 @@
 		};
 		E23F1D721AEEEE7B00381349 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FBFC70C76EDA5084BD32BCA /* Pods-schedule.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

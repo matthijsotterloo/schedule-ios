@@ -200,7 +200,7 @@
 -(void)handleUserTap:(UITapGestureRecognizer *)recognizer {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    UIAlertView *userAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:[self labelFor:1], [appDelegate.user objectForKey:@"name"]] message:[self labelFor:2] delegate:self cancelButtonTitle:[self labelFor:3] otherButtonTitles:[self labelFor:5], [self labelFor:4], nil];
+    UIAlertView *userAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:[self labelFor:1], appDelegate.user.name] message:[self labelFor:2] delegate:self cancelButtonTitle:[self labelFor:3] otherButtonTitles:[self labelFor:5], [self labelFor:4], nil];
     [userAlert show];
 }
 
@@ -289,9 +289,6 @@
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    //    UIImage* logoImage = [UIImage imageNamed:@"puff.svg"];
-    //    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:logoImage];
-    
     [self.tableView collapseAllRows];
     
     NSNumber *time = [NSNumber numberWithInt:(int)baseTime+(int)deltaTime];
@@ -306,12 +303,12 @@
         }
     }
     
-    if([appDelegate.user objectForKey:@"community"]){
-        [appDelegate.scholica request:[NSString stringWithFormat:@"/communities/%@/calendar/schedule", [appDelegate.user objectForKey:@"community"]] withFields:@{@"time":deltaTime==0?[NSNumber numberWithInteger:deltaTime]:time, @"show_week":@1, @"show_tasks":@0} callback:^(ScholicaRequestResult *result) {
+    if(appDelegate.user.community){
+        [[Scholica instance] request:[NSString stringWithFormat:@"/communities/%d/calendar/schedule", appDelegate.user.community] withFields:@{@"time":deltaTime==0?[NSNumber numberWithInteger:deltaTime]:time, @"show_week":@1, @"show_tasks":@0} callback:^(SARequestResult *result) {
             
             [self stopSync];
             
-            if(result.status == ScholicaRequestStatusOK){
+            if(result.status == SARequestStatusOK){
                 NSLog(@"Sync successful");
                 [self loadWithData:result.data];
                 if (deltaTime == 0) {
@@ -335,7 +332,7 @@
     
     if (!userImage || (userImageFromFile && [[Reachability reachabilityForLocalWiFi] currentReachabilityStatus] == ReachableViaWiFi)) {
             dispatch_async(dispatch_get_global_queue(0,0), ^{
-                NSData * data2 = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: [appDelegate.user objectForKey:@"picture"]]];
+                NSData * data2 = [[NSData alloc] initWithContentsOfURL: appDelegate.user.picture];
                 if ( data2 == nil ) return;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     NSLog(@"Downloaded user image");

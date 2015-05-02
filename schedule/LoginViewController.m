@@ -28,9 +28,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    // TODO: remove this (DEBUGGING)
-    //[self loginButtonTapped:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,55 +38,46 @@
 
 - (IBAction) loginButtonTapped:(id)sender
 {
-    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-    Scholica* scholica = appDelegate.scholica;
-    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    [scholica loginInViewController:self
-                            success:^(ScholicaLoginStatus status){
-                                [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-                                
-                                [appDelegate.navigationController dismissViewControllerAnimated:YES completion:nil];
-                                [[NSUserDefaults standardUserDefaults] setObject:scholica.accessToken forKey:@"ScholicaAccessToken"];
-                                [[NSUserDefaults standardUserDefaults] synchronize];
-                                [appDelegate getUser];
-                            }
-                            failure:^(ScholicaLoginStatus status){
-                                NSLog(@"Login failure...");
-                                
-                                [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-                                
-                                if(status == ScholicaLoginStatusInvalidConsumer){
-                                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Login error"
-                                                                                    message: @"The application is not correctly configured for signing in with Scholica."
-                                                                                   delegate: nil
-                                                                          cancelButtonTitle:@"OK"
-                                                                          otherButtonTitles:nil
-                                                          ];
-                                    [alert show];
-                                }
-                                if(status == ScholicaLoginStatusNetworkError){
-                                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Login error"
-                                                                                    message: @"Please check your internet connection and try signing in again."
-                                                                                   delegate: nil
-                                                                          cancelButtonTitle:@"OK"
-                                                                          otherButtonTitles:nil
-                                                          ];
-                                    [alert show];
-                                }
-                                if(status == ScholicaLoginStatusUnknown){
-                                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Login error"
-                                                                                    message: @"An unknown error occurred. Please try signing in again."
-                                                                                   delegate: nil
-                                                                          cancelButtonTitle:@"OK"
-                                                                          otherButtonTitles:nil
-                                                          ];
-                                    [alert show];
-                                }
-                                
-                            }
-     ];
+    
+    [[Scholica instance] signIn:^(SALoginStatus status){
+        NSLog(@"Login success");
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+
+        AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        [appDelegate.navigationController dismissViewControllerAnimated:YES completion:nil];
+        [appDelegate getUser];
+        }
+    failure:^(SALoginStatus status){
+        NSLog(@"Login fail");
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+
+        if(status == SALoginStatusInvalidConsumer){
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Login error"
+                                                            message: @"The application is not correctly configured for signing in with Scholica."
+                                                           delegate: nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        if(status == SALoginStatusNetworkError){
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Login error"
+                                                            message: @"Please check your internet connection and try signing in again."
+                                                           delegate: nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        if(status == SALoginStatusUnknown){
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Login error"
+                                                            message: @"An unknown error occurred. Please try signing in again."
+                                                           delegate: nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+    }];
     
     NSLog(@"Logging in...");
     

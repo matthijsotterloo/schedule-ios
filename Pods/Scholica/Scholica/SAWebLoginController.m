@@ -1,26 +1,50 @@
 //
-//  ScholicaLoginController.m
+//  SALoginController.m
 //  Scholica
 //
 //  Created by Thomas Schoffelen on 30/04/15.
 //  Copyright (c) 2015 Scholica. All rights reserved.
 //
 
-#import "ScholicaLoginController.h"
+#import "SAWebLoginController.h"
 
-@interface ScholicaLoginController ()
+@interface SAWebLoginController ()
 
 @end
 
-@implementation NSString (NSString_Extended)
+@implementation SAWebLoginController
 
-- (NSString *)urlencode {
-    return [self stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet];
++ (void) signIn:(SALoginCallback)success failure:(SALoginCallback)failure viewController:(UIViewController *)viewController {
+    // Create a view controller (SALoginController)
+    SAWebLoginController *loginController = [[SAWebLoginController alloc] init];
+    
+    // Set redirect URI
+    loginController.redirectURI = @"webview://x-callback-url/auth";
+    
+    // Set callbacks
+    __block SAWebLoginController* loginControllerShim = loginController;
+    loginController.callback = ^{
+        if(loginControllerShim.status == SALoginStatusOK){
+            NSString *accessToken = loginControllerShim.accessToken;
+            [Scholica instance].accessToken = accessToken;
+            if([[Scholica instance] autoSaveAccessToken]){
+                [SASession saveAccessToken:accessToken];
+            }
+            success(loginControllerShim.status);
+        }else{
+            failure(loginControllerShim.status);
+        }
+        
+        if (![Scholica instance].customDismissLoginController){
+            [viewController dismissViewControllerAnimated:YES completion:nil];
+            loginControllerShim.shouldHide = YES;
+        }
+    };
+    
+    // Present view controller
+    loginController.shouldHide = NO;
+    [viewController presentViewController:loginController animated:YES completion:nil];
 }
-
-@end
-
-@implementation ScholicaLoginController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,7 +63,7 @@
     [self.view addSubview:self.activityIndicator];
     
     // Compile authorization URL
-    NSString* authURL = [NSString stringWithFormat:@"%@/auth?consumer_key=%@&redirect_uri=%@&mode=IOS", self.endPoint, [self.consumerKey urlencode], [self.redirectUri urlencode]];
+    NSString* authURL = [NSString stringWithFormat:@"%@/auth?consumer_key=%@&redirect_uri=%@&mode=IOS", [Scholica instance].authEndPoint, [SAUtilities urlencode:[Scholica instance].consumerKey], [SAUtilities urlencode:self.redirectURI]];
     
     // Fire up webview
     [self.activityIndicator startAnimating];
@@ -65,7 +89,7 @@
 - (void) webView:(UIWebView*)webView didFailLoadWithError:(NSError*)error {
     if(webView == self.modalView){
         [self.activityIndicator stopAnimating];
-        self.status = ScholicaLoginStatusNetworkError;
+        self.status = SALoginStatusNetworkError;
         [self complete];
     }
 }
@@ -86,25 +110,24 @@
         NSString *urlString = url.absoluteString;
         
         if (
-            [urlString rangeOfString:self.redirectUri].location != NSNotFound &&
-            [urlString rangeOfString:[NSString stringWithFormat:@"redirect_uri=%@",[self.redirectUri urlencode]]].location == NSNotFound
+            [urlString rangeOfString:self.redirectURI].location != NSNotFound &&
+            [urlString rangeOfString:[NSString stringWithFormat:@"redirect_uri=%@",[SAUtilities urlencode:self.redirectURI]]].location == NSNotFound
             ){
-            if(self.customLoginProcess){
+            if([Scholica instance].customLoginProcess){
                 // custom login process, so open URL in Safari
                 [[UIApplication sharedApplication] openURL:url];
-            
             }else{
                 // otherwise we will parse the result
-                self.status = ScholicaLoginStatusUnknown;
+                self.status = SALoginStatusUnknown;
                 if([urlString rangeOfString:@"access_token="].location != NSNotFound){
                     self.accessToken = [[urlString componentsSeparatedByString:@"="] lastObject];
                     if(![self.accessToken isEqual:@""]){
-                        self.status = ScholicaLoginStatusOK;
+                        self.status = SALoginStatusOK;
                     }
                 }else if([urlString rangeOfString:@"access_error=invalid_consumer"].location != NSNotFound){
-                    self.status = ScholicaLoginStatusInvalidConsumer;
+                    self.status = SALoginStatusInvalidConsumer;
                 }else if([urlString rangeOfString:@"access_error=canceled_by_user"].location != NSNotFound){
-                    self.status = ScholicaLoginStatusCanceledByUser;
+                    self.status = SALoginStatusCanceledByUser;
                 }
                 [self complete];
             }

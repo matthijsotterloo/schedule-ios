@@ -14,55 +14,76 @@
 
 @implementation AppDelegate
 
-@synthesize navigationController;
-@synthesize mainStoryboard;
-
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Set Scholica consumer key & secret
+    [[Scholica instance] setConsumerKey:@"262weE1HRXdOVWRXV0d4VVYwZWRWRmw0ZEhk561WcHpWMjFHVjJKR2JETl666Up3"];
+    [[Scholica instance] setConsumerSecret:@"2lSMmhXVm14a2IxSkdj7f9a4jBaVVVsUldXbGRyWkc5VWJVVjRZMFZvVjFKc2NGaFdha1po4WpGa4NsZHNV4WxTVlhCd4ZtM"];
+    
+    // Set up view controllers
     self.mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    self.controller = (ViewController*)[self.mainStoryboard instantiateViewControllerWithIdentifier: @"MainViewController"];
+    [self setupNavigationController];
     
-    self.controller = (ViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"MainViewController"];
-    
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.controller];
-    [navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    [navigationController.navigationBar setShadowImage:[UIImage new]];
-    [navigationController.navigationBar setBackgroundColor:[UIColor whiteColor]];
-    [navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"ProximaNova-Regular" size:17], NSFontAttributeName, [UIColor colorWithWhite:0.2 alpha:1.0],NSForegroundColorAttributeName, nil]];
-    
-    UIView *statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, -20, navigationController.navigationBar.frame.size.width, 22)];
-    statusBarView.backgroundColor = [UIColor whiteColor];
-    [navigationController.navigationBar addSubview:statusBarView];
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self.window setRootViewController:navigationController];
-    [self.window setBackgroundColor:[UIColor whiteColor]];
-    [self.window makeKeyAndVisible];
-    
-    self.scholica = [[Scholica alloc] initWithConsumerKey:@"262weE1HRXdOVWRXV0d4VVYwZWRWRmw0ZEhk561WcHpWMjFHVjJKR2JETl666Up3" secret:@"2lSMmhXVm14a2IxSkdj7f9a4jBaVVVsUldXbGRyWkc5VWJVVjRZMFZvVjFKc2NGaFdha1po4WpGa4NsZHNV4WxTVlhCd4ZtM"];
-    
-    // Check if access token is available
-    NSString *accessToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"ScholicaAccessToken"];
-    if(!accessToken){
+    // Check if user is signed in
+    if(![[Scholica instance] currentSession]){
         // Show login screen
-        [self login:YES];
+        [self login:NO];
     }else{
         // Set access token
-        self.scholica.accessToken = accessToken;
         [self getUser];
     }
     
     return YES;
 }
 
-- (void)login:(BOOL)animated {
-    LoginViewController *vc = [self.mainStoryboard instantiateViewControllerWithIdentifier:@"Login"];
-    [self.navigationController presentViewController:vc animated:NO completion:nil];
+- (BOOL) application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    if(![[Scholica instance] applicationDelegateOpenURL:url sourceApplication:sourceApplication]){
+        // Override point for URL scheme handling if requested URL is not related to Scholica login
+    }
+    
+    return YES;
 }
 
-- (void)logout {
-    // Remove access token
-    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"ScholicaAccessToken"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+- (void) applicationDidBecomeActive:(UIApplication *)application {
+    if(self.user && self.controller){
+        [self.controller synchronize];
+    }else if(self.controller && [[Scholica instance] currentSession]){
+        [self getUser];
+    }
+}
+
+
+# pragma mark - View controller setup
+
+- (void) setupNavigationController {
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.controller];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"ProximaNova-Regular" size:17], NSFontAttributeName, [UIColor colorWithWhite:0.2 alpha:1.0],NSForegroundColorAttributeName, nil]];
+    
+    UIView *statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, -20, self.navigationController.navigationBar.frame.size.width, 22)];
+    statusBarView.backgroundColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar addSubview:statusBarView];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window setRootViewController:self.navigationController];
+    [self.window setBackgroundColor:[UIColor whiteColor]];
+    [self.window makeKeyAndVisible];
+}
+
+
+# pragma mark - Scholica authentication
+
+- (void) login:(BOOL)animated {
+    // Present login overlay
+    LoginViewController *vc = [self.mainStoryboard instantiateViewControllerWithIdentifier:@"Login"];
+    [self.navigationController presentViewController:vc animated:animated completion:nil];
+}
+
+- (void) logout {
+    // Destroy access token
+    [[Scholica instance] signOut];
     
     // Remove cache files
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -77,19 +98,17 @@
     [self login:YES];
 }
 
-- (void)getUser {
-    NSLog(@"Getting user...");
-    
-    [self.scholica request:@"/me" callback:^(ScholicaRequestResult *result) {
-        if(result.status == ScholicaRequestStatusOK){
+- (void) getUser {
+    [[Scholica instance] profile:^(SAUserObject *user) {
+        if(!user.error){
             // Got user data, save it and start synchronisation
-            self.user = result.data;
+            self.user = user;
             
             // Synchronize data
             if(self.controller) {
                 [self.controller synchronize];
             }
-        }else if(result.error.code > 900){
+        }else if(user.error.code > 900){
             // Show login dialog, but only if the error is a Scholica error, not a network error
             NSLog(@"Scholica error, present login view.");
             [self login:YES];
@@ -99,14 +118,6 @@
             [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(getUser) userInfo:nil repeats:NO];
         }
     }];
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    if(self.user && self.controller){
-        [self.controller synchronize];
-    }else if(self.controller && self.scholica.accessToken){
-        [self getUser];
-    }
 }
 
 @end

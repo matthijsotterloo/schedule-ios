@@ -1,14 +1,14 @@
 //
-//  ScholicaRequestError.m
+//  SARequestError.m
 //  Scholica
 //
 //  Created by Thomas Schoffelen on 30/04/15.
 //  Copyright (c) 2015 Scholica. All rights reserved.
 //
 
-#import "ScholicaRequestError.h"
+#import "SARequestError.h"
 
-@implementation ScholicaRequestError
+@implementation SARequestError
 
 - (id) initWithData:(NSDictionary*)data {
     

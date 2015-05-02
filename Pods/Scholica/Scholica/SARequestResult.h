@@ -1,5 +1,5 @@
 //
-//  ScholicaRequestResult.h
+//  SARequestResult.h
 //  Scholica
 //
 //  Created by Thomas Schoffelen on 30/04/15.
@@ -8,14 +8,14 @@
 
 #import "Scholica.h"
 
-@class ScholicaRequestResult, ScholicaRequestError;
+@class SARequestResult, SARequestError;
 
-@interface ScholicaRequestResult : NSObject
+@interface SARequestResult : NSObject
 
 @property (nonatomic) NSDictionary* data;
 @property (nonatomic) NSDictionary* meta;
-@property (nonatomic) ScholicaRequestError* error;
-@property (nonatomic) ScholicaRequestStatus status;
+@property (nonatomic) SARequestError* error;
+@property (nonatomic) SARequestStatus status;
 
 - (id) initWithData:(NSData*)data;
 
