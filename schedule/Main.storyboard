@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -29,9 +29,11 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Zey-VV-cOJ" customClass="ParentTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Zey-VV-cOJ" secondAttribute="bottom" id="WKY-TR-5TH"/>
@@ -61,13 +63,14 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eJ-BF-yhV">
                                 <rect key="frame" x="276" y="286" width="46" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="53" id="LxA-yh-LKg">
                                         <variation key="heightClass=regular" constant="45"/>
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
-                                <state key="normal" title="SIGN IN WITH SCHOLICA" backgroundImage="btn-large">
+                                <state key="normal" title="CHOOSE ACCOUNT" backgroundImage="btn-large">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -91,6 +94,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN IN TO VIEW YOUR SCHEDULE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAK-Wv-UtC">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -100,6 +104,7 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plant" translatesAutoresizingMaskIntoConstraints="NO" id="WDK-lG-ByY">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="6cN-st-SxX">
                                         <variation key="heightClass=regular" constant="150"/>
@@ -127,6 +132,7 @@
                                 </variation>
                             </imageView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.92941176470588238" green="0.29019607843137257" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9Ib-IQ-sfG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1eJ-BF-yhV" secondAttribute="bottom" constant="25" id="2Jq-0j-HhO"/>
@@ -152,14 +158,14 @@
                                 <exclude reference="WDK-lG-ByY"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="EXP-rX-wyv"/>
-                                <exclude reference="O0D-7p-yDx"/>
                                 <exclude reference="3kz-LZ-deM"/>
                                 <exclude reference="BiN-IT-yg7"/>
                                 <exclude reference="b55-DF-Feu"/>
                                 <exclude reference="f4t-F4-BJi"/>
                                 <exclude reference="lXN-ae-8do"/>
                                 <exclude reference="wUb-i1-h3M"/>
+                                <exclude reference="EXP-rX-wyv"/>
+                                <exclude reference="O0D-7p-yDx"/>
                                 <exclude reference="Qka-xV-ycD"/>
                                 <exclude reference="ZKD-Ca-aEG"/>
                                 <exclude reference="xKT-Pw-mmA"/>
@@ -172,14 +178,14 @@
                                 <include reference="WDK-lG-ByY"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="EXP-rX-wyv"/>
-                                <include reference="O0D-7p-yDx"/>
                                 <include reference="3kz-LZ-deM"/>
                                 <include reference="BiN-IT-yg7"/>
                                 <include reference="b55-DF-Feu"/>
                                 <include reference="f4t-F4-BJi"/>
                                 <include reference="lXN-ae-8do"/>
                                 <include reference="wUb-i1-h3M"/>
+                                <include reference="EXP-rX-wyv"/>
+                                <include reference="O0D-7p-yDx"/>
                                 <include reference="Qka-xV-ycD"/>
                                 <include reference="ZKD-Ca-aEG"/>
                                 <include reference="xKT-Pw-mmA"/>

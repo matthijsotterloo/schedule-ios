@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Scholica.h"
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <UIActionSheetDelegate>
 
 - (IBAction) loginButtonTapped:(id)sender;
 

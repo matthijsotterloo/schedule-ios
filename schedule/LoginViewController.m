@@ -21,7 +21,7 @@
     
     self.view.backgroundColor = [UIColor colorWithRed:0.929 green:0.290 blue:0.392 alpha:1];
     
-    [self.loginButton setTitle:NSLocalizedString(@"SIGN IN WITH SCHOLICA", nil) forState:UIControlStateNormal];
+    [self.loginButton setTitle:NSLocalizedString(@"CHOOSE ACCOUNT", nil) forState:UIControlStateNormal];
     [self.loginLabel setText:NSLocalizedString(@"SIGN IN TO VIEW YOUR SCHEDULE", nil)];
 }
 
@@ -38,6 +38,18 @@
 
 - (IBAction) loginButtonTapped:(id)sender
 {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:NSLocalizedString(@"Choose account", nil)
+                                  delegate:self
+                                  cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:@"Scholica", @"Magister", nil];
+    [actionSheet showInView:self.view];
+}
+
+- (void) loginWithScholica
+{
+    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     
@@ -77,10 +89,20 @@
                                                   otherButtonTitles:nil];
             [alert show];
         }
-    }];
+    } viewController:self];
     
     NSLog(@"Logging in...");
     
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+    
+    if([buttonTitle isEqualToString:@"Magister"]){
+        //[self loginWithMagister];
+    }else if([buttonTitle isEqualToString:@"Scholica"]){
+        [self loginWithScholica];
+    }
 }
 
 @end
