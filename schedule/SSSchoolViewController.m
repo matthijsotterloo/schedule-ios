@@ -23,6 +23,12 @@ NSString* site;
     [[UISearchBar appearanceWhenContainedIn:[UIView class], nil] setBarTintColor:[UIColor whiteColor]];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    schools = @[];
+    [self.schoolsTableView reloadData];
+    [super viewWillAppear:animated];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -36,7 +42,7 @@ NSString* site;
     }
 }
 
-- (void)setResults:(NSMutableArray*)results {
+- (void)setSearchResults:(NSMutableArray*)results {
     schools = [[NSArray alloc] initWithArray:results];
     [self.schoolsTableView reloadData];
 }

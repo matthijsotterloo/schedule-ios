@@ -160,7 +160,7 @@ static BOOL manualreset;
                 }];
             }
         }
-        [controller setResults:items];
+        [controller setSearchResults:items];
     }];
 }
 

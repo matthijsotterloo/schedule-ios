@@ -14,6 +14,6 @@
 @property IBOutlet UISearchBar *schoolsSearchBar;
 @property IBOutlet UITableView *schoolsTableView;
 
-- (void)setResults:(NSMutableArray*)results;
+- (void)setSearchResults:(NSMutableArray*)results;
 
 @end
