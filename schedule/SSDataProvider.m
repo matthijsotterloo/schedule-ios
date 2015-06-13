@@ -102,7 +102,7 @@ static BOOL manualreset;
 }
 
 - (void) personRequest:(NSString*)method callback:(SARequestCallback)callback {
-    [SAJSONRequest request:[self getPersonURLString:method] parameters:@{} callback:callback];
+    [self JSONRequest:[self getPersonURLString:method] callback:callback];
 }
 
 - (void) profile:(SAProfileCallback)callback {
@@ -127,7 +127,7 @@ static BOOL manualreset;
                     userProfile = user;
                     callback(user);
                 }else{
-                    SAUserObject *user = nil;
+                    SAUserObject *user = [[SAUserObject alloc] init];
                     user.error = result.error;
                     callback(user);
                 }
@@ -138,22 +138,28 @@ static BOOL manualreset;
 
 - (void)getSchoolsForProvider:(NSString*)provider searchText:(NSString*)searchText controller:(SSSchoolViewController*)controller {
     NSString* searchURL;
+    
+    if ([searchText length] < 3) {
+        return;
+    }
+    
     if ([provider isEqualToString:@"magister"]) {
         searchURL = [NSString stringWithFormat:@"https://mijn.magister.net/api/schools?filter=%@", searchText];
     }
     
-    [SAJSONRequest request:searchURL parameters:@{} callback:^(SARequestResult *result) {
+    [self JSONRequest:searchURL callback:^(SARequestResult *result) {
         NSMutableArray* items = [[NSMutableArray alloc] init];
-        for (NSDictionary* school in result.data) {
-            NSString* schoolURLString = [school objectForKey:@"Url"];
-            NSURL* schoolURL = [NSURL URLWithString:schoolURLString];
-            NSArray * hostComponents = [[schoolURL host] componentsSeparatedByString:@"."];
-            [items addObject:@{
-                              @"title": [school objectForKey:@"Name"],
-                              @"site": [hostComponents objectAtIndex:0]
-                               }];
+        if (result.status == SARequestStatusOK) {
+            for (NSDictionary* school in result.data) {
+                NSString* schoolURLString = [school objectForKey:@"Url"];
+                NSURL* schoolURL = [NSURL URLWithString:schoolURLString];
+                NSArray * hostComponents = [[schoolURL host] componentsSeparatedByString:@"."];
+                [items addObject:@{
+                    @"title": [school objectForKey:@"Name"],
+                    @"site": [hostComponents objectAtIndex:0]
+                }];
+            }
         }
-        
         [controller setResults:items];
     }];
 }
@@ -166,6 +172,93 @@ static BOOL manualreset;
         [self personRequest:[NSString stringWithFormat:@"meetings/%@", time == 0 ? @"now" : time] callback:callback];
     }
     
+}
+
+- (void) JSONRequest:(NSString *)url callback:(SARequestCallback)callback {
+    
+    NSURL *URL = [NSURL URLWithString:url];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:[Scholica instance].requestTimeout];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue currentQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+       dispatch_async(dispatch_get_main_queue(), ^{
+           [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+       });
+       
+       if (callback) {
+           NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
+           SARequestResult* result = [SARequestResult alloc];
+           if (!connectionError && (responseCode == 200 || responseCode >= 400)) {
+               result = [result initWithData:data];
+               if (!result.data) {
+                   result.status = SARequestStatusError;
+                   result.error = [[SARequestError alloc] initWithData:@{
+                       @"code": (responseCode == 200 ? @"-1" : [NSNumber numberWithInteger:responseCode]),
+                       @"description": @"Response is unreadable",
+                       @"documentation": @""
+                   }];
+               }
+               
+               // JSON array fix
+               if (result.status == SARequestStatusError &&
+                   [result.error.errorDescription isEqualToString:@"Response is no valid JSON"]) {
+                   NSError* errorObject;
+                   @try {
+                       NSArray* array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&errorObject];
+                       result.data = array;
+                       result.status = SARequestStatusOK;
+                       result.error = nil;
+                   }
+                   @catch(NSException* exception){
+                       result.data = @{};
+                       result.status = SARequestStatusError;
+                       result.error = [[SARequestError alloc] initWithData:@{
+                                                                           @"code": @"999",
+                                                                           @"description": @"Response is no valid JSON",
+                                                                           @"documentation": @""
+                                                                           }];
+                   }
+               }
+           }else{
+               result = [result init];
+               result.status = SARequestStatusError;
+               result.error = [[SARequestError alloc] initWithData:@{
+                                                                     @"code": [NSString stringWithFormat:@"%ld", (long)responseCode],
+                                                                     @"description": connectionError?connectionError.description:@"Unknown error",
+                                                                     @"documentation": @""
+                                                                     }];
+           }
+           
+           callback(result);
+       }
+   }];
+}
+
++ (void)invokeLoginDialogForProvider:(NSString*)provider site:(NSString*)site title:(NSString*)title {
+    [SSDataProvider instance].provider = provider;
+    [SSDataProvider instance].site = site;
+    UIAlertView* alert =[[UIAlertView alloc] initWithTitle:title message:[NSString stringWithFormat:@"Sign in to %@", provider] delegate:[SSDataProvider instance] cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+    alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    [alert addButtonWithTitle:@"Login"];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    if (buttonIndex == 1) {
+        NSString* username = [alertView textFieldAtIndex:0].text;
+        NSString* password = [alertView textFieldAtIndex:1].text;
+        [self setProvider:self.provider site:self.site username:username password:password];
+        
+        [appDelegate.navigationController dismissViewControllerAnimated:YES completion:nil];
+        [appDelegate getUser];
+    }else{
+        LoginViewController *vc = [appDelegate.mainStoryboard instantiateViewControllerWithIdentifier:@"Login"];
+        [appDelegate.navigationController presentViewController:vc animated:YES completion:nil];
+    }
 }
 
 @end

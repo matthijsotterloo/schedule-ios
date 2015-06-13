@@ -15,11 +15,12 @@
 @implementation SSSchoolViewController
 
 NSArray* schools;
+NSString* provider = @"magister";
+NSString* site;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[UISearchBar appearanceWhenContainedIn:[UIView class], nil] setBarTintColor:[UIColor whiteColor]];
-    //[[UISearchBar appearanceWhenContainedIn:[UIView class], nil] setTintColor:[UIColor whiteColor]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,7 +32,7 @@ NSArray* schools;
 
 - (void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)searchText {
     if(searchBar == self.schoolsSearchBar){
-        [[SSDataProvider instance] getSchoolsForProvider:@"magister" searchText:searchText controller:self];
+        [[SSDataProvider instance] getSchoolsForProvider:provider searchText:searchText controller:self];
     }
 }
 
@@ -53,14 +54,21 @@ NSArray* schools;
     return [schools count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:  (NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath: (NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = @"Testje";
-    cell.detailTextLabel.text = @"Nog eentje";
+    cell.textLabel.text = [[schools objectAtIndex:indexPath.row] objectForKey:@"title"];
     
     return cell;
+}
+
+- (void) tableView:(UITableView*) tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
+    if([schools objectAtIndex:indexPath.row]) {
+        site = [[schools objectAtIndex:indexPath.row] objectForKey:@"site"];
+        [SSDataProvider invokeLoginDialogForProvider:provider site:site title:[[schools objectAtIndex:indexPath.row] objectForKey:@"title"]];
+    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 /*

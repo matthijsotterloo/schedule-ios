@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SSCalendarViewController.h"
 #import "LoginViewController.h"
+#import "SSSchoolViewController.h"
 #import "SSDataProvider.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

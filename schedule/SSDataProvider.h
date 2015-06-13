@@ -32,4 +32,6 @@
 
 - (void)getSchoolsForProvider:(NSString*)provider searchText:(NSString*)searchText controller:(UIViewController*)controller;
 
++ (void)invokeLoginDialogForProvider:(NSString*)provider site:(NSString*)site title:(NSString*)title;
+
 @end

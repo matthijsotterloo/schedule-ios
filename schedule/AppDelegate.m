@@ -26,9 +26,9 @@
     
     
     // REMOVE BEFORE PUBLISHING, DEBUG ONLY!
-    UIViewController* controller = (UIViewController*)[self.mainStoryboard instantiateViewControllerWithIdentifier: @"SelectSchool"];
-    [self.controller presentViewController:controller animated:NO completion:nil];
-    return YES;
+//    UIViewController* controller = (UIViewController*)[self.mainStoryboard instantiateViewControllerWithIdentifier: @"SelectSchool"];
+//    [self.controller presentViewController:controller animated:NO completion:nil];
+//    return YES;
     // REMOVE BEFORE PUBLISHING, DEBUG ONLY!
     
     
@@ -121,7 +121,11 @@
         }else if(user.error.code > 400 && user.error.code != 500){
             // Show login dialog, but only if the error is a user-related error, not a network error
             NSLog(@"Login error, present login view.");
-            [self login:YES];
+            if(([[SSDataProvider instance].provider isEqual: @"magister"] || [[SSDataProvider instance].provider isEqual: @"somtoday"]) && [SSDataProvider instance].site){
+                [SSDataProvider invokeLoginDialogForProvider:[SSDataProvider instance].provider site:[SSDataProvider instance].site title:@"Sign in"];
+            }else{
+                [self login:YES];
+            }
         }else{
             // Network error, so try again in a couple of seconds
             NSLog(@"Network error, will try again soon.");

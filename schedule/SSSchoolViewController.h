@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
-@interface SSSchoolViewController : UIViewController <UISearchBarDelegate>
+@interface SSSchoolViewController : UIViewController <UISearchBarDelegate, UITableViewDelegate, UIAlertViewDelegate>
 
 @property IBOutlet UISearchBar *schoolsSearchBar;
 @property IBOutlet UITableView *schoolsTableView;
