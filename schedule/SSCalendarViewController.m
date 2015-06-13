@@ -1,12 +1,12 @@
 //
-//  ViewController.m
+//  SSCalendarViewController.m
 //  schedule
 //
 //  Created by Thomas Schoffelen on 28/04/15.
 //  Copyright (c) 2015 Scholica. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SSCalendarViewController.h"
 #import "ParentTableView.h"
 #import "ParentTableViewCell.h"
 #import "SubTableView.h"
@@ -15,7 +15,7 @@
 #import "Reachability.h"
 #import "MMMaterialDesignSpinner.h"
 
-@interface ViewController (){
+@interface SSCalendarViewController (){
 
     UIImage *userImage;
     bool syncing;
@@ -27,7 +27,7 @@
 
 @end
 
-@implementation ViewController
+@implementation SSCalendarViewController
 
 @synthesize data;
 @synthesize footericon;
@@ -224,6 +224,7 @@
     
     if (deltaTime == 0) {
         baseTime = [[self.data objectForKey:@"week_timestamp"] integerValue];
+        NSLog(@"Set baseTime to %ld", (long)baseTime);
     }
     
     [self.tableView reloadData];
@@ -304,8 +305,7 @@
     }
     
     if(appDelegate.user.community){
-        [[Scholica instance] request:[NSString stringWithFormat:@"/communities/%d/calendar/schedule", appDelegate.user.community] withFields:@{@"time":deltaTime==0?[NSNumber numberWithInteger:deltaTime]:time, @"show_week":@1, @"show_tasks":@0} callback:^(SARequestResult *result) {
-            
+        [[SSDataProvider instance] getCalendarWithTimestamp:(deltaTime == 0 ? @0 : time) callback:^(SARequestResult *result) {
             [self stopSync];
             
             if(result.status == SARequestStatusOK){

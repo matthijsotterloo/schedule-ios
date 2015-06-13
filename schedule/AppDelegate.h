@@ -7,16 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Scholica.h"
-#import "ViewController.h"
+#import "SSCalendarViewController.h"
 #import "LoginViewController.h"
+#import "SSDataProvider.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UIStoryboard *mainStoryboard;
 @property (strong, nonatomic) UINavigationController *navigationController;
-@property (strong, nonatomic) ViewController *controller;
+@property (strong, nonatomic) SSCalendarViewController *controller;
 
 @property (nonatomic) double cellSize;
 

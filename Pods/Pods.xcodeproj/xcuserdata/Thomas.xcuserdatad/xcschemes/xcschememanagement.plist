@@ -6,23 +6,23 @@
 	<dict>
 		<key>Pods-schedule-Scholica.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-schedule.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>01E7721FBB13EC7F7B363E01</key>
+		<key>6F5F1C2E49CCDB6043316924</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1439C446254CD32FB12ECBA8</key>
+		<key>9D36C0FDD51DA2AD597A98E4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

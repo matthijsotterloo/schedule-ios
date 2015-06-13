@@ -10,7 +10,7 @@
 		0B1ECC14C679BBB91B042030 /* libPods-schedule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A02035D1FFF85F5B05D7850 /* libPods-schedule.a */; };
 		E23F1D531AEEEE7A00381349 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1D521AEEEE7A00381349 /* main.m */; };
 		E23F1D561AEEEE7A00381349 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1D551AEEEE7A00381349 /* AppDelegate.m */; };
-		E23F1D591AEEEE7A00381349 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1D581AEEEE7A00381349 /* ViewController.m */; };
+		E23F1D591AEEEE7A00381349 /* SSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1D581AEEEE7A00381349 /* SSCalendarViewController.m */; };
 		E23F1D5E1AEEEE7A00381349 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E23F1D5D1AEEEE7A00381349 /* Images.xcassets */; };
 		E23F1D781AEEF19000381349 /* ProximaNova-Reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = E23F1D761AEEF10800381349 /* ProximaNova-Reg.otf */; };
 		E23F1D791AEEF19200381349 /* ProximaNova-Sbold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E23F1D771AEEF10D00381349 /* ProximaNova-Sbold.otf */; };
@@ -25,6 +25,8 @@
 		E25C4B551AF21C5900D691F9 /* MMMaterialDesignSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = E25C4B541AF21C5900D691F9 /* MMMaterialDesignSpinner.m */; };
 		E281B9451AF16ADB00BAAE16 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E281B9441AF16ADB00BAAE16 /* Reachability.m */; };
 		E2EE993A1AEF87170092C428 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EE99391AEF87170092C428 /* LoginViewController.m */; };
+		E91DBA551B2C620A00C8A7B3 /* SSDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E91DBA541B2C620A00C8A7B3 /* SSDataProvider.m */; };
+		E93FB8391B2C9C550099D094 /* SSSchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93FB8381B2C9C550099D094 /* SSSchoolViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,8 +50,8 @@
 		E23F1D521AEEEE7A00381349 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E23F1D541AEEEE7A00381349 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E23F1D551AEEEE7A00381349 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E23F1D571AEEEE7A00381349 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E23F1D581AEEEE7A00381349 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E23F1D571AEEEE7A00381349 /* SSCalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSCalendarViewController.h; sourceTree = "<group>"; };
+		E23F1D581AEEEE7A00381349 /* SSCalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSCalendarViewController.m; sourceTree = "<group>"; };
 		E23F1D5D1AEEEE7A00381349 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E23F1D761AEEF10800381349 /* ProximaNova-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Reg.otf"; sourceTree = "<group>"; };
 		E23F1D771AEEF10D00381349 /* ProximaNova-Sbold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Sbold.otf"; sourceTree = "<group>"; };
@@ -75,6 +77,10 @@
 		E281B9601AF173FB00BAAE16 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2EE99381AEF87170092C428 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E2EE99391AEF87170092C428 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		E91DBA531B2C620A00C8A7B3 /* SSDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDataProvider.h; sourceTree = "<group>"; };
+		E91DBA541B2C620A00C8A7B3 /* SSDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDataProvider.m; sourceTree = "<group>"; };
+		E93FB8371B2C9C550099D094 /* SSSchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSchoolViewController.h; sourceTree = "<group>"; };
+		E93FB8381B2C9C550099D094 /* SSSchoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSchoolViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +135,12 @@
 			children = (
 				E23F1D541AEEEE7A00381349 /* AppDelegate.h */,
 				E23F1D551AEEEE7A00381349 /* AppDelegate.m */,
-				E23F1D571AEEEE7A00381349 /* ViewController.h */,
-				E23F1D581AEEEE7A00381349 /* ViewController.m */,
+				E91DBA531B2C620A00C8A7B3 /* SSDataProvider.h */,
+				E91DBA541B2C620A00C8A7B3 /* SSDataProvider.m */,
+				E93FB8371B2C9C550099D094 /* SSSchoolViewController.h */,
+				E93FB8381B2C9C550099D094 /* SSSchoolViewController.m */,
+				E23F1D571AEEEE7A00381349 /* SSCalendarViewController.h */,
+				E23F1D581AEEEE7A00381349 /* SSCalendarViewController.m */,
 				E2EE99381AEF87170092C428 /* LoginViewController.h */,
 				E2EE99391AEF87170092C428 /* LoginViewController.m */,
 				E25C4B421AF176F100D691F9 /* Main.storyboard */,
@@ -333,7 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E23F1D591AEEEE7A00381349 /* ViewController.m in Sources */,
+				E23F1D591AEEEE7A00381349 /* SSCalendarViewController.m in Sources */,
 				E2EE993A1AEF87170092C428 /* LoginViewController.m in Sources */,
 				E23F1D891AEEF1D500381349 /* ParentTableView.m in Sources */,
 				E23F1D8B1AEEF1D500381349 /* ExpandedContainer.m in Sources */,
@@ -343,6 +353,8 @@
 				E281B9451AF16ADB00BAAE16 /* Reachability.m in Sources */,
 				E23F1D561AEEEE7A00381349 /* AppDelegate.m in Sources */,
 				E23F1D8C1AEEF1D500381349 /* SubTableView.m in Sources */,
+				E93FB8391B2C9C550099D094 /* SSSchoolViewController.m in Sources */,
+				E91DBA551B2C620A00C8A7B3 /* SSDataProvider.m in Sources */,
 				E23F1D531AEEEE7A00381349 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +484,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -496,6 +509,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "f6b5a5a5-3a93-49fc-aa73-f6777705e524";
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

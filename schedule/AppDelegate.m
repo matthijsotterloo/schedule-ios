@@ -21,15 +21,25 @@
     
     // Set up view controllers
     self.mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    self.controller = (ViewController*)[self.mainStoryboard instantiateViewControllerWithIdentifier: @"MainViewController"];
+    self.controller = (SSCalendarViewController*)[self.mainStoryboard instantiateViewControllerWithIdentifier: @"MainViewController"];
     [self setupNavigationController];
     
+    
+    // REMOVE BEFORE PUBLISHING, DEBUG ONLY!
+    UIViewController* controller = (UIViewController*)[self.mainStoryboard instantiateViewControllerWithIdentifier: @"SelectSchool"];
+    [self.controller presentViewController:controller animated:NO completion:nil];
+    return YES;
+    // REMOVE BEFORE PUBLISHING, DEBUG ONLY!
+    
+    
+    
+    
     // Check if user is signed in
-    if(![[Scholica instance] currentSession]){
+    if(![[SSDataProvider instance] getSession]){
         // Show login screen
         [self login:NO];
     }else{
-        // Set access token
+        // Start app
         [self getUser];
     }
     
@@ -47,7 +57,7 @@
 - (void) applicationDidBecomeActive:(UIApplication *)application {
     if(self.user && self.controller){
         [self.controller synchronize];
-    }else if(self.controller && [[Scholica instance] currentSession]){
+    }else if(self.controller && [[SSDataProvider instance] getSession]){
         [self getUser];
     }
 }
@@ -83,7 +93,7 @@
 
 - (void) logout {
     // Destroy access token
-    [[Scholica instance] signOut];
+    [[SSDataProvider instance] signOut];
     
     // Remove cache files
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -99,8 +109,8 @@
 }
 
 - (void) getUser {
-    [[Scholica instance] profile:^(SAUserObject *user) {
-        if(!user.error){
+    [[SSDataProvider instance] profile:^(SAUserObject *user) {
+        if(user && !user.error){
             // Got user data, save it and start synchronisation
             self.user = user;
             
@@ -108,9 +118,9 @@
             if(self.controller) {
                 [self.controller synchronize];
             }
-        }else if(user.error.code > 900){
-            // Show login dialog, but only if the error is a Scholica error, not a network error
-            NSLog(@"Scholica error, present login view.");
+        }else if(user.error.code > 400 && user.error.code != 500){
+            // Show login dialog, but only if the error is a user-related error, not a network error
+            NSLog(@"Login error, present login view.");
             [self login:YES];
         }else{
             // Network error, so try again in a couple of seconds
