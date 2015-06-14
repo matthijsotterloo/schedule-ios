@@ -95,7 +95,9 @@ static NSArray* schoolsList;
 }
 
 - (NSString*) getPersonURLString:(NSString*)method {
-    return [NSString stringWithFormat:@"%@%@/%@/%@/%@/%@", self.endPoint, self.provider, self.site, self.username, self.password, method];
+    NSString* a = [NSString stringWithFormat:@"%@%@/%@/%@/%@/%@", self.endPoint, self.provider, self.site, self.username, self.password, method];
+    NSLog(a);
+    return a;
 }
 
 - (NSURL*) getPersonURL:(NSString*)method {
@@ -140,12 +142,11 @@ static NSArray* schoolsList;
 - (void)getSchoolsForProvider:(NSString*)provider searchText:(NSString*)searchText controller:(SSSchoolViewController*)controller {
     NSString* searchURL;
     
-    if ([searchText length] < 3) {
-        return;
-    }
-    
     if ([provider isEqualToString:@"magister"]) {
         searchURL = [NSString stringWithFormat:@"https://mijn.magister.net/api/schools?filter=%@", searchText];
+        if ([searchText length] < 3) {
+            return;
+        }
     }
     
     if([provider isEqual:@"somtoday"]){
@@ -156,7 +157,7 @@ static NSArray* schoolsList;
         if([searchURL isEqual:@"inline-search"]){
             NSMutableArray* items = [[NSMutableArray alloc] init];
             for(NSDictionary* school in schoolsList){
-                if ([[school objectForKey:@"title"] rangeOfString:searchText].location != NSNotFound) {
+                if ([searchText length] == 0 || [[school objectForKey:@"title"] rangeOfString:searchText options:NSCaseInsensitiveSearch].location != NSNotFound) {
                     [items addObject:school];
                 }
             }
