@@ -249,6 +249,9 @@
                                                 <exclude reference="Me0-j2-Juc"/>
                                             </mask>
                                         </variation>
+                                        <variation key="heightClass=regular" misplaced="YES">
+                                            <rect key="frame" x="32" y="97" width="327" height="45"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <mask key="constraints">
                                                 <include reference="Me0-j2-Juc"/>
@@ -272,7 +275,8 @@
                                                 <exclude reference="qre-Le-t8k"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular">
+                                        <variation key="heightClass=regular" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="61" width="391" height="20"/>
                                             <mask key="constraints">
                                                 <exclude reference="qre-Le-t8k"/>
                                             </mask>
@@ -518,6 +522,7 @@
                         <viewControllerLayoutGuide type="bottom" id="BjT-zY-bxs"/>
                     </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="Wx3-Vj-4bY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sb3-W2-PKa">
@@ -549,7 +554,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thomas S. Schoffelen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTI-hS-LTq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thomas Schoffelen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTI-hS-LTq">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -644,7 +649,9 @@
                             <constraint firstItem="7j0-yh-Yp3" firstAttribute="top" secondItem="hTI-hS-LTq" secondAttribute="bottom" constant="45" id="Qwd-cu-XVG"/>
                             <constraint firstItem="CLd-p6-Lfm" firstAttribute="trailing" secondItem="7j0-yh-Yp3" secondAttribute="trailing" id="RNn-wD-Imf"/>
                             <constraint firstItem="7j0-yh-Yp3" firstAttribute="trailing" secondItem="hTI-hS-LTq" secondAttribute="trailing" id="bhq-EA-H0k"/>
-                            <constraint firstItem="KdD-kn-geJ" firstAttribute="top" secondItem="Wx3-Vj-4bY" secondAttribute="top" constant="175" id="l1V-Dn-6Zv"/>
+                            <constraint firstItem="KdD-kn-geJ" firstAttribute="top" secondItem="Wx3-Vj-4bY" secondAttribute="top" constant="175" id="l1V-Dn-6Zv">
+                                <variation key="heightClass=regular" constant="190"/>
+                            </constraint>
                             <constraint firstItem="7j0-yh-Yp3" firstAttribute="leading" secondItem="hTI-hS-LTq" secondAttribute="leading" id="l8G-XT-q0B"/>
                             <constraint firstItem="CLd-p6-Lfm" firstAttribute="top" secondItem="7j0-yh-Yp3" secondAttribute="bottom" constant="8" symbolic="YES" id="qT0-eT-Tk3"/>
                             <constraint firstItem="j7V-IW-JeX" firstAttribute="leading" secondItem="Wx3-Vj-4bY" secondAttribute="leading" id="zJY-LC-VcK"/>
@@ -659,11 +666,6 @@
                                 <exclude reference="j7V-IW-JeX"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="M1S-mp-2CA"/>
-                                <exclude reference="l1V-Dn-6Zv"/>
-                                <exclude reference="5Gp-Sl-mTz"/>
-                                <exclude reference="IGo-PB-ROR"/>
-                                <exclude reference="QRT-XZ-cBY"/>
                                 <exclude reference="Qwd-cu-XVG"/>
                                 <exclude reference="bhq-EA-H0k"/>
                                 <exclude reference="l8G-XT-q0B"/>
@@ -672,6 +674,11 @@
                                 <exclude reference="Cil-dL-cci"/>
                                 <exclude reference="RNn-wD-Imf"/>
                                 <exclude reference="qT0-eT-Tk3"/>
+                                <exclude reference="l1V-Dn-6Zv"/>
+                                <exclude reference="5Gp-Sl-mTz"/>
+                                <exclude reference="IGo-PB-ROR"/>
+                                <exclude reference="QRT-XZ-cBY"/>
+                                <exclude reference="M1S-mp-2CA"/>
                                 <exclude reference="9iy-Sm-SrX"/>
                                 <exclude reference="A3A-7e-euZ"/>
                                 <exclude reference="Drf-0y-Bvw"/>
@@ -689,11 +696,6 @@
                                 <include reference="j7V-IW-JeX"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="M1S-mp-2CA"/>
-                                <include reference="l1V-Dn-6Zv"/>
-                                <include reference="5Gp-Sl-mTz"/>
-                                <include reference="IGo-PB-ROR"/>
-                                <include reference="QRT-XZ-cBY"/>
                                 <include reference="Qwd-cu-XVG"/>
                                 <include reference="bhq-EA-H0k"/>
                                 <include reference="l8G-XT-q0B"/>
@@ -702,6 +704,11 @@
                                 <include reference="Cil-dL-cci"/>
                                 <include reference="RNn-wD-Imf"/>
                                 <include reference="qT0-eT-Tk3"/>
+                                <include reference="l1V-Dn-6Zv"/>
+                                <include reference="5Gp-Sl-mTz"/>
+                                <include reference="IGo-PB-ROR"/>
+                                <include reference="QRT-XZ-cBY"/>
+                                <include reference="M1S-mp-2CA"/>
                                 <include reference="9iy-Sm-SrX"/>
                                 <include reference="A3A-7e-euZ"/>
                                 <include reference="Drf-0y-Bvw"/>
