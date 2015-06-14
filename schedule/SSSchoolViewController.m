@@ -15,7 +15,6 @@
 @implementation SSSchoolViewController
 
 NSArray* schools;
-NSString* provider = @"magister";
 NSString* site;
 
 - (void)viewDidLoad {
@@ -24,8 +23,7 @@ NSString* site;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    schools = @[];
-    [self.schoolsTableView reloadData];
+    [[SSDataProvider instance] prefillListForProvider:self.provider controller:self];
     [super viewWillAppear:animated];
 }
 
@@ -38,7 +36,7 @@ NSString* site;
 
 - (void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)searchText {
     if(searchBar == self.schoolsSearchBar){
-        [[SSDataProvider instance] getSchoolsForProvider:provider searchText:searchText controller:self];
+        [[SSDataProvider instance] getSchoolsForProvider:self.provider searchText:searchText controller:self];
     }
 }
 
@@ -72,7 +70,7 @@ NSString* site;
 - (void) tableView:(UITableView*) tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
     if([schools objectAtIndex:indexPath.row]) {
         site = [[schools objectAtIndex:indexPath.row] objectForKey:@"site"];
-        [SSDataProvider invokeLoginDialogForProvider:provider site:site title:[[schools objectAtIndex:indexPath.row] objectForKey:@"title"]];
+        [SSDataProvider invokeLoginDialogForProvider:self.provider site:site title:[[schools objectAtIndex:indexPath.row] objectForKey:@"title"]];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

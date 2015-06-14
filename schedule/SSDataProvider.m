@@ -12,6 +12,7 @@
 
 static SAUserObject *userProfile;
 static BOOL manualreset;
+static NSArray* schoolsList;
 
 - (id) init {
     self.endPoint = @"https://api.lesrooster.io/";
@@ -147,21 +148,67 @@ static BOOL manualreset;
         searchURL = [NSString stringWithFormat:@"https://mijn.magister.net/api/schools?filter=%@", searchText];
     }
     
-    [self JSONRequest:searchURL callback:^(SARequestResult *result) {
-        NSMutableArray* items = [[NSMutableArray alloc] init];
-        if (result.status == SARequestStatusOK) {
-            for (NSDictionary* school in result.data) {
-                NSString* schoolURLString = [school objectForKey:@"Url"];
-                NSURL* schoolURL = [NSURL URLWithString:schoolURLString];
-                NSArray * hostComponents = [[schoolURL host] componentsSeparatedByString:@"."];
-                [items addObject:@{
-                    @"title": [school objectForKey:@"Name"],
-                    @"site": [hostComponents objectAtIndex:0]
-                }];
+    if([provider isEqual:@"somtoday"]){
+        searchURL = @"inline-search";
+    }
+    
+    if(searchURL){
+        if([searchURL isEqual:@"inline-search"]){
+            NSMutableArray* items = [[NSMutableArray alloc] init];
+            for(NSDictionary* school in schoolsList){
+                if ([[school objectForKey:@"title"] rangeOfString:searchText].location != NSNotFound) {
+                    [items addObject:school];
+                }
             }
+            [controller setSearchResults:items];
+        }else{
+            [self JSONRequest:searchURL callback:^(SARequestResult *result) {
+                NSMutableArray* items = [[NSMutableArray alloc] init];
+                if (result.status == SARequestStatusOK) {
+                    for (NSDictionary* school in result.data) {
+                        NSString* schoolURLString = [school objectForKey:@"Url"];
+                        NSURL* schoolURL = [NSURL URLWithString:schoolURLString];
+                        NSArray * hostComponents = [[schoolURL host] componentsSeparatedByString:@"."];
+                        [items addObject:@{
+                            @"title": [school objectForKey:@"Name"],
+                            @"site": [hostComponents objectAtIndex:0]
+                        }];
+                    }
+                }
+                [controller setSearchResults:items];
+            }];
         }
+    }
+}
+
+- (void)prefillListForProvider:(NSString*)provider controller:(SSSchoolViewController*)controller {
+    NSString* searchURL;
+    schoolsList = @[];
+    
+    if ([provider isEqualToString:@"somtoday"]) {
+        searchURL = @"https://servers.somtoday.nl/";
+    }
+    
+    if(searchURL) {
+        [self JSONRequest:searchURL callback:^(SARequestResult *result) {
+            NSMutableArray* items = [[NSMutableArray alloc] init];
+            if (result.status == SARequestStatusOK) {
+                NSArray* resdata = result.data;
+                NSArray* schools = [[resdata objectAtIndex:0] objectForKey:@"instellingen"];
+                for (NSDictionary* school in schools) {
+                    [items addObject:@{
+                       @"title": [school objectForKey:@"naam"],
+                       @"site": [NSString stringWithFormat:@"%@-%@", [school objectForKey:@"afkorting"], [school objectForKey:@"brin"]]
+                    }];
+                }
+            }
+            schoolsList = items;
+            [controller setSearchResults:items];
+        }];
+    }else{
+        NSMutableArray* items = [[NSMutableArray alloc] init];
         [controller setSearchResults:items];
-    }];
+    }
 }
 
 - (void)getCalendarWithTimestamp:(NSNumber*)time callback:(SARequestCallback)callback {
@@ -259,6 +306,7 @@ static BOOL manualreset;
         [self setProvider:self.provider site:self.site username:username password:password];
         
         [appDelegate.navigationController dismissViewControllerAnimated:YES completion:nil];
+        appDelegate.schoolController = nil;
         [appDelegate getUser];
     }else{
         LoginViewController *vc = [appDelegate.mainStoryboard instantiateViewControllerWithIdentifier:@"Login"];

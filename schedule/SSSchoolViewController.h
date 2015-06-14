@@ -13,6 +13,7 @@
 
 @property IBOutlet UISearchBar *schoolsSearchBar;
 @property IBOutlet UITableView *schoolsTableView;
+@property (nonatomic, strong) NSString* provider;
 
 - (void)setSearchResults:(NSMutableArray*)results;
 

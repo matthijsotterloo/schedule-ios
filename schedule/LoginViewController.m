@@ -43,7 +43,7 @@
                                   delegate:self
                                   cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
                                   destructiveButtonTitle:nil
-                                  otherButtonTitles:@"Scholica", @"Magister", nil];
+                                  otherButtonTitles:@"Scholica", @"Magister", @"SOMtoday ELO", nil];
     [actionSheet showInView:self.view];
 }
 
@@ -101,7 +101,14 @@
     
     if([buttonTitle isEqualToString:@"Magister"]){
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        UIViewController* controller = (UIViewController*)[appDelegate.mainStoryboard instantiateViewControllerWithIdentifier: @"SelectSchool"];
+        SSSchoolViewController* controller = (SSSchoolViewController*)[appDelegate.mainStoryboard instantiateViewControllerWithIdentifier: @"SelectSchool"];
+        controller.provider = @"magister";
+        appDelegate.schoolController = controller;
+        [self showDetailViewController:controller sender:nil];
+    }else if([buttonTitle isEqualToString:@"SOMtoday ELO"]){
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        SSSchoolViewController* controller = (SSSchoolViewController*)[appDelegate.mainStoryboard instantiateViewControllerWithIdentifier: @"SelectSchool"];
+        controller.provider = @"somtoday";
         appDelegate.schoolController = controller;
         [self showDetailViewController:controller sender:nil];
     }else if([buttonTitle isEqualToString:@"Scholica"]){
