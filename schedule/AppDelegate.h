@@ -18,6 +18,7 @@
 @property (strong, nonatomic) UIStoryboard *mainStoryboard;
 @property (strong, nonatomic) UINavigationController *navigationController;
 @property (strong, nonatomic) SSCalendarViewController *controller;
+@property (strong, nonatomic) UIViewController *schoolController;
 
 @property (nonatomic) double cellSize;
 

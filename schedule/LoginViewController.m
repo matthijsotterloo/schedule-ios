@@ -100,19 +100,10 @@
     NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
     
     if([buttonTitle isEqualToString:@"Magister"]){
-        
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         UIViewController* controller = (UIViewController*)[appDelegate.mainStoryboard instantiateViewControllerWithIdentifier: @"SelectSchool"];
+        appDelegate.schoolController = controller;
         [self showDetailViewController:controller sender:nil];
-        
-//        NSLog(@"Crappy stuff");
-//        
-//        [[SSDataProvider instance] setProvider:@"magister" site:@"parkstad" username:@"1006867" password:@"mielcox"];
-//        
-//        AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-//        [appDelegate.navigationController dismissViewControllerAnimated:YES completion:nil];
-//        [appDelegate getUser];
-        
     }else if([buttonTitle isEqualToString:@"Scholica"]){
         [self loginWithScholica];
     }

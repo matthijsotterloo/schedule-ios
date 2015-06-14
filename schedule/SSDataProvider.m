@@ -216,10 +216,10 @@ static BOOL manualreset;
                        result.data = @{};
                        result.status = SARequestStatusError;
                        result.error = [[SARequestError alloc] initWithData:@{
-                                                                           @"code": @"999",
-                                                                           @"description": @"Response is no valid JSON",
-                                                                           @"documentation": @""
-                                                                           }];
+                           @"code": @"999",
+                           @"description": @"Response is no valid JSON",
+                           @"documentation": @""
+                       }];
                    }
                }
            }else{
@@ -251,13 +251,22 @@ static BOOL manualreset;
     if (buttonIndex == 1) {
         NSString* username = [alertView textFieldAtIndex:0].text;
         NSString* password = [alertView textFieldAtIndex:1].text;
+        if([username isEqual:@""] || [password isEqual:@""]){
+            [SSDataProvider invokeLoginDialogForProvider:self.provider site:self.site title:@"Sign in"];
+            return;
+        }
+        
         [self setProvider:self.provider site:self.site username:username password:password];
         
         [appDelegate.navigationController dismissViewControllerAnimated:YES completion:nil];
         [appDelegate getUser];
     }else{
         LoginViewController *vc = [appDelegate.mainStoryboard instantiateViewControllerWithIdentifier:@"Login"];
-        [appDelegate.navigationController presentViewController:vc animated:YES completion:nil];
+        if(appDelegate.schoolController){
+            [appDelegate.schoolController presentViewController:vc animated:YES completion:nil];
+        }else{
+            [appDelegate.navigationController presentViewController:vc animated:YES completion:nil];
+        }
     }
 }
 
