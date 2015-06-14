@@ -19,9 +19,13 @@
 "MY SCHEDULE" = "MY SCHEDULE";
 "LAST WEEK" = "LAST WEEK";
 "%i WEEKS AGO" = "%i WEEKS AGO";
+"THIS WEEK" = "THIS WEEK";
 "NEXT WEEK" = "NEXT WEEK";
 "IN %i WEEKS" = "IN %i WEEKS";
 "Hint: swipe left or right." = "Hint: swipe left or right.";
 
 "CHOOSE ACCOUNT" = "CHOOSE ACCOUNT";
+"Choose account" = "Choose account";
+"SEARCH YOUR SCHOOL" = "SEARCH YOUR SCHOOL";
+"Search your school..." = "Search your school...";
 "SIGN IN TO VIEW YOUR SCHEDULE" = "SIGN IN TO VIEW YOUR SCHEDULE";

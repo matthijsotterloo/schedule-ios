@@ -95,9 +95,7 @@ static NSArray* schoolsList;
 }
 
 - (NSString*) getPersonURLString:(NSString*)method {
-    NSString* a = [NSString stringWithFormat:@"%@%@/%@/%@/%@/%@", self.endPoint, self.provider, self.site, self.username, self.password, method];
-    NSLog(a);
-    return a;
+    return [NSString stringWithFormat:@"%@%@/%@/%@/%@/%@", self.endPoint, self.provider, self.site, self.username, self.password, method];
 }
 
 - (NSURL*) getPersonURL:(NSString*)method {
@@ -269,7 +267,12 @@ static NSArray* schoolsList;
                            @"documentation": @""
                        }];
                    }
+               }else if([result.data objectForKey:@"provider_error"]){
+                   UIAlertView* alert =[[UIAlertView alloc] initWithTitle:@"Login error" message:[result.data objectForKey:@"provider_error"] delegate:[SSDataProvider instance] cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                   [alert show];
+                   return;
                }
+               
            }else{
                result = [result init];
                result.status = SARequestStatusError;
@@ -312,9 +315,9 @@ static NSArray* schoolsList;
     }else{
         LoginViewController *vc = [appDelegate.mainStoryboard instantiateViewControllerWithIdentifier:@"Login"];
         if(appDelegate.schoolController){
-            [appDelegate.schoolController presentViewController:vc animated:YES completion:nil];
+            [appDelegate.schoolController presentViewController:vc animated:NO completion:nil];
         }else{
-            [appDelegate.navigationController presentViewController:vc animated:YES completion:nil];
+            [appDelegate.navigationController presentViewController:vc animated:NO completion:nil];
         }
     }
 }

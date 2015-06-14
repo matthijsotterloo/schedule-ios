@@ -109,7 +109,7 @@
             return @"Refresh";
             
         case 6:
-            return @"MY SCHEDULE";
+            return @"THIS WEEK";
             
         case 7:
             return @"LAST WEEK";

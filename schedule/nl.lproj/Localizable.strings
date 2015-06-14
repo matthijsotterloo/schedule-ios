@@ -21,8 +21,12 @@
 "LAST WEEK" = "VORIGE WEEK";
 "%i WEEKS AGO" = "%i WEKEN GELEDEN";
 "NEXT WEEK" = "VOLGENDE WEEK";
+"THIS WEEK" = "DEZE WEEK";
 "IN %i WEEKS" = "OVER %i WEKEN";
 "Hint: swipe left or right." = "Hint: swipe links of rechts.";
 
 "CHOOSE ACCOUNT" = "KIES ACCOUNT";
+"Choose account" = "Selecteer account-type";
+"SEARCH YOUR SCHOOL" = "ZOEK JE SCHOOL";
+"Search your school..." = "Zoek je school...";
 "SIGN IN TO VIEW YOUR SCHEDULE" = "LOG IN OM JE LESROOSTER TE ZIEN";

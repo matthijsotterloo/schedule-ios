@@ -490,7 +490,9 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="schoolsSearchBackgroundView" destination="s5t-a2-040" id="WOE-gT-lfy"/>
                         <outlet property="schoolsSearchBar" destination="oRp-Up-scS" id="or5-p2-lWA"/>
+                        <outlet property="schoolsSearchLabel" destination="4T2-8y-k3K" id="5hQ-wN-7xW"/>
                         <outlet property="schoolsTableView" destination="emo-fY-5Ii" id="Ygv-2V-trl"/>
                         <outlet property="searchDisplayController" destination="V7W-Zy-ycN" id="rhi-2t-0iR"/>
                     </connections>

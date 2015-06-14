@@ -13,6 +13,11 @@
 
 @property IBOutlet UISearchBar *schoolsSearchBar;
 @property IBOutlet UITableView *schoolsTableView;
+
+@property IBOutlet UIView *schoolsSearchBackgroundView;
+
+@property IBOutlet UILabel *schoolsSearchLabel;
+
 @property (nonatomic, strong) NSString* provider;
 
 - (void)setSearchResults:(NSMutableArray*)results;

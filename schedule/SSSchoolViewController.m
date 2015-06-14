@@ -19,7 +19,13 @@ NSString* site;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[UISearchBar appearanceWhenContainedIn:[UIView class], nil] setBarTintColor:[UIColor whiteColor]];
+    
+    self.schoolsSearchBackgroundView.backgroundColor = [UIColor colorWithRed:0.929 green:0.290 blue:0.392 alpha:1];
+    
+    [self.schoolsSearchLabel setText:NSLocalizedString(@"SEARCH YOUR SCHOOL", nil)];
+    
+    [self.schoolsSearchBar setPlaceholder:NSLocalizedString(@"Search your school...", nil)];
+    [self.schoolsSearchBar setBarTintColor:[UIColor whiteColor]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
