@@ -69,6 +69,7 @@
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.controller];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:0.929 green:0.290 blue:0.392 alpha:1]];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor whiteColor]];
     [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"ProximaNova-Regular" size:17], NSFontAttributeName, [UIColor colorWithWhite:0.2 alpha:1.0],NSForegroundColorAttributeName, nil]];
     
