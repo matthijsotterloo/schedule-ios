@@ -483,7 +483,7 @@
 					"$(PROJECT_DIR)/schedule",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "88fe0d87-5838-41f6-bc9b-c3129e34fb42";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -495,7 +495,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Scholica VOF (KN44X8ZLNC)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/schedule",
@@ -508,7 +508,7 @@
 					"$(PROJECT_DIR)/schedule",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f6b5a5a5-3a93-49fc-aa73-f6777705e524";
+				PROVISIONING_PROFILE = "88fe0d87-5838-41f6-bc9b-c3129e34fb42";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
