@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B1ECC14C679BBB91B042030 /* libPods-schedule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A02035D1FFF85F5B05D7850 /* libPods-schedule.a */; };
+		AD82FDB21B35770B00102AE7 /* SSGradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82FDB11B35770B00102AE7 /* SSGradeViewController.m */; };
 		E23F1D531AEEEE7A00381349 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1D521AEEEE7A00381349 /* main.m */; };
 		E23F1D561AEEEE7A00381349 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1D551AEEEE7A00381349 /* AppDelegate.m */; };
 		E23F1D591AEEEE7A00381349 /* SSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1D581AEEEE7A00381349 /* SSCalendarViewController.m */; };
@@ -46,6 +47,8 @@
 		3FBFC70C76EDA5084BD32BCA /* Pods-schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedule.release.xcconfig"; path = "Pods/Target Support Files/Pods-schedule/Pods-schedule.release.xcconfig"; sourceTree = "<group>"; };
 		4249ED5D960B6A9D97A612C2 /* Pods-schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-schedule/Pods-schedule.debug.xcconfig"; sourceTree = "<group>"; };
 		9A02035D1FFF85F5B05D7850 /* libPods-schedule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-schedule.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD82FDB01B3576D000102AE7 /* SSGradeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSGradeViewController.h; sourceTree = "<group>"; };
+		AD82FDB11B35770B00102AE7 /* SSGradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGradeViewController.m; sourceTree = "<group>"; };
 		E23F1D4D1AEEEE7A00381349 /* schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23F1D521AEEEE7A00381349 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E23F1D541AEEEE7A00381349 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				E93FB8381B2C9C550099D094 /* SSSchoolViewController.m */,
 				E23F1D571AEEEE7A00381349 /* SSCalendarViewController.h */,
 				E23F1D581AEEEE7A00381349 /* SSCalendarViewController.m */,
+				AD82FDB01B3576D000102AE7 /* SSGradeViewController.h */,
+				AD82FDB11B35770B00102AE7 /* SSGradeViewController.m */,
 				E2EE99381AEF87170092C428 /* LoginViewController.h */,
 				E2EE99391AEF87170092C428 /* LoginViewController.m */,
 				E25C4B421AF176F100D691F9 /* Main.storyboard */,
@@ -343,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD82FDB21B35770B00102AE7 /* SSGradeViewController.m in Sources */,
 				E23F1D591AEEEE7A00381349 /* SSCalendarViewController.m in Sources */,
 				E2EE993A1AEF87170092C428 /* LoginViewController.m in Sources */,
 				E23F1D891AEEF1D500381349 /* ParentTableView.m in Sources */,

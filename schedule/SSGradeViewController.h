@@ -1,5 +1,5 @@
 //
-//  SSCalendarViewController.h
+//  SSGradeViewController.h
 //  schedule
 //
 //  Created by Thomas Schoffelen on 28/04/15.
@@ -12,7 +12,7 @@
 
 #import "Scholica.h"
 
-@interface SSCalendarViewController : UIViewController <SubTableViewDelegate, SubTableViewDataSource, UIAlertViewDelegate>
+@interface SSGradeViewController : UIViewController <SubTableViewDelegate, SubTableViewDataSource, UIAlertViewDelegate>
 
 - (void) synchronize;
 

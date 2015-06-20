@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Scholica. All rights reserved.
 //
 
-#import "SSCalendarViewController.h"
+#import "SSGradeViewController.h"
 #import "ParentTableView.h"
 #import "ParentTableViewCell.h"
 #import "SubTableView.h"
@@ -15,8 +15,8 @@
 #import "Reachability.h"
 #import "MMMaterialDesignSpinner.h"
 
-@interface SSCalendarViewController (){
-
+@interface SSGradeViewController (){
+    
     UIImage *userImage;
     bool syncing;
     bool userImageFromFile;
@@ -27,7 +27,7 @@
 
 @end
 
-@implementation SSCalendarViewController
+@implementation SSGradeViewController
 
 @synthesize data;
 @synthesize footericon;
@@ -79,7 +79,7 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
     
-    NSDictionary *dict = [self getDictFromFile:@"ScheduleCache-0"];
+    NSDictionary *dict = [self getDictFromFile:@"GradesCache-0"];
     if(dict){
         NSLog(@"Loading base entry from cache");
         [self loadWithData:dict];
@@ -92,7 +92,7 @@
     switch (m) {
         case 0:
             return @"Oh, seems like not much is going on this week. Field trip? 🌴";
-        
+            
         case 1:
             return @"Whassup %@?";
             
@@ -109,11 +109,11 @@
             return @"Refresh";
             
         case 6:
-            return @"THIS WEEK";
+            return @"LAATSTE CIJFERS";
             
         case 7:
             return @"LAST WEEK";
-        
+            
         case 8:
             return @"%i WEEKS AGO";
             
@@ -125,10 +125,10 @@
             
         case 11:
             return @"Hint: swipe left or right.";
-        
+            
         case 12:
             return @"Credits";
-        
+            
         case 13:
             return @"Grades";
     }
@@ -164,7 +164,7 @@
     [footer addSubview:footericon];
     
     if(empty){
-    UILabel *footerLabel = [[UILabel alloc] initWithFrame:CGRectMake(48, (screenRect.size.height-128)/3, screenRect.size.width-96, 100)];
+        UILabel *footerLabel = [[UILabel alloc] initWithFrame:CGRectMake(48, (screenRect.size.height-128)/3, screenRect.size.width-96, 100)];
         footerLabel.text = [self labelFor:0];
         footerLabel.textAlignment = NSTextAlignmentCenter;
         footerLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -205,7 +205,7 @@
 -(void)handleUserTap:(UITapGestureRecognizer *)recognizer {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    UIAlertView *userAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:[self labelFor:1], appDelegate.user.name] message:[self labelFor:2] delegate:self cancelButtonTitle:[self labelFor:3] otherButtonTitles:[self labelFor:5], [self labelFor:4], [self labelFor:13], [self labelFor:12], nil];
+    UIAlertView *userAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:[self labelFor:1], appDelegate.user.name] message:[self labelFor:2] delegate:self cancelButtonTitle:[self labelFor:3] otherButtonTitles:[self labelFor:5], [self labelFor:4], [self labelFor:12], nil];
     [userAlert show];
 }
 
@@ -221,14 +221,16 @@
     {
         [self synchronize];
     }
+    else if([title isEqualToString:[self labelFor:12]]){
+        AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        [appDelegate.navigationController pushViewController:[appDelegate.mainStoryboard instantiateViewControllerWithIdentifier:@"Grades"] animated:YES];
+    }
     else if([title isEqualToString:[self labelFor:13]]){
         AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
         [appDelegate.navigationController pushViewController:[appDelegate.mainStoryboard instantiateViewControllerWithIdentifier:@"Grades"] animated:YES];
     }
-    else if([title isEqualToString:[self labelFor:12]]){
-        AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-        [appDelegate.navigationController pushViewController:[appDelegate.mainStoryboard instantiateViewControllerWithIdentifier:@"CreditsScreen"] animated:YES];
-    }
+    
+    
 }
 
 - (void) loadWithData:(NSDictionary*)input {
@@ -307,7 +309,7 @@
     NSNumber *time = [NSNumber numberWithInt:(int)baseTime+(int)deltaTime];
     NSLog(@"Base: %ld, delta: %ld, TIME: %@", (long)baseTime, (long)deltaTime, time);
     
-    NSDictionary *dict = [self getDictFromFile:[NSString stringWithFormat:@"ScheduleCache-%@", time]];
+    NSDictionary *dict = [self getDictFromFile:[NSString stringWithFormat:@"GradesCache-%@", time]];
     if(dict){
         NSLog(@"Loading entry %@ from cache", time);
         [self loadWithData:dict];
@@ -317,16 +319,16 @@
     }
     
     if(appDelegate.user.community){
-        [[SSDataProvider instance] getCalendarWithTimestamp:(deltaTime == 0 ? @0 : time) callback:^(SARequestResult *result) {
+        [[SSDataProvider instance] getGrades: ^(SARequestResult *result) {
             [self stopSync];
             
             if(result.status == SARequestStatusOK){
                 NSLog(@"Sync successful");
                 [self loadWithData:result.data];
                 if (deltaTime == 0) {
-                    [self writeDict:result.data file:@"ScheduleCache-0"];
+                    [self writeDict:result.data file:@"GradesCache-0"];
                 }
-                [self writeDict:result.data file:[NSString stringWithFormat:@"ScheduleCache-%@", time]];
+                [self writeDict:result.data file:[NSString stringWithFormat:@"GradesCache-%@", time]];
             }else if(result.error.code > 900){
                 // Show login dialog, but only if the error is a Scholica error, not a network error
                 NSLog(@"Scholica error, present login view: %@", result.error.errorDescription);
@@ -343,18 +345,18 @@
     }
     
     if (!userImage || (userImageFromFile && [[Reachability reachabilityForLocalWiFi] currentReachabilityStatus] == ReachableViaWiFi)) {
-            dispatch_async(dispatch_get_global_queue(0,0), ^{
-                NSData * data2 = [[NSData alloc] initWithContentsOfURL: appDelegate.user.picture];
-                if ( data2 == nil ) return;
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    NSLog(@"Downloaded user image");
-                    if (footericon){
-                        userImageFromFile = NO;
-                        footericon.image = userImage = [UIImage imageWithData: data2];
-                        [self writeDict:userImage file:@"UserImage"];
-                    }
-                });
+        dispatch_async(dispatch_get_global_queue(0,0), ^{
+            NSData * data2 = [[NSData alloc] initWithContentsOfURL: appDelegate.user.picture];
+            if ( data2 == nil ) return;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSLog(@"Downloaded user image");
+                if (footericon){
+                    userImageFromFile = NO;
+                    footericon.image = userImage = [UIImage imageWithData: data2];
+                    [self writeDict:userImage file:@"UserImage"];
+                }
             });
+        });
     }
 }
 
@@ -450,7 +452,7 @@
             return [UIColor colorWithRed:0.925 green:0.882 blue:0.373 alpha:1];
             
         default:
-            return [UIColor whiteColor];
+            return [UIColor colorWithRed:0.929 green:0.290 blue:0.392 alpha:1];
     }
 }
 
@@ -487,7 +489,7 @@
 
 - (NSString *)timeLabelForCellAtChildIndex:(NSInteger)childIndex withinParentCellIndex:(NSInteger)parentIndex {
     if(self.data){
-        return [[self getItem:childIndex forDay:parentIndex] objectForKey:@"start_str"];
+        return [[self getItem:childIndex forDay:parentIndex] objectForKey:@"grade"];
     }
     return @"";
 }

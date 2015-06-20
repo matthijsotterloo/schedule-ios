@@ -220,6 +220,11 @@ static NSArray* schoolsList;
     
 }
 
+- (void)getGrades:(SARequestCallback)callback {
+        [self personRequest:[NSString stringWithFormat:@"grades/"] callback:callback];
+}
+
+
 - (void) JSONRequest:(NSString *)url callback:(SARequestCallback)callback {
     
     NSURL *URL = [NSURL URLWithString:url];
