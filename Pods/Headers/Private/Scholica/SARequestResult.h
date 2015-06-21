@@ -1,1 +1,0 @@
-../../../Scholica/Scholica/SARequestResult.h

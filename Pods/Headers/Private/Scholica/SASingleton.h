@@ -1,1 +1,0 @@
-../../../Scholica/Scholica/SASingleton.h

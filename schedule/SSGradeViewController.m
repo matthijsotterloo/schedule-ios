@@ -56,23 +56,15 @@
 
 -(void)viewDidLoad {
     
+    [self synchronize];
+    
     [self.tableView setDataSourceDelegate:self];
     [self.tableView setTableViewDelegate:self];
     
     [super viewDidLoad];
     
     self.tableView.showsVerticalScrollIndicator = NO;
-    
-    UISwipeGestureRecognizer *recognizer;
-    
-    recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeFromLeft)];
-    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
-    [self.tableView addGestureRecognizer:recognizer];
-    
-    recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeFromRight)];
-    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
-    [self.tableView addGestureRecognizer:recognizer];
-    
+  
     spinner = [[MMMaterialDesignSpinner alloc] initWithFrame:CGRectMake(0, 0, 18, 18)];
     spinner.lineWidth = 1.5f;
     spinner.tintColor = [UIColor colorWithWhite:0.2 alpha:1.0];
@@ -86,6 +78,8 @@
     }
     
     self.title = [self labelFor:6];
+    
+    [self.tableView tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
 }
 
 -(NSString *) labelForInt:(int)m {
@@ -184,6 +178,8 @@
     }
     
     self.tableView.tableFooterView = footer;
+    
+
 }
 
 -(bool) writeDict:(id)dict file:(NSString *)file {
@@ -191,6 +187,7 @@
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *fileName = [NSString stringWithFormat:@"%@/%@.dat", documentsDirectory, file];
     NSData *content = [NSKeyedArchiver archivedDataWithRootObject:dict];
+    
     return [content writeToFile:fileName atomically:NO];
 }
 - (id)getDictFromFile:(NSString *)file {
@@ -243,44 +240,7 @@
     
     [self.tableView reloadData];
     
-    [self initFooter:([[self.data objectForKey:@"days"] count] == 0)];
-    [self updateTitle];
-}
-
-- (void) updateTitle {
-    long weeks = deltaTime / 604800;
-    
-    // Current week
-    if(weeks == 0){
-        self.title = [self labelFor:6];
-    }
-    
-    // Last/next week
-    if(weeks == 1){
-        self.title = [self labelFor:9];
-    }
-    if(weeks == -1){
-        self.title = [self labelFor:7];
-    }
-    
-    // X weeks ago/forward
-    if(weeks < -1){
-        self.title = [NSString stringWithFormat:[self labelFor:8], -weeks];
-    }
-    if(weeks > 1){
-        self.title = [NSString stringWithFormat:[self labelFor:10], weeks];
-    }
-}
-
-- (void) swipeFromLeft {
-    deltaTime -= 604800;
-    [self synchronize];
-    [self updateTitle];
-}
-- (void) swipeFromRight {
-    deltaTime += 604800;
-    [self synchronize];
-    [self updateTitle];
+    [self initFooter:([[self.data objectForKey:@"items"] count] == 0)];
 }
 
 - (void) startSync {
@@ -319,11 +279,13 @@
     }
     
     if(appDelegate.user.community){
+        
         [[SSDataProvider instance] getGrades: ^(SARequestResult *result) {
             [self stopSync];
             
             if(result.status == SARequestStatusOK){
                 NSLog(@"Sync successful");
+                
                 [self loadWithData:result.data];
                 if (deltaTime == 0) {
                     [self writeDict:result.data file:@"GradesCache-0"];
@@ -399,6 +361,11 @@
     return objects;
 }
 
+- (NSDictionary *)getGradeInfoForChildIndex:(NSInteger)index {
+    
+    return [(NSArray *)[self.data objectForKey:@"items"] objectAtIndex:index];
+}
+
 #pragma mark - SubTableViewDelegate
 
 // @optional
@@ -417,43 +384,23 @@
 
 // @required
 - (NSInteger)numberOfParentCells {
-    if(self.data){
-        return [[self.data objectForKey:@"days"] count];
-    }
-    return 5;
+
+    return 1;
 }
 - (NSInteger)heightForParentRows {
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    appDelegate.cellSize = (self.view.frame.size.height - 62) / [self numberOfParentCells];
-    return appDelegate.cellSize;
+    
+    return 0;
 }
 
 // @optional
 - (NSString *)titleLabelForParentCellAtIndex:(NSInteger)parentIndex {
     
-    if(self.data){
-        return [[[self getDay:parentIndex] objectForKey:@"day_title"] uppercaseString];
-    }
-    return 0;
+    return @"";
 }
 
 - (UIColor *)backgroundColorForParentCellAtIndex:(NSInteger)parentIndex {
-    
-    switch ([[[self getDay:parentIndex] objectForKey:@"day_ofweek"] integerValue]) {
-        case 1:
-            return [UIColor colorWithRed:0.929 green:0.290 blue:0.392 alpha:1];
-        case 2:
-            return [UIColor colorWithRed:0.455 green:0.424 blue:0.906 alpha:1];
-        case 3:
-            return [UIColor colorWithRed:0.180 green:0.616 blue:0.969 alpha:1];
-        case 4:
-            return [UIColor colorWithRed:0.443 green:0.875 blue:0.443 alpha:1];
-        case 5:
-            return [UIColor colorWithRed:0.925 green:0.882 blue:0.373 alpha:1];
-            
-        default:
-            return [UIColor colorWithRed:0.929 green:0.290 blue:0.392 alpha:1];
-    }
+        
+        return [UIColor colorWithRed:0.0 green:0.05 blue:0.4 alpha:1.0];
 }
 
 
@@ -462,12 +409,14 @@
 
 // @required
 - (NSInteger)numberOfChildCellsUnderParentIndex:(NSInteger)parentIndex {
+    
     if(self.data){
-        return [[[self getDay:parentIndex] objectForKey:@"items"] count];
+        return [[self.data objectForKey:@"items"] count];
     }
     return 0;
 }
 - (NSInteger)heightForChildRows {
+    
     
     return 75;
 }
@@ -475,21 +424,21 @@
 // @optional
 - (NSString *)titleLabelForCellAtChildIndex:(NSInteger)childIndex withinParentCellIndex:(NSInteger)parentIndex {
     if(self.data){
-        return [[self getItem:childIndex forDay:parentIndex] objectForKey:@"title"];
+        return [[self getGradeInfoForChildIndex:childIndex] objectForKey:@"description"];
     }
     return @"";
 }
 - (NSString *)subtitleLabelForCellAtChildIndex:(NSInteger)childIndex withinParentCellIndex:(NSInteger)parentIndex {
     
     if(self.data){
-        return [[self getItem:childIndex forDay:parentIndex] objectForKey:@"subtitle"];
+        return [NSString stringWithFormat:@"%@ - %@", [[self getGradeInfoForChildIndex:childIndex] objectForKey:@"title"],  [[self getGradeInfoForChildIndex:childIndex] objectForKey:@"subtitle"]];
     }
     return @"";
 }
 
 - (NSString *)timeLabelForCellAtChildIndex:(NSInteger)childIndex withinParentCellIndex:(NSInteger)parentIndex {
     if(self.data){
-        return [[self getItem:childIndex forDay:parentIndex] objectForKey:@"grade"];
+        return [[self getGradeInfoForChildIndex:childIndex] objectForKey:@"grade"];
     }
     return @"";
 }

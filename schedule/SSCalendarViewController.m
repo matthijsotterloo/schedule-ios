@@ -86,6 +86,24 @@
     }
     
     self.title = [self labelFor:6];
+    
+    NSString *provider = [[SSDataProvider instance] provider];
+    
+    if ([provider isEqualToString:@"somtoday"]) {
+        
+        UIBarButtonItem *gradeButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:NSLocalizedString(@"GRADES", @"Should represent the word for grades as in school.")
+                                   style:UIBarButtonItemStyleBordered
+                                   target:self
+                                   action:@selector(goToGrades)];
+        self.navigationItem.leftBarButtonItem = gradeButton;
+    }
+}
+
+- (void)goToGrades {
+    
+    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    [appDelegate.navigationController pushViewController:[appDelegate.mainStoryboard instantiateViewControllerWithIdentifier:@"Grades"] animated:YES];
 }
 
 -(NSString *) labelForInt:(int)m {
@@ -205,7 +223,7 @@
 -(void)handleUserTap:(UITapGestureRecognizer *)recognizer {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    UIAlertView *userAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:[self labelFor:1], appDelegate.user.name] message:[self labelFor:2] delegate:self cancelButtonTitle:[self labelFor:3] otherButtonTitles:[self labelFor:5], [self labelFor:4], [self labelFor:13], [self labelFor:12], nil];
+    UIAlertView *userAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:[self labelFor:1], appDelegate.user.name] message:[self labelFor:2] delegate:self cancelButtonTitle:[self labelFor:3] otherButtonTitles:[self labelFor:5], [self labelFor:4], [self labelFor:12], nil];
     [userAlert show];
 }
 

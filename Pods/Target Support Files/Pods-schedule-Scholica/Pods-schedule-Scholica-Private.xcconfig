@@ -1,6 +1,5 @@
 #include "Pods-schedule-Scholica.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/Scholica" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Scholica"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/Scholica" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Scholica"
 OTHER_LDFLAGS = ${PODS_SCHEDULE_SCHOLICA_OTHER_LDFLAGS} -ObjC
 PODS_ROOT = ${SRCROOT}
-SKIP_INSTALL = YES
