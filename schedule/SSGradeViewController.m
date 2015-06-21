@@ -220,7 +220,7 @@
     }
     else if([title isEqualToString:[self labelFor:12]]){
         AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-        [appDelegate.navigationController pushViewController:[appDelegate.mainStoryboard instantiateViewControllerWithIdentifier:@"Grades"] animated:YES];
+        [appDelegate.navigationController pushViewController:[appDelegate.mainStoryboard instantiateViewControllerWithIdentifier:@"CreditsScreen"] animated:YES];
     }
     else if([title isEqualToString:[self labelFor:13]]){
         AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
