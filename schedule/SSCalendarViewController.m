@@ -90,13 +90,8 @@
     NSString *provider = [[SSDataProvider instance] provider];
     
     if ([provider isEqualToString:@"somtoday"]) {
-        
-        UIBarButtonItem *gradeButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:NSLocalizedString(@"GRADES", @"Should represent the word for grades as in school.")
-                                   style:UIBarButtonItemStyleBordered
-                                   target:self
-                                   action:@selector(goToGrades)];
-        self.navigationItem.leftBarButtonItem = gradeButton;
+        UIBarButtonItem *gradeButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"GradesIcon"] style:UIBarButtonItemStyleBordered target:self action:@selector(goToGrades)];
+        self.navigationItem.rightBarButtonItem = gradeButton;
     }
 }
 
