@@ -63,7 +63,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eJ-BF-yhV">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eJ-BF-yhV">
                                 <rect key="frame" x="276" y="286" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -71,7 +71,6 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="53" id="LxA-yh-LKg">
                                         <variation key="heightClass=regular" constant="45"/>
                                     </constraint>
-                                    <constraint firstAttribute="width" constant="46" id="n9F-nI-RBz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
                                 <state key="normal" title="CHOOSE ACCOUNT" backgroundImage="btn-large">
@@ -151,10 +150,8 @@
                         <constraints>
                             <constraint firstItem="9Ib-IQ-sfG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1eJ-BF-yhV" secondAttribute="bottom" constant="25" id="2Jq-0j-HhO"/>
                             <constraint firstItem="KAK-Wv-UtC" firstAttribute="centerX" secondItem="WDK-lG-ByY" secondAttribute="centerX" id="3kz-LZ-deM"/>
-                            <constraint firstItem="9Ib-IQ-sfG" firstAttribute="top" secondItem="1eJ-BF-yhV" secondAttribute="bottom" constant="351" id="5KU-GV-ndy"/>
                             <constraint firstItem="KAK-Wv-UtC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WDK-lG-ByY" secondAttribute="bottom" constant="50" id="BiN-IT-yg7"/>
                             <constraint firstItem="WDK-lG-ByY" firstAttribute="top" relation="lessThanOrEqual" secondItem="itT-hz-mpu" secondAttribute="bottom" constant="97" id="EXP-rX-wyv"/>
-                            <constraint firstItem="1eJ-BF-yhV" firstAttribute="top" secondItem="itT-hz-mpu" secondAttribute="bottom" constant="266" id="HIA-jd-Fhf"/>
                             <constraint firstItem="WDK-lG-ByY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="itT-hz-mpu" secondAttribute="bottom" constant="25" id="O0D-7p-yDx">
                                 <variation key="heightClass=regular" constant="25"/>
                             </constraint>
@@ -164,7 +161,6 @@
                                 <variation key="heightClass=regular" constant="103"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="KAK-Wv-UtC" secondAttribute="trailing" constant="-16" id="f4t-F4-BJi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1eJ-BF-yhV" secondAttribute="trailing" constant="37" id="f5h-mI-a0B"/>
                             <constraint firstItem="9Ib-IQ-sfG" firstAttribute="top" secondItem="1eJ-BF-yhV" secondAttribute="bottom" constant="104" id="fti-qB-ysg"/>
                             <constraint firstItem="KAK-Wv-UtC" firstAttribute="centerX" secondItem="1eJ-BF-yhV" secondAttribute="centerX" id="lXN-ae-8do"/>
                             <constraint firstItem="KAK-Wv-UtC" firstAttribute="leading" secondItem="qzc-JT-SNj" secondAttribute="leadingMargin" constant="-16" id="wUb-i1-h3M"/>

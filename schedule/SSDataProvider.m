@@ -300,9 +300,9 @@ static NSArray* schoolsList;
 + (void)invokeLoginDialogForProvider:(NSString*)provider site:(NSString*)site title:(NSString*)title {
     [SSDataProvider instance].provider = provider;
     [SSDataProvider instance].site = site;
-    UIAlertView* alert =[[UIAlertView alloc] initWithTitle:title message:[NSString stringWithFormat:@"Sign in to %@", provider] delegate:[SSDataProvider instance] cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+    UIAlertView* alert =[[UIAlertView alloc] initWithTitle:title message:[NSString stringWithFormat:@"Inloggen op %@", provider] delegate:[SSDataProvider instance] cancelButtonTitle:@"Annuleren" otherButtonTitles:nil];
     alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
-    [alert addButtonWithTitle:@"Login"];
+    [alert addButtonWithTitle:@"Inloggen"];
     [alert show];
 }
 
