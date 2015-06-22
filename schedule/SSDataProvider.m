@@ -15,7 +15,7 @@ static BOOL manualreset;
 static NSArray* schoolsList;
 
 - (id) init {
-    self.endPoint = @"https://api.lesrooster.io/";
+    self.endPoint = @"http://rooster.dev:8888/";
     
     return [super init];
 }
@@ -222,6 +222,10 @@ static NSArray* schoolsList;
 
 - (void)getGrades:(SARequestCallback)callback {
         [self personRequest:[NSString stringWithFormat:@"grades/"] callback:callback];
+}
+
+- (void)getHomework:(SARequestCallback)callback {
+    [self personRequest:[NSString stringWithFormat:@"homework/"] callback:callback];
 }
 
 
