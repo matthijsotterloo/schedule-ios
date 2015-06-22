@@ -15,7 +15,10 @@ static BOOL manualreset;
 static NSArray* schoolsList;
 
 - (id) init {
-    self.endPoint = @"http://rooster.dev:8888/";
+    self.endPoint = @"https://api.lesrooster.io/";
+    
+    // Testing endpoint for local usage
+    //    self.endPoint = @"http://rooster.dev:8888/";
     
     return [super init];
 }
