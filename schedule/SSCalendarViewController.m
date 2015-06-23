@@ -90,8 +90,14 @@
     NSString *provider = [[SSDataProvider instance] provider];
     
     if ([provider isEqualToString:@"somtoday"]) {
+        
+        // Grade button
         UIBarButtonItem *gradeButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"GradesIcon"] style:UIBarButtonItemStyleBordered target:self action:@selector(goToGrades)];
         self.navigationItem.rightBarButtonItem = gradeButton;
+        // Homework button
+        UIBarButtonItem *homeworkButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"HomeworkIcon"] style:UIBarButtonItemStyleBordered target:self action:@selector(goToHomework)];
+        self.navigationItem.leftBarButtonItem = homeworkButton;
+
     }
 }
 
@@ -99,6 +105,12 @@
     
     AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     [appDelegate.navigationController pushViewController:[appDelegate.mainStoryboard instantiateViewControllerWithIdentifier:@"Grades"] animated:YES];
+}
+
+- (void)goToHomework {
+    
+    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    [appDelegate.navigationController pushViewController:[appDelegate.mainStoryboard instantiateViewControllerWithIdentifier:@"Homework"] animated:YES];
 }
 
 -(NSString *) labelForInt:(int)m {
@@ -491,16 +503,15 @@
     return @"";
 }
 - (NSString *)subtitleLabelForCellAtChildIndex:(NSInteger)childIndex withinParentCellIndex:(NSInteger)parentIndex {
-    
     if(self.data){
-        return [[self getItem:childIndex forDay:parentIndex] objectForKey:@"subtitle"];
+        return [NSString stringWithFormat:@"%@ - %@", [[self getItem:childIndex forDay:parentIndex] objectForKey:@"teacher"],[[self getItem:childIndex forDay:parentIndex] objectForKey:@"subtitle"]];
     }
     return @"";
 }
 
 - (NSString *)timeLabelForCellAtChildIndex:(NSInteger)childIndex withinParentCellIndex:(NSInteger)parentIndex {
     if(self.data){
-        return [[self getItem:childIndex forDay:parentIndex] objectForKey:@"start_str"];
+        return [[self getItem:childIndex forDay:parentIndex] objectForKey:@"hour"];
     }
     return @"";
 }

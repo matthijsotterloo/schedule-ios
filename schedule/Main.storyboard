@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -28,7 +28,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Zey-VV-cOJ" customClass="ParentTableView">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Zey-VV-cOJ" customClass="ParentTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -63,7 +63,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eJ-BF-yhV">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eJ-BF-yhV">
                                 <rect key="frame" x="276" y="286" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -71,7 +71,6 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="53" id="LxA-yh-LKg">
                                         <variation key="heightClass=regular" constant="45"/>
                                     </constraint>
-                                    <constraint firstAttribute="width" constant="46" id="n9F-nI-RBz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
                                 <state key="normal" title="CHOOSE ACCOUNT" backgroundImage="btn-large">
@@ -151,10 +150,8 @@
                         <constraints>
                             <constraint firstItem="9Ib-IQ-sfG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1eJ-BF-yhV" secondAttribute="bottom" constant="25" id="2Jq-0j-HhO"/>
                             <constraint firstItem="KAK-Wv-UtC" firstAttribute="centerX" secondItem="WDK-lG-ByY" secondAttribute="centerX" id="3kz-LZ-deM"/>
-                            <constraint firstItem="9Ib-IQ-sfG" firstAttribute="top" secondItem="1eJ-BF-yhV" secondAttribute="bottom" constant="351" id="5KU-GV-ndy"/>
                             <constraint firstItem="KAK-Wv-UtC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WDK-lG-ByY" secondAttribute="bottom" constant="50" id="BiN-IT-yg7"/>
                             <constraint firstItem="WDK-lG-ByY" firstAttribute="top" relation="lessThanOrEqual" secondItem="itT-hz-mpu" secondAttribute="bottom" constant="97" id="EXP-rX-wyv"/>
-                            <constraint firstItem="1eJ-BF-yhV" firstAttribute="top" secondItem="itT-hz-mpu" secondAttribute="bottom" constant="266" id="HIA-jd-Fhf"/>
                             <constraint firstItem="WDK-lG-ByY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="itT-hz-mpu" secondAttribute="bottom" constant="25" id="O0D-7p-yDx">
                                 <variation key="heightClass=regular" constant="25"/>
                             </constraint>
@@ -164,7 +161,6 @@
                                 <variation key="heightClass=regular" constant="103"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="KAK-Wv-UtC" secondAttribute="trailing" constant="-16" id="f4t-F4-BJi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1eJ-BF-yhV" secondAttribute="trailing" constant="37" id="f5h-mI-a0B"/>
                             <constraint firstItem="9Ib-IQ-sfG" firstAttribute="top" secondItem="1eJ-BF-yhV" secondAttribute="bottom" constant="104" id="fti-qB-ysg"/>
                             <constraint firstItem="KAK-Wv-UtC" firstAttribute="centerX" secondItem="1eJ-BF-yhV" secondAttribute="centerX" id="lXN-ae-8do"/>
                             <constraint firstItem="KAK-Wv-UtC" firstAttribute="leading" secondItem="qzc-JT-SNj" secondAttribute="leadingMargin" constant="-16" id="wUb-i1-h3M"/>
@@ -222,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0G-Sq-akH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1058.5" y="171.375"/>
+            <point key="canvasLocation" x="1048.5" y="254.5"/>
         </scene>
         <!--SEARCH SCHOOL-->
         <scene sceneID="AaU-0R-71f">
@@ -511,7 +507,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1524.5" y="170.5"/>
+            <point key="canvasLocation" x="1438.5" y="254.5"/>
         </scene>
         <!--CREDITS-->
         <scene sceneID="4gh-9p-ob2">
@@ -725,7 +721,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pqW-3j-Zt1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="568" y="871.5"/>
+            <point key="canvasLocation" x="1860" y="289"/>
         </scene>
         <!--MY GRADES-->
         <scene sceneID="lnd-vb-28F">
@@ -739,7 +735,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YFB-wu-9dN" customClass="ParentTableView">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YFB-wu-9dN" customClass="ParentTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -761,6 +757,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17Q-yV-o4r" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="536" y="-469"/>
+        </scene>
+        <!--MY HOMEWORK-->
+        <scene sceneID="snR-yA-0au">
+            <objects>
+                <viewController storyboardIdentifier="Homework" title="MY HOMEWORK" id="deG-yr-pyO" customClass="SSHomeworkViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AHf-Es-XQG"/>
+                        <viewControllerLayoutGuide type="bottom" id="fRe-Ig-gid"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fcf-lI-lul">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GoP-hI-aeB" customClass="ParentTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GoP-hI-aeB" firstAttribute="leading" secondItem="fcf-lI-lul" secondAttribute="leadingMargin" constant="-16" id="7ZU-kL-qzE"/>
+                            <constraint firstItem="GoP-hI-aeB" firstAttribute="top" secondItem="fcf-lI-lul" secondAttribute="topMargin" id="Rg2-pC-yPR"/>
+                            <constraint firstItem="fRe-Ig-gid" firstAttribute="top" secondItem="GoP-hI-aeB" secondAttribute="bottom" id="mp1-CO-4Ue"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GoP-hI-aeB" secondAttribute="trailing" constant="-16" id="pQ7-I9-F06"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="GoP-hI-aeB" id="oMg-sb-mLg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3xg-w2-nYT" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1176" y="-469"/>
         </scene>
     </scenes>
     <resources>

@@ -17,6 +17,9 @@ static NSArray* schoolsList;
 - (id) init {
     self.endPoint = @"https://api.lesrooster.io/";
     
+    // Testing endpoint for local usage
+    //    self.endPoint = @"http://rooster.dev:8888/";
+    
     return [super init];
 }
 
@@ -224,6 +227,10 @@ static NSArray* schoolsList;
         [self personRequest:[NSString stringWithFormat:@"grades/"] callback:callback];
 }
 
+- (void)getHomework:(SARequestCallback)callback {
+    [self personRequest:[NSString stringWithFormat:@"homework/"] callback:callback];
+}
+
 
 - (void) JSONRequest:(NSString *)url callback:(SARequestCallback)callback {
     
@@ -296,9 +303,9 @@ static NSArray* schoolsList;
 + (void)invokeLoginDialogForProvider:(NSString*)provider site:(NSString*)site title:(NSString*)title {
     [SSDataProvider instance].provider = provider;
     [SSDataProvider instance].site = site;
-    UIAlertView* alert =[[UIAlertView alloc] initWithTitle:title message:[NSString stringWithFormat:@"Sign in to %@", provider] delegate:[SSDataProvider instance] cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+    UIAlertView* alert =[[UIAlertView alloc] initWithTitle:title message:[NSString stringWithFormat:@"Inloggen op %@", provider] delegate:[SSDataProvider instance] cancelButtonTitle:@"Annuleren" otherButtonTitles:nil];
     alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
-    [alert addButtonWithTitle:@"Login"];
+    [alert addButtonWithTitle:@"Inloggen"];
     [alert show];
 }
 

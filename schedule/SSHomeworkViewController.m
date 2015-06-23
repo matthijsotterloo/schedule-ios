@@ -1,12 +1,12 @@
 //
-//  SSGradeViewController.m
+//  SSHomeworkViewController.m
 //  schedule
 //
 //  Created by Thomas Schoffelen on 28/04/15.
 //  Copyright (c) 2015 Scholica. All rights reserved.
 //
 
-#import "SSGradeViewController.h"
+#import "SSHomeworkViewController.h"
 #import "ParentTableView.h"
 #import "ParentTableViewCell.h"
 #import "SubTableView.h"
@@ -15,7 +15,7 @@
 #import "Reachability.h"
 #import "MMMaterialDesignSpinner.h"
 
-@interface SSGradeViewController (){
+@interface SSHomeworkViewController (){
     
     UIImage *userImage;
     bool syncing;
@@ -27,7 +27,7 @@
 
 @end
 
-@implementation SSGradeViewController
+@implementation SSHomeworkViewController
 
 @synthesize data;
 @synthesize footericon;
@@ -64,7 +64,7 @@
     [super viewDidLoad];
     
     self.tableView.showsVerticalScrollIndicator = NO;
-  
+    
     spinner = [[MMMaterialDesignSpinner alloc] initWithFrame:CGRectMake(0, 0, 18, 18)];
     spinner.lineWidth = 1.5f;
     spinner.tintColor = [UIColor colorWithWhite:0.2 alpha:1.0];
@@ -77,7 +77,7 @@
         [self loadWithData:dict];
     }
     
-    self.title = [self labelFor:6];
+    self.title = [self labelFor:14];
     
     [self.tableView tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
 }
@@ -125,6 +125,9 @@
             
         case 13:
             return @"Grades";
+            
+        case 14:
+            return @"MIJN HUISWERK";
     }
     
     return nil;
@@ -179,7 +182,7 @@
     
     self.tableView.tableFooterView = footer;
     
-
+    
 }
 
 -(bool) writeDict:(id)dict file:(NSString *)file {
@@ -280,7 +283,7 @@
     
     if(appDelegate.user.community){
         
-        [[SSDataProvider instance] getGrades: ^(SARequestResult *result) {
+        [[SSDataProvider instance] getHomework: ^(SARequestResult *result) {
             [self stopSync];
             
             if(result.status == SARequestStatusOK){
@@ -384,7 +387,7 @@
 
 // @required
 - (NSInteger)numberOfParentCells {
-
+    
     return 1;
 }
 - (NSInteger)heightForParentRows {
@@ -399,8 +402,8 @@
 }
 
 - (UIColor *)backgroundColorForParentCellAtIndex:(NSInteger)parentIndex {
-        
-        return [UIColor colorWithRed:0.0 green:0.05 blue:0.4 alpha:1.0];
+    
+    return [UIColor colorWithRed:0.0 green:0.05 blue:0.4 alpha:1.0];
 }
 
 

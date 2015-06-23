@@ -31,6 +31,7 @@
 - (void)getCalendarWithTimestamp:(NSNumber *)time callback:(SARequestCallback)callback;
 
 - (void)getGrades:(SARequestCallback)callback;
+- (void)getHomework:(SARequestCallback)callback;
 - (void)prefillListForProvider:(NSString*)provider controller:(UIViewController*)controller;
 - (void)getSchoolsForProvider:(NSString*)provider searchText:(NSString*)searchText controller:(UIViewController*)controller;
 
