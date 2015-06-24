@@ -1,0 +1,35 @@
+/*
+ Localizable.strings
+ schedule
+ 
+ Created by Thomas Schoffelen on 29/04/15.
+ Copyright (c) 2015 Scholica. All rights reserved.
+ */
+
+"Schedule" = "Lesrooster";
+
+"Oh, seems like not much is going on this week. Field trip? 🌴" = "Oh, het lijkt erop dat er niet veel aan de hand is deze week. Schoolreisje? 🌴";
+
+"Whassup %@?" = "Whassup %@?";
+
+"\"In the first place, God made idiots. That was for practice. Then he made school boards.\" – Mark Twain" = "\"In the first place, God made idiots. That was for practice. Then he made school boards.\" – Mark Twain";
+
+"Cancel" = "Annuleren";
+"Logout" = "Uitloggen";
+"Credits" = "Credits";
+"Refresh" = "Synchroniseren";
+"MY SCHEDULE" = "MIJN LESROOSTER";
+"LAST WEEK" = "VORIGE WEEK";
+"%i WEEKS AGO" = "%i WEKEN GELEDEN";
+"NEXT WEEK" = "VOLGENDE WEEK";
+"THIS WEEK" = "DEZE WEEK";
+"IN %i WEEKS" = "OVER %i WEKEN";
+"Hint: swipe left or right." = "Hint: swipe links of rechts.";
+"LATEST GRADES" = "LAATSTE CIJFERS";
+"GRADES"        = "CIJFERS";
+
+"CHOOSE ACCOUNT" = "KIES ACCOUNT";
+"Choose account" = "Selecteer account-type";
+"SEARCH YOUR SCHOOL" = "ZOEK JE SCHOOL";
+"Search your school..." = "Zoek je school...";
+"SIGN IN TO VIEW YOUR SCHEDULE" = "LOG IN OM JE LESROOSTER TE ZIEN";
