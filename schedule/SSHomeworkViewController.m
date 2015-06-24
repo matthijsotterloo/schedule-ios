@@ -58,12 +58,16 @@
     
     [self synchronize];
     
+    
+    
     [self.tableView setDataSourceDelegate:self];
     [self.tableView setTableViewDelegate:self];
+    [self.tableView setOwnDelegate:self];
     
     [super viewDidLoad];
     
     self.tableView.showsVerticalScrollIndicator = NO;
+    
     
     spinner = [[MMMaterialDesignSpinner alloc] initWithFrame:CGRectMake(0, 0, 18, 18)];
     spinner.lineWidth = 1.5f;
@@ -71,7 +75,7 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
     
-    NSDictionary *dict = [self getDictFromFile:@"GradesCache-0"];
+    NSDictionary *dict = [self getDictFromFile:@"HomeworkCache-0"];
     if(dict){
         NSLog(@"Loading base entry from cache");
         [self loadWithData:dict];
@@ -79,7 +83,7 @@
     
     self.title = [self labelFor:14];
     
-    [self.tableView tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+        [self.tableView tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
 }
 
 -(NSString *) labelForInt:(int)m {
@@ -205,7 +209,7 @@
 -(void)handleUserTap:(UITapGestureRecognizer *)recognizer {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    UIAlertView *userAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:[self labelFor:1], appDelegate.user.name] message:[self labelFor:2] delegate:self cancelButtonTitle:[self labelFor:3] otherButtonTitles:[self labelFor:5], [self labelFor:4], [self labelFor:12], nil];
+    UIAlertView *userAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:[self labelFor:1], appDelegate.user.name] message:[self labelFor:2] delegate:self cancelButtonTitle:[self labelFor:3] otherButtonTitles: [self labelFor:4], [self labelFor:12], nil];
     [userAlert show];
 }
 
@@ -233,7 +237,45 @@
     
 }
 
+- (NSDictionary *)homeworkDictInSchedule:(NSDictionary *)schedule {
+    
+    NSMutableDictionary *newDic = [[NSMutableDictionary alloc] init];
+    
+    for (int day = 0; day < 6; day++) {
+        
+        NSMutableDictionary *dayDic = [[NSMutableDictionary alloc] init];
+        
+        for (int itemNum = 0; itemNum < [(NSArray *)[[self getDay:day] objectForKey:@"items"] count]; itemNum++) {
+            
+            NSDictionary *item = [self getItem:itemNum forDay:day];
+            
+            NSString *title = [item objectForKey:@"title"];
+            NSString *homework = [item objectForKey:@"homework"];
+            
+            if (homework != (id)[NSNull null]) {
+                
+                NSDictionary *homeworkDic = [[NSDictionary alloc] initWithObjects:@[title, homework] forKeys:@[@"title", @"homework"]];
+                
+                [dayDic setObject:homeworkDic forKey:[NSString stringWithFormat:@"%d", itemNum]];
+            }
+            
+            [newDic setObject:dayDic forKey:[NSString stringWithFormat:@"day%d", day + 1]];
+            
+        }
+    }
+    
+    return [[NSDictionary alloc] initWithDictionary:newDic];
+}
+
+
 - (void) loadWithData:(NSDictionary*)input {
+    
+
+    
+    self.data = input;
+    
+        input = [self homeworkDictInSchedule:input];
+    
     self.data = input;
     
     if (deltaTime == 0) {
@@ -243,7 +285,7 @@
     
     [self.tableView reloadData];
     
-    [self initFooter:([[self.data objectForKey:@"items"] count] == 0)];
+    [self initFooter:false];
 }
 
 - (void) startSync {
@@ -253,6 +295,7 @@
 - (void) stopSync {
     syncing = NO;
     [spinner stopAnimating];
+    self.tableView.isRefreshing = false;
 }
 
 - (void) synchronize {
@@ -272,7 +315,7 @@
     NSNumber *time = [NSNumber numberWithInt:(int)baseTime+(int)deltaTime];
     NSLog(@"Base: %ld, delta: %ld, TIME: %@", (long)baseTime, (long)deltaTime, time);
     
-    NSDictionary *dict = [self getDictFromFile:[NSString stringWithFormat:@"GradesCache-%@", time]];
+    NSDictionary *dict = [self getDictFromFile:[NSString stringWithFormat:@"HomeworkCache-%@", time]];
     if(dict){
         NSLog(@"Loading entry %@ from cache", time);
         [self loadWithData:dict];
@@ -291,9 +334,9 @@
                 
                 [self loadWithData:result.data];
                 if (deltaTime == 0) {
-                    [self writeDict:result.data file:@"GradesCache-0"];
+                    [self writeDict:result.data file:@"HomeworkCache-0"];
                 }
-                [self writeDict:result.data file:[NSString stringWithFormat:@"GradesCache-%@", time]];
+                [self writeDict:result.data file:[NSString stringWithFormat:@"HomeworkCache-%@", time]];
             }else if(result.error.code > 900){
                 // Show login dialog, but only if the error is a Scholica error, not a network error
                 NSLog(@"Scholica error, present login view: %@", result.error.errorDescription);
@@ -326,6 +369,8 @@
 }
 
 - (NSDictionary *)getDay:(NSInteger)num {
+    
+    
     NSArray *days = [self getDays];
     if([days count] <= num){
         return nil;
@@ -357,6 +402,7 @@
 }
 
 -(NSArray *)getDays {
+    
     NSDictionary *dict = [self.data objectForKey:@"days"];
     NSArray *sortedKeys = [[dict allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
     NSArray *objects = [dict objectsForKeys:sortedKeys notFoundMarker:[NSNull null]];
@@ -364,12 +410,34 @@
     return objects;
 }
 
+- (NSDictionary *)homeworkForDay:(NSInteger)day {
+    
+    NSString *key = [NSString stringWithFormat:@"day%ld", (long)day];
+    
+    NSDictionary *dic = [self.data objectForKey:key];
+    
+    return dic;
+}
+
+- (NSDictionary *)homeworkForHour:(NSInteger)hour andDay:(NSInteger)day {
+    
+     NSString *key = [NSString stringWithFormat:@"day%ld", (long)day];
+    
+     NSDictionary *dic = [self.data objectForKey:key];
+    
+    if (dic) {
+        return [dic objectForKey:[NSString stringWithFormat:@"%ld", (long)hour]];
+    }
+    
+    return [[NSDictionary alloc] init];
+}
+
 - (NSDictionary *)getGradeInfoForChildIndex:(NSInteger)index {
     
     return [(NSArray *)[self.data objectForKey:@"items"] objectAtIndex:index];
 }
 
-#pragma mark - SubTableViewDelegate
+#pragma mark - SubTableViewDelegateM
 
 // @optional
 - (void)tableView:(UITableView *)tableView didSelectCellAtChildIndex:(NSInteger)childIndex withInParentCellIndex:(NSInteger)parentIndex {
@@ -388,22 +456,67 @@
 // @required
 - (NSInteger)numberOfParentCells {
     
-    return 1;
+    return 5;
 }
 - (NSInteger)heightForParentRows {
     
-    return 0;
+    ((AppDelegate *)[[UIApplication sharedApplication] delegate]).cellSize = 44;
+    return 44;
+}
+
+- (NSString *)dayNameForIndex:(NSInteger)index {
+    
+    switch (index) {
+        case 1:
+            return NSLocalizedString(@"MONDAY", @"Representation of the first day of the school week.");
+            break;
+            
+        case 2:
+            return NSLocalizedString(@"TUESDAY", @"Representation of the second day of the school week.");
+            break;
+            
+        case 3:
+            return NSLocalizedString(@"WEDNESDAY", @"Representation of the third day of the school week.");
+            break;
+            
+        case 4:
+            return NSLocalizedString(@"THURSDAY", @"Representation of the fourth day of the school week.");
+            break;
+            
+        case 5:
+            return NSLocalizedString(@"FRIDAY", @"Representation of the last/fifth day of the school week.");
+            break;
+            
+        default:
+            return @"";
+            break;
+    }
 }
 
 // @optional
 - (NSString *)titleLabelForParentCellAtIndex:(NSInteger)parentIndex {
     
-    return @"";
+    return [self dayNameForIndex:parentIndex + 1];
 }
 
 - (UIColor *)backgroundColorForParentCellAtIndex:(NSInteger)parentIndex {
     
-    return [UIColor colorWithRed:0.0 green:0.05 blue:0.4 alpha:1.0];
+    switch (parentIndex + 1) {
+    case 1:
+        return [UIColor colorWithRed:0.929 green:0.290 blue:0.392 alpha:1];
+    case 2:
+        return [UIColor colorWithRed:0.455 green:0.424 blue:0.906 alpha:1];
+    case 3:
+        return [UIColor colorWithRed:0.180 green:0.616 blue:0.969 alpha:1];
+    case 4:
+        return [UIColor colorWithRed:0.443 green:0.875 blue:0.443 alpha:1];
+    case 5:
+        return [UIColor colorWithRed:0.925 green:0.882 blue:0.373 alpha:1];
+        
+    default:
+        return [UIColor whiteColor];
+    }
+
 }
 
 
@@ -414,7 +527,7 @@
 - (NSInteger)numberOfChildCellsUnderParentIndex:(NSInteger)parentIndex {
     
     if(self.data){
-        return [[self.data objectForKey:@"items"] count];
+        return [self homeworkForDay:parentIndex + 1].allKeys.count > 0 ? [self homeworkForDay:parentIndex + 1].allKeys.count : 1;
     }
     return 0;
 }
@@ -424,26 +537,78 @@
     return 75;
 }
 
+- (NSString *)clearHTMLTags:(NSString *)string {
+    
+    //most common ones
+    string = [string stringByReplacingOccurrencesOfString:@"<br/>" withString:@" "];
+    string = [string stringByReplacingOccurrencesOfString:@"<br>" withString:@" "];
+    string = [string stringByReplacingOccurrencesOfString:@"<b>" withString:@""];
+    string = [string stringByReplacingOccurrencesOfString:@"</b>" withString:@""];
+    string = [string stringByReplacingOccurrencesOfString:@"<i>" withString:@""];
+    string = [string stringByReplacingOccurrencesOfString:@"</i>" withString:@""];
+    string = [string stringByReplacingOccurrencesOfString:@"<u>" withString:@""];
+    string = [string stringByReplacingOccurrencesOfString:@"</u>" withString:@""];
+    
+    return string;
+}
+
 // @optional
 - (NSString *)titleLabelForCellAtChildIndex:(NSInteger)childIndex withinParentCellIndex:(NSInteger)parentIndex {
     if(self.data){
-        return [[self getGradeInfoForChildIndex:childIndex] objectForKey:@"description"];
+        
+        if ([self homeworkForDay:parentIndex + 1].allKeys.count < 1) {
+            
+            return NSLocalizedString(@"Great news! Homework-free!", @"A funny short sentence or two that describes the fact that there's no homework to do.");
+        }
+        
+        NSArray *array = [[self homeworkForDay:parentIndex + 1] allKeys];
+        
+        NSString *string = [array objectAtIndex:childIndex];
+        
+        NSString *finalString =  [self  clearHTMLTags:[((NSDictionary *)[self homeworkForHour:string.intValue andDay:parentIndex+1]) objectForKey:@"homework"]];
+        
+        return finalString;
     }
     return @"";
 }
 - (NSString *)subtitleLabelForCellAtChildIndex:(NSInteger)childIndex withinParentCellIndex:(NSInteger)parentIndex {
     
     if(self.data){
-        return [NSString stringWithFormat:@"%@ - %@", [[self getGradeInfoForChildIndex:childIndex] objectForKey:@"title"],  [[self getGradeInfoForChildIndex:childIndex] objectForKey:@"subtitle"]];
+        
+        if ([self homeworkForDay:parentIndex + 1].allKeys.count < 1) {
+            
+            return @"";
+        }
+        
+        NSArray *array = [[self homeworkForDay:parentIndex + 1] allKeys];
+        
+        NSString *string = [array objectAtIndex:childIndex];
+        
+        return [self  clearHTMLTags:[((NSDictionary *)[self homeworkForHour:string.intValue andDay:parentIndex+1]) objectForKey:@"title"]];
     }
     return @"";
 }
 
 - (NSString *)timeLabelForCellAtChildIndex:(NSInteger)childIndex withinParentCellIndex:(NSInteger)parentIndex {
     if(self.data){
-        return [[self getGradeInfoForChildIndex:childIndex] objectForKey:@"grade"];
+        
+        if ([self homeworkForDay:parentIndex + 1].allKeys.count < 1) {
+            
+            return NSLocalizedString(@"All day", @"A super short description that tells that they're off for homework the whole day.");
+        }
+        
+        return [NSString stringWithFormat:@"%d", ((NSString *)[[self homeworkForDay:parentIndex + 1].allKeys objectAtIndex:childIndex]).intValue + 1];
     }
     return @"";
+}
+
+#pragma mark Pull to refresh
+
+- (void)userPulledToRefresh {
+    
+    [self synchronize];
+    
+     [self.tableView tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
 }
 
 @end

@@ -25,6 +25,8 @@
 /** Property indicating whether the view is currently animating. */
 @property (nonatomic, readonly) BOOL isAnimating;
 
+@property (nonatomic) BOOL isPulledToRefresh;
+
 /**
  *  Convenience function for starting & stopping animation with a boolean variable instead of explicit
  *  method calls.

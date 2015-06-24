@@ -22,7 +22,7 @@
     self.view.backgroundColor = [UIColor colorWithRed:0.929 green:0.290 blue:0.392 alpha:1];
     
     [self.loginButton setTitle:NSLocalizedString(@"CHOOSE ACCOUNT", nil) forState:UIControlStateNormal];
-    [self.loginLabel setText:NSLocalizedString(@"SIGN IN TO VIEW YOUR SCHEDULE, HOMEWORK AND GRADES", nil)];
+    [self.loginLabel setText:NSLocalizedString(@"SIGN IN TO VIEW YOUR SCHEDULE", nil)];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -43,7 +43,7 @@
                                   delegate:self
                                   cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
                                   destructiveButtonTitle:nil
-                                  otherButtonTitles:@"Scholica", @"Magister", @"SomToday", nil];
+                                  otherButtonTitles:@"Scholica", @"Magister", @"SOMtoday ELO", nil];
     [actionSheet showInView:self.view];
 }
 
@@ -105,7 +105,7 @@
         controller.provider = @"magister";
         appDelegate.schoolController = controller;
         [self showDetailViewController:controller sender:nil];
-    }else if([buttonTitle isEqualToString:@"SomToday"]){
+    }else if([buttonTitle isEqualToString:@"SOMtoday ELO"]){
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         SSSchoolViewController* controller = (SSSchoolViewController*)[appDelegate.mainStoryboard instantiateViewControllerWithIdentifier: @"SelectSchool"];
         controller.provider = @"somtoday";
