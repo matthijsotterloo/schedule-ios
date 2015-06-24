@@ -21,6 +21,7 @@
 @property (strong, nonatomic) UIViewController *schoolController;
 
 @property (nonatomic) double cellSize;
+@property (nonatomic) double smallCellSize;
 
 @property (retain) SAUserObject *user;
 

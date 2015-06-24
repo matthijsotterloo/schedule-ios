@@ -12,7 +12,7 @@
 
 #import "Scholica.h"
 
-@interface SSCalendarViewController : UIViewController <SubTableViewDelegate, SubTableViewDataSource, UIAlertViewDelegate>
+@interface SSCalendarViewController : UIViewController <SubTableViewDelegate, SubTableViewDataSource, UIAlertViewDelegate, ParentTableViewDelegate>
 
 - (void) synchronize;
 

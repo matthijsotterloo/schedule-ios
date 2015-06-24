@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "ExpandedContainer.h"
+#import "MMMaterialDesignSpinner.h"
 
 @class ViewController;
+
+@protocol ParentTableViewDelegate <NSObject>
+
+- (void)userPulledToRefresh;
+
+@end
 
 @protocol SubTableViewDelegate <NSObject>
 
@@ -47,7 +54,7 @@
 
 
 @interface ParentTableView : UITableView
-    <UITableViewDataSource, UITableViewDelegate, SubTableViewCellDelegate> {
+    <UITableViewDataSource, UITableViewDelegate, SubTableViewCellDelegate, UIScrollViewDelegate> {
     __weak id tableViewDelegate;
     __weak id dataSourceDelegate;
     NSMutableArray * expansionStates;
@@ -58,6 +65,9 @@
 @property (nonatomic, weak) id<SubTableViewDelegate> tableViewDelegate;
 @property (nonatomic, weak, getter = getDataSourceDelegate, setter = setDataSourceDelegate:) id<SubTableViewDataSource> dataSourceDelegate;
 @property (nonatomic, strong) NSMutableArray * expansionStates;
+@property  BOOL shouldntReindent;
+@property BOOL isRefreshing;
+@property (nonatomic, weak) id<ParentTableViewDelegate> ownDelegate;
 
 @property (assign, nonatomic) NSInteger selectedRow;
 - (void)collapseAllRows;

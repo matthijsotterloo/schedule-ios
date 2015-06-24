@@ -60,6 +60,7 @@
     
     [self.tableView setDataSourceDelegate:self];
     [self.tableView setTableViewDelegate:self];
+    [self.tableView setOwnDelegate:self];
     
     [super viewDidLoad];
     
@@ -202,7 +203,7 @@
 -(void)handleUserTap:(UITapGestureRecognizer *)recognizer {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    UIAlertView *userAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:[self labelFor:1], appDelegate.user.name] message:[self labelFor:2] delegate:self cancelButtonTitle:[self labelFor:3] otherButtonTitles:[self labelFor:5], [self labelFor:4], [self labelFor:12], nil];
+    UIAlertView *userAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:[self labelFor:1], appDelegate.user.name] message:[self labelFor:2] delegate:self cancelButtonTitle:[self labelFor:3] otherButtonTitles: [self labelFor:4], [self labelFor:12], nil];
     [userAlert show];
 }
 
@@ -231,6 +232,8 @@
 }
 
 - (void) loadWithData:(NSDictionary*)input {
+    
+    
     self.data = input;
     
     if (deltaTime == 0) {
@@ -250,6 +253,7 @@
 - (void) stopSync {
     syncing = NO;
     [spinner stopAnimating];
+    self.tableView.isRefreshing = false;
 }
 
 - (void) synchronize {
@@ -279,6 +283,7 @@
     }
     
     if(appDelegate.user.community){
+        
         
         [[SSDataProvider instance] getGrades: ^(SARequestResult *result) {
             [self stopSync];
@@ -441,6 +446,14 @@
         return [[self getGradeInfoForChildIndex:childIndex] objectForKey:@"grade"];
     }
     return @"";
+}
+
+#pragma mark Pull to refresh
+
+- (void)userPulledToRefresh {
+    
+    [self synchronize];
+    [self.tableView tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
 }
 
 @end

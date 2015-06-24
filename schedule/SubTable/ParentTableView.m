@@ -19,7 +19,7 @@
 @end
 
 @implementation ParentTableView
-@synthesize tableViewDelegate, expansionStates;
+@synthesize tableViewDelegate, expansionStates, isRefreshing= _isRefreshing;
 
 - (id)initWithFrame:(CGRect)frame dataSource:dataDelegate tableViewDelegate:tableDelegate {
     
@@ -96,8 +96,10 @@
     
     NSUInteger parentIndex = [self parentIndexForRow:row];
     
-    if ([[self.expansionStates objectAtIndex:parentIndex] boolValue]) {
-        return;
+    if (!self.shouldntReindent) {
+        if ([[self.expansionStates objectAtIndex:parentIndex] boolValue]) {
+            return;
+        }
     }
     
     // update expansionStates so backing data is ready before calling insertRowsAtIndexPaths
@@ -105,7 +107,19 @@
     
     [self removeFooter];
     
-    [self insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:(row + 1) inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    if (!self.shouldntReindent) {
+        [self insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:(row + 1) inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    } else {
+        
+        int actualRow = 0;
+        
+        for (int i = 0; i < row; i++) {
+            
+           actualRow += [self numberOfChildrenUnderParentIndex:i] + 1;
+        }
+        
+        [self insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:(actualRow+1) inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    }
     
     [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(restoreFooterAction:) userInfo:nil repeats:NO];
     
@@ -279,16 +293,21 @@
         self.selectedRow = [pCell parentIndex];
         
         if ([[self.expansionStates objectAtIndex:[pCell parentIndex]] boolValue]) {
-            
-            // clicked an already expanded cell
-            [self collapseForParentAtRow:indexPath.row];
-            previouslySelectedCell = nil;
-            [self scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+           
+            if (!self.shouldntReindent) {
+                // clicked an already expanded cell
+                [self collapseForParentAtRow:indexPath.row];
+                previouslySelectedCell = nil;
+                [self scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+            }
         }
         else {
             
             // clicked a collapsed cell
-            [self collapseAllRows];
+            if (!self.shouldntReindent) {
+                [self collapseAllRows];
+            }
+            
             [self expandForParentAtRow:[pCell parentIndex]];
             
             previouslySelectedCell = pCell;
@@ -351,5 +370,45 @@
     
     return [self.dataSourceDelegate timeLabelForCellAtChildIndex:childIndex withinParentCellIndex:parentIndex];
 }
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    if (scrollView.contentOffset.y < -120 && ![self viewWithTag:10]) {
+        
+        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(self.frame.size.width /2 - 15, -45, 30, 30)];
+        indicator.color = [self tintColor];
+        
+        indicator.tag = 10;
+        [indicator startAnimating];
+        
+        self.isRefreshing = true;
+        
+        self.frame = CGRectMake(self.frame.origin.x, -120, self.frame.size.width, self.frame.size.height);
+        
+        self.contentOffset = CGPointMake(self.contentOffset.x, -120);
+        
+        [self addSubview:indicator];
+        
+        [self.ownDelegate userPulledToRefresh];
+    }
+}
+
+- (BOOL)isRefreshing {
+    
+    return _isRefreshing;
+}
+
+- (void)setIsRefreshing:(BOOL)isRefreshing {
+    
+    _isRefreshing = isRefreshing;
+    
+    if (!isRefreshing) {
+        
+        self.frame = CGRectMake(self.frame.origin.x, 0, self.frame.size.width, self.frame.size.height);
+    }
+    
+    [[self viewWithTag:10] removeFromSuperview];
+}
+
 
 @end

@@ -12,7 +12,7 @@
 
 #import "Scholica.h"
 
-@interface SSGradeViewController : UIViewController <SubTableViewDelegate, SubTableViewDataSource, UIAlertViewDelegate>
+@interface SSGradeViewController : UIViewController <SubTableViewDelegate, SubTableViewDataSource, UIAlertViewDelegate, ParentTableViewDelegate>
 
 - (void) synchronize;
 

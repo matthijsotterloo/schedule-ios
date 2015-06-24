@@ -58,6 +58,7 @@
     
     [self.tableView setDataSourceDelegate:self];
     [self.tableView setTableViewDelegate:self];
+    [self.tableView setOwnDelegate:self];
     
     [super viewDidLoad];
     
@@ -73,11 +74,11 @@
     [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
     [self.tableView addGestureRecognizer:recognizer];
     
-    spinner = [[MMMaterialDesignSpinner alloc] initWithFrame:CGRectMake(0, 0, 18, 18)];
-    spinner.lineWidth = 1.5f;
-    spinner.tintColor = [UIColor colorWithWhite:0.2 alpha:1.0];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+//    spinner = [[MMMaterialDesignSpinner alloc] initWithFrame:CGRectMake(0, 0, 18, 18)];
+//    spinner.lineWidth = 1.5f;
+//    spinner.tintColor = [UIColor colorWithWhite:0.2 alpha:1.0];
+//    
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
     
     NSDictionary *dict = [self getDictFromFile:@"ScheduleCache-0"];
     if(dict){
@@ -230,7 +231,7 @@
 -(void)handleUserTap:(UITapGestureRecognizer *)recognizer {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    UIAlertView *userAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:[self labelFor:1], appDelegate.user.name] message:[self labelFor:2] delegate:self cancelButtonTitle:[self labelFor:3] otherButtonTitles:[self labelFor:5], [self labelFor:4], [self labelFor:12], nil];
+    UIAlertView *userAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:[self labelFor:1], appDelegate.user.name] message:[self labelFor:2] delegate:self cancelButtonTitle:[self labelFor:3] otherButtonTitles: [self labelFor:4], [self labelFor:12], nil];
     [userAlert show];
 }
 
@@ -313,6 +314,7 @@
 - (void) stopSync {
     syncing = NO;
     [spinner stopAnimating];
+    self.tableView.isRefreshing = false;
 }
 
 - (void) synchronize {
@@ -514,6 +516,13 @@
         return [[self getItem:childIndex forDay:parentIndex] objectForKey:@"hour"];
     }
     return @"";
+}
+
+#pragma mark Pull to refresh
+
+- (void)userPulledToRefresh {
+    
+    [self synchronize];
 }
 
 @end
