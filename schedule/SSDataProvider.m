@@ -300,10 +300,12 @@ static NSArray* schoolsList;
 + (void)invokeLoginDialogForProvider:(NSString*)provider site:(NSString*)site title:(NSString*)title {
     [SSDataProvider instance].provider = provider;
     [SSDataProvider instance].site = site;
-    UIAlertView* alert =[[UIAlertView alloc] initWithTitle:title message:[NSString stringWithFormat:@"Sign in to %@", provider] delegate:[SSDataProvider instance] cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-    alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
-    [alert addButtonWithTitle:@"Login"];
-    [alert show];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertView* alert =[[UIAlertView alloc] initWithTitle:title message:[NSString stringWithFormat:@"Sign in to %@", provider] delegate:[SSDataProvider instance] cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+        alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+        [alert addButtonWithTitle:@"Login"];
+        [alert show];
+    });
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {

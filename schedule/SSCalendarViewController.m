@@ -506,14 +506,24 @@
 }
 - (NSString *)subtitleLabelForCellAtChildIndex:(NSInteger)childIndex withinParentCellIndex:(NSInteger)parentIndex {
     if(self.data){
-        return [NSString stringWithFormat:@"%@ - %@", [[self getItem:childIndex forDay:parentIndex] objectForKey:@"teacher"],[[self getItem:childIndex forDay:parentIndex] objectForKey:@"subtitle"]];
+        NSDictionary* lesson = [self getItem:childIndex forDay:parentIndex];
+        if([lesson objectForKey:@"teacher"]){
+            return [NSString stringWithFormat:@"%@ - %@", [lesson objectForKey:@"teacher"],[lesson objectForKey:@"subtitle"]];
+        }else{
+            return [lesson objectForKey:@"subtitle"];
+        }
     }
     return @"";
 }
 
 - (NSString *)timeLabelForCellAtChildIndex:(NSInteger)childIndex withinParentCellIndex:(NSInteger)parentIndex {
     if(self.data){
-        return [[self getItem:childIndex forDay:parentIndex] objectForKey:@"hour"];
+        NSDictionary* lesson = [self getItem:childIndex forDay:parentIndex];
+        if([lesson objectForKey:@"hour"]){
+            return [lesson objectForKey:@"hour"];
+        }else{
+            return [lesson objectForKey:@"start_str"];
+        }
     }
     return @"";
 }
