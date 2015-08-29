@@ -74,12 +74,6 @@
     [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
     [self.tableView addGestureRecognizer:recognizer];
     
-//    spinner = [[MMMaterialDesignSpinner alloc] initWithFrame:CGRectMake(0, 0, 18, 18)];
-//    spinner.lineWidth = 1.5f;
-//    spinner.tintColor = [UIColor colorWithWhite:0.2 alpha:1.0];
-//    
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
-    
     NSDictionary *dict = [self getDictFromFile:@"ScheduleCache-0"];
     if(dict){
         NSLog(@"Loading base entry from cache");
@@ -309,12 +303,11 @@
 
 - (void) startSync {
     syncing = YES;
-    [spinner startAnimating];
+    [self.tableView startRefreshing];
 }
 - (void) stopSync {
     syncing = NO;
-    [spinner stopAnimating];
-    self.tableView.isRefreshing = false;
+    [self.tableView doneRefreshing];
 }
 
 - (void) synchronize {
@@ -417,6 +410,10 @@
 }
 
 -(NSArray *)getDays {
+    if(self.data == nil || ![self.data objectForKey:@"days"]){
+        return @[];
+    }
+    NSLog(@"DaysData: %@", [self.data objectForKey:@"days"]);
     NSDictionary *dict = [self.data objectForKey:@"days"];
     NSArray *sortedKeys = [[dict allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
     NSArray *objects = [dict objectsForKeys:sortedKeys notFoundMarker:[NSNull null]];

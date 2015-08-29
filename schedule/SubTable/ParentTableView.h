@@ -67,6 +67,10 @@
 @property (nonatomic, strong) NSMutableArray * expansionStates;
 @property  BOOL shouldntReindent;
 @property BOOL isRefreshing;
+
+- (void)startRefreshing;
+- (void)doneRefreshing;
+
 @property (nonatomic, weak) id<ParentTableViewDelegate> ownDelegate;
 
 @property (assign, nonatomic) NSInteger selectedRow;

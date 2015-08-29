@@ -29,6 +29,7 @@ NSString* site;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    NSLog(@"SSschoolviewcontroller will appear, provider: %@", self.provider);
     [[SSDataProvider instance] prefillListForProvider:self.provider controller:self];
     [super viewWillAppear:animated];
 }

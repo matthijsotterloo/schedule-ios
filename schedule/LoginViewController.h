@@ -9,11 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Scholica.h"
 
-@interface LoginViewController : UIViewController <UIActionSheetDelegate>
+@interface LoginViewController : UIViewController <UIActionSheetDelegate, UITableViewDelegate, UITableViewDataSource>
 
-- (IBAction) loginButtonTapped:(id)sender;
-
-@property (strong, nonatomic) IBOutlet UIButton *loginButton;
 @property (strong, nonatomic) IBOutlet UILabel *loginLabel;
+
+@property (strong, atomic) NSArray* services;
 
 @end

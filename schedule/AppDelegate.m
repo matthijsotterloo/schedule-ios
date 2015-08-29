@@ -19,20 +19,21 @@
     [[Scholica instance] setConsumerKey:@"a62weE1HRXdOVWRXV0d4VVYwZWRWRmw0ZEhk561WcHpWMjFHVjJKR2JETl666Up3"];
     [[Scholica instance] setConsumerSecret:@"2lSMmhXVm14a2IxSkdj7f9a4jBaVVVsUldXbGRyWkc5VWJVVjRZMFZvVjFKc2NGaFdha1po4WpGa4NsZHNV4WxTVlhCd4ZtM"];
     
+    // Set appearance
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:@"ProximaNova-Semibold" size:16.0]}];
+    
+    // BackButton appearance
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"ProximaNova-Semibold" size:14.0]}
+                                                forState:UIControlStateNormal];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage alloc] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setShadowImage:[UIImage alloc]];
+    
     // Set up view controllers
     self.mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     self.controller = (SSCalendarViewController*)[self.mainStoryboard instantiateViewControllerWithIdentifier: @"MainViewController"];
     [self setupNavigationController];
-    
-    
-    // REMOVE BEFORE PUBLISHING, DEBUG ONLY!
-//    UIViewController* controller = (UIViewController*)[self.mainStoryboard instantiateViewControllerWithIdentifier: @"SelectSchool"];
-//    [self.controller presentViewController:controller animated:NO completion:nil];
-//    return YES;
-    // REMOVE BEFORE PUBLISHING, DEBUG ONLY!
-    
-    
-    
     
     // Check if user is signed in
     if(![[SSDataProvider instance] getSession]){

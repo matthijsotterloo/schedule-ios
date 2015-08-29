@@ -7,6 +7,7 @@
 //
 
 #import "SSDataProvider.h"
+#import "UvaDataProvider.h"
 
 @implementation SSDataProvider
 
@@ -51,6 +52,11 @@ static NSArray* schoolsList;
         self.site = [[NSUserDefaults standardUserDefaults] stringForKey:@"ScheduleProviderSite"];
         self.username = [[NSUserDefaults standardUserDefaults] stringForKey:@"ScheduleProviderUsername"];
         self.password = [[NSUserDefaults standardUserDefaults] stringForKey:@"ScheduleProviderPassword"];
+        
+        if([self.provider isEqualToString:@"uva"]){
+            [[UvaDataProvider instance] setToken:self.password];
+        }
+        
         return YES;
     }
     
@@ -92,6 +98,10 @@ static NSArray* schoolsList;
     self.username = username;
     self.password = password;
     manualreset = YES;
+    
+    if([self.provider isEqualToString:@"uva"]){
+        [[UvaDataProvider instance] setToken: self.password];
+    }
 }
 
 - (NSString*) getPersonURLString:(NSString*)method {
@@ -109,6 +119,8 @@ static NSArray* schoolsList;
 - (void) profile:(SAProfileCallback)callback {
     if ([self.provider isEqualToString:@"scholica"]) {
         [[Scholica instance] profile:callback];
+    }else if ([self.provider isEqualToString:@"uva"]) {
+        [[UvaDataProvider instance] profile:callback];
     }else{
         if(userProfile){
             callback(userProfile);
@@ -123,7 +135,7 @@ static NSArray* schoolsList;
                     SAUserObject *user = [[SAUserObject alloc] init];
                     user.name = [result.data objectForKey:@"name"];
                     user.username = [result.data objectForKey:@"username"];
-                    user.community = 99999;
+                    user.community = 99999; // Is required for the sync to function
                     user.picture = [self getPersonURL:@"picture"];
                     userProfile = user;
                     callback(user);
@@ -192,7 +204,7 @@ static NSArray* schoolsList;
         [self JSONRequest:searchURL callback:^(SARequestResult *result) {
             NSMutableArray* items = [[NSMutableArray alloc] init];
             if (result.status == SARequestStatusOK) {
-                NSArray* resdata = result.data;
+                NSArray* resdata = (NSArray*)result.data;
                 NSArray* schools = [[resdata objectAtIndex:0] objectForKey:@"instellingen"];
                 for (NSDictionary* school in schools) {
                     [items addObject:@{
@@ -214,6 +226,8 @@ static NSArray* schoolsList;
     if ([self.provider isEqualToString:@"scholica"]) {
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         [[Scholica instance] request:[NSString stringWithFormat:@"/communities/%d/calendar/schedule", appDelegate.user.community] withFields:@{@"time":time, @"show_week":@1, @"show_tasks":@0} callback:callback];
+    }else if ([self.provider isEqualToString:@"uva"]) {
+        [[UvaDataProvider instance] getCalendarWithTimestamp:time callback:callback];
     }else{
         [self personRequest:[NSString stringWithFormat:@"meetings/%@", time == 0 ? @"now" : time] callback:callback];
     }
@@ -324,10 +338,8 @@ static NSArray* schoolsList;
         appDelegate.schoolController = nil;
         [appDelegate getUser];
     }else{
-        LoginViewController *vc = [appDelegate.mainStoryboard instantiateViewControllerWithIdentifier:@"Login"];
-        if(appDelegate.schoolController){
-            [appDelegate.schoolController presentViewController:vc animated:NO completion:nil];
-        }else{
+        if(!appDelegate.schoolController){
+            LoginViewController *vc = [appDelegate.mainStoryboard instantiateViewControllerWithIdentifier:@"Login"];
             [appDelegate.navigationController presentViewController:vc animated:NO completion:nil];
         }
     }

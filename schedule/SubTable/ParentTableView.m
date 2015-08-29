@@ -21,6 +21,8 @@
 @implementation ParentTableView
 @synthesize tableViewDelegate, expansionStates, isRefreshing= _isRefreshing;
 
+NSNumber* extendedRow;
+
 - (id)initWithFrame:(CGRect)frame dataSource:dataDelegate tableViewDelegate:tableDelegate {
     
     self = [super initWithFrame:frame style:UITableViewStylePlain];
@@ -124,6 +126,8 @@
     [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(restoreFooterAction:) userInfo:nil repeats:NO];
     
     [self scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    
+    extendedRow = [NSNumber numberWithInteger:row];
 }
 
 - (void)collapseForParentAtRow:(NSInteger)row {
@@ -141,6 +145,8 @@
     // update expansionStates so backing data is ready before calling deleteRowsAtIndexPaths
     [self.expansionStates replaceObjectAtIndex:parentIndex withObject:@"NO"];
     [self deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:(row + 1) inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    
+    extendedRow = nil;
 }
 - (void)collapseAllRows {
     
@@ -153,6 +159,8 @@
         
         // TODO: will this crash the thing?
         [self scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        
+        extendedRow = nil;
     }
 }
 
@@ -216,7 +224,9 @@
         NSInteger parentIndex = [self parentIndexForRow:row];
         NSInteger numberOfChildren = [self.dataSourceDelegate numberOfChildCellsUnderParentIndex:parentIndex];
         NSInteger childRowHeight = [self.dataSourceDelegate heightForChildRows];
-        return childRowHeight * numberOfChildren + 32;
+        NSInteger maxHeight = childRowHeight * numberOfChildren + 32;
+        NSInteger minHeight = tableView.frame.size.height - rowHeight - 64;
+        return fmax(maxHeight, minHeight);
     }
     else
         return rowHeight;
@@ -373,42 +383,51 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    if (scrollView.contentOffset.y < -120 && ![self viewWithTag:10]) {
+    if (scrollView.contentOffset.y <= -120) {
+        if(self.isRefreshing){
+            return;
+        }
+        if(extendedRow != nil){
+            return;
+        }
         
-        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(self.frame.size.width /2 - 15, -45, 30, 30)];
-        indicator.color = [self tintColor];
-        
+        if(![self viewWithTag:10]){
+            MMMaterialDesignSpinner *indicator = [[MMMaterialDesignSpinner alloc] initWithFrame:CGRectMake(self.frame.size.width /2 - 15, -45, 30, 30)];
+            indicator.lineWidth = 1.5f;
+            indicator.tintColor = [UIColor colorWithWhite:0.2 alpha:1.0];
+            indicator.tag = 10;
+            [indicator startAnimating];
+                
+            [self addSubview:indicator];
+        }
+    }else if([self viewWithTag:10]){
+        if(!self.isRefreshing){
+            [self.ownDelegate userPulledToRefresh];
+            self.isRefreshing = YES;
+        }
+        self.contentOffset = CGPointMake(self.contentOffset.x, -120);
+    }
+}
+
+- (void) startRefreshing {
+    if(![self viewWithTag:10]){
+        MMMaterialDesignSpinner *indicator = [[MMMaterialDesignSpinner alloc] initWithFrame:CGRectMake(self.frame.size.width /2 - 15, -45, 30, 30)];
+        indicator.lineWidth = 1.5f;
+        indicator.tintColor = [UIColor colorWithWhite:0.2 alpha:1.0];
         indicator.tag = 10;
         [indicator startAnimating];
         
-        self.isRefreshing = true;
-        
-        self.frame = CGRectMake(self.frame.origin.x, -120, self.frame.size.width, self.frame.size.height);
-        
-        self.contentOffset = CGPointMake(self.contentOffset.x, -120);
-        
         [self addSubview:indicator];
-        
-        [self.ownDelegate userPulledToRefresh];
-    }
-}
-
-- (BOOL)isRefreshing {
-    
-    return _isRefreshing;
-}
-
-- (void)setIsRefreshing:(BOOL)isRefreshing {
-    
-    _isRefreshing = isRefreshing;
-    
-    if (!isRefreshing) {
-        
-        self.frame = CGRectMake(self.frame.origin.x, 0, self.frame.size.width, self.frame.size.height);
     }
     
-    [[self viewWithTag:10] removeFromSuperview];
+    self.isRefreshing = YES;
 }
 
+- (void) doneRefreshing {
+    self.isRefreshing = NO;
+    if([self viewWithTag:10] != nil){
+        [[self viewWithTag:10] removeFromSuperview];
+    }
+}
 
 @end

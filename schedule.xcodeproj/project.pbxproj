@@ -29,6 +29,8 @@
 		E2EE993A1AEF87170092C428 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EE99391AEF87170092C428 /* LoginViewController.m */; };
 		E91DBA551B2C620A00C8A7B3 /* SSDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E91DBA541B2C620A00C8A7B3 /* SSDataProvider.m */; };
 		E93FB8391B2C9C550099D094 /* SSSchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93FB8381B2C9C550099D094 /* SSSchoolViewController.m */; };
+		E9D5EA3E1B91F110006BE394 /* SSWebLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D5EA3D1B91F110006BE394 /* SSWebLoginViewController.m */; };
+		E9D5EA421B91FE12006BE394 /* UvaDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D5EA411B91FE12006BE394 /* UvaDataProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,6 +89,10 @@
 		E91DBA541B2C620A00C8A7B3 /* SSDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDataProvider.m; sourceTree = "<group>"; };
 		E93FB8371B2C9C550099D094 /* SSSchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSchoolViewController.h; sourceTree = "<group>"; };
 		E93FB8381B2C9C550099D094 /* SSSchoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSchoolViewController.m; sourceTree = "<group>"; };
+		E9D5EA3C1B91F110006BE394 /* SSWebLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSWebLoginViewController.h; sourceTree = "<group>"; };
+		E9D5EA3D1B91F110006BE394 /* SSWebLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSWebLoginViewController.m; sourceTree = "<group>"; };
+		E9D5EA401B91FE12006BE394 /* UvaDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UvaDataProvider.h; sourceTree = "<group>"; };
+		E9D5EA411B91FE12006BE394 /* UvaDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UvaDataProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,10 +145,9 @@
 		E23F1D4F1AEEEE7A00381349 /* schedule */ = {
 			isa = PBXGroup;
 			children = (
+				E9D5EA3F1B91FDEC006BE394 /* DataProvider */,
 				E23F1D541AEEEE7A00381349 /* AppDelegate.h */,
 				E23F1D551AEEEE7A00381349 /* AppDelegate.m */,
-				E91DBA531B2C620A00C8A7B3 /* SSDataProvider.h */,
-				E91DBA541B2C620A00C8A7B3 /* SSDataProvider.m */,
 				E93FB8371B2C9C550099D094 /* SSSchoolViewController.h */,
 				E93FB8381B2C9C550099D094 /* SSSchoolViewController.m */,
 				E23F1D571AEEEE7A00381349 /* SSCalendarViewController.h */,
@@ -151,6 +156,8 @@
 				AD82FDB11B35770B00102AE7 /* SSGradeViewController.m */,
 				AD06FF5D1B37F090005B21E4 /* SSHomeworkViewController.h */,
 				AD06FF5E1B37F090005B21E4 /* SSHomeworkViewController.m */,
+				E9D5EA3C1B91F110006BE394 /* SSWebLoginViewController.h */,
+				E9D5EA3D1B91F110006BE394 /* SSWebLoginViewController.m */,
 				E2EE99381AEF87170092C428 /* LoginViewController.h */,
 				E2EE99391AEF87170092C428 /* LoginViewController.m */,
 				E25C4B421AF176F100D691F9 /* Main.storyboard */,
@@ -241,6 +248,17 @@
 				E281B9441AF16ADB00BAAE16 /* Reachability.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		E9D5EA3F1B91FDEC006BE394 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				E91DBA531B2C620A00C8A7B3 /* SSDataProvider.h */,
+				E91DBA541B2C620A00C8A7B3 /* SSDataProvider.m */,
+				E9D5EA401B91FE12006BE394 /* UvaDataProvider.h */,
+				E9D5EA411B91FE12006BE394 /* UvaDataProvider.m */,
+			);
+			name = DataProvider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD82FDB21B35770B00102AE7 /* SSGradeViewController.m in Sources */,
+				E9D5EA3E1B91F110006BE394 /* SSWebLoginViewController.m in Sources */,
 				E23F1D591AEEEE7A00381349 /* SSCalendarViewController.m in Sources */,
 				E2EE993A1AEF87170092C428 /* LoginViewController.m in Sources */,
 				E23F1D891AEEF1D500381349 /* ParentTableView.m in Sources */,
@@ -361,6 +380,7 @@
 				E23F1D8B1AEEF1D500381349 /* ExpandedContainer.m in Sources */,
 				E23F1D8A1AEEF1D500381349 /* SubTableViewCell.m in Sources */,
 				E23F1D881AEEF1D500381349 /* ParentTableViewCell.m in Sources */,
+				E9D5EA421B91FE12006BE394 /* UvaDataProvider.m in Sources */,
 				E25C4B551AF21C5900D691F9 /* MMMaterialDesignSpinner.m in Sources */,
 				E281B9451AF16ADB00BAAE16 /* Reachability.m in Sources */,
 				E23F1D561AEEEE7A00381349 /* AppDelegate.m in Sources */,
