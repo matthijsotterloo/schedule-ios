@@ -101,17 +101,11 @@
 }
 
 - (void)getCalendarWithTimestamp:(NSNumber*)time callback:(SARequestCallback)callback {
-    NSLog(@"UvaDataProvider called for getCalendarWithTimestamp: %@", time);
-    
     if(![time boolValue]){
-        NSLog(@"Time is zero");
         time = [NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]];
     }
     
-    NSLog(@"Newtime: %@", time);
-    
     NSDate* requestedDate = [NSDate dateWithTimeIntervalSince1970:[time doubleValue]];
-    NSLog(@"reqdate: %@", requestedDate);
     NSDate* weekStart = [self getFirstDayOfTheWeekFromDate:requestedDate];
     NSNumber* weekStartUnix = [NSNumber numberWithDouble:[weekStart timeIntervalSince1970]];
     

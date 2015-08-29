@@ -386,7 +386,7 @@ NSNumber* extendedRow;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    if (scrollView.contentOffset.y <= -120) {
+    if (scrollView.contentOffset.y <= -160) {
         if(self.isRefreshing){
             return;
         }
@@ -395,7 +395,7 @@ NSNumber* extendedRow;
         }
         
         if(![self viewWithTag:10]){
-            MMMaterialDesignSpinner *indicator = [[MMMaterialDesignSpinner alloc] initWithFrame:CGRectMake(self.frame.size.width /2 - 15, -45, 30, 30)];
+            MMMaterialDesignSpinner *indicator = [[MMMaterialDesignSpinner alloc] initWithFrame:CGRectMake(self.frame.size.width /2 - 15, -63, 30, 30)];
             indicator.lineWidth = 1.5f;
             indicator.tintColor = [UIColor colorWithWhite:0.2 alpha:1.0];
             indicator.tag = 10;
@@ -408,13 +408,13 @@ NSNumber* extendedRow;
             [self.ownDelegate userPulledToRefresh];
             self.isRefreshing = YES;
         }
-        self.contentOffset = CGPointMake(self.contentOffset.x, -120);
+        self.contentOffset = CGPointMake(self.contentOffset.x, -160);
     }
 }
 
 - (void) startRefreshing {
     if(![self viewWithTag:10]){
-        MMMaterialDesignSpinner *indicator = [[MMMaterialDesignSpinner alloc] initWithFrame:CGRectMake(self.frame.size.width /2 - 15, -45, 30, 30)];
+        MMMaterialDesignSpinner *indicator = [[MMMaterialDesignSpinner alloc] initWithFrame:CGRectMake(self.frame.size.width /2 - 15, -63, 30, 30)];
         indicator.lineWidth = 1.5f;
         indicator.tintColor = [UIColor colorWithWhite:0.2 alpha:1.0];
         indicator.tag = 10;
