@@ -224,12 +224,15 @@ NSNumber* extendedRow;
         NSInteger parentIndex = [self parentIndexForRow:row];
         NSInteger numberOfChildren = [self.dataSourceDelegate numberOfChildCellsUnderParentIndex:parentIndex];
         NSInteger childRowHeight = [self.dataSourceDelegate heightForChildRows];
+        if(numberOfChildren == 0) {
+            return 0;
+        }
         NSInteger maxHeight = childRowHeight * numberOfChildren + 32;
         NSInteger minHeight = tableView.frame.size.height - rowHeight - 64;
         return fmax(maxHeight, minHeight);
-    }
-    else
+    } else {
         return rowHeight;
+    }
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     

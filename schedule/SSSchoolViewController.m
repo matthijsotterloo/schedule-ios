@@ -71,6 +71,12 @@ NSString* site;
     
     cell.textLabel.text = [[schools objectAtIndex:indexPath.row] objectForKey:@"title"];
     
+    cell.separatorInset = UIEdgeInsetsZero;
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0){
+        cell.preservesSuperviewLayoutMargins = false;
+        cell.layoutMargins = UIEdgeInsetsZero;
+    }
+    
     return cell;
 }
 

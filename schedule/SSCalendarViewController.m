@@ -81,19 +81,23 @@
     }
     
     self.title = [self labelFor:6];
-    
-    NSString *provider = [[SSDataProvider instance] provider];
-    
-    if ([provider isEqualToString:@"somtoday"]) {
-        
-        // Grade button
-        UIBarButtonItem *gradeButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"GradesIcon"] style:UIBarButtonItemStyleBordered target:self action:@selector(goToGrades)];
-        self.navigationItem.rightBarButtonItem = gradeButton;
-        // Homework button
-        UIBarButtonItem *homeworkButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"HomeworkIcon"] style:UIBarButtonItemStyleBordered target:self action:@selector(goToHomework)];
-        self.navigationItem.leftBarButtonItem = homeworkButton;
+}
 
-    }
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    
+    // TODO: temporarily disabled this, needs to be improved some more to be user friendly
+    
+    //    NSString *provider = [[SSDataProvider instance] provider];
+    //    if ([provider isEqualToString:@"somtoday"]) {
+    //        // Grade button
+    //        UIBarButtonItem *gradeButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"GradesIcon"] style:UIBarButtonItemStyleBordered target:self action:@selector(goToGrades)];
+    //        self.navigationItem.rightBarButtonItem = gradeButton;
+    //        // Homework button
+    //        UIBarButtonItem *homeworkButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"HomeworkIcon"] style:UIBarButtonItemStyleBordered target:self action:@selector(goToHomework)];
+    //        self.navigationItem.leftBarButtonItem = homeworkButton;
+    //    }
 }
 
 - (void)goToGrades {
@@ -410,11 +414,15 @@
 }
 
 -(NSArray *)getDays {
+    NSLog(@"Clas: %@", [[self.data objectForKey:@"days"] class]);
     if(self.data == nil || ![self.data objectForKey:@"days"]){
         return @[];
     }
     NSLog(@"DaysData: %@", [self.data objectForKey:@"days"]);
     NSDictionary *dict = [self.data objectForKey:@"days"];
+    if(![dict respondsToSelector:@selector(allKeys)]){
+        return @[];
+    }
     NSArray *sortedKeys = [[dict allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
     NSArray *objects = [dict objectsForKeys:sortedKeys notFoundMarker:[NSNull null]];
     //NSLog(@"%@", objects);
@@ -439,27 +447,32 @@
 
 // @required
 - (NSInteger)numberOfParentCells {
-    if(self.data){
-        return [[self.data objectForKey:@"days"] count];
+    if(self.data && [[self.data objectForKey:@"days"] count] == 0){
+        return 0;
     }
     return 5;
 }
 - (NSInteger)heightForParentRows {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    appDelegate.cellSize = (self.view.frame.size.height - 62) / [self numberOfParentCells];
+    NSInteger numCells = [self numberOfParentCells];
+    appDelegate.cellSize = (self.view.frame.size.height - 62) / numCells;
     return appDelegate.cellSize;
 }
 
 // @optional
 - (NSString *)titleLabelForParentCellAtIndex:(NSInteger)parentIndex {
     
-    if(self.data){
+    if(self.data && [self getDay:parentIndex]){
         return [[[self getDay:parentIndex] objectForKey:@"day_title"] uppercaseString];
     }
-    return 0;
+    return @"";
 }
 
 - (UIColor *)backgroundColorForParentCellAtIndex:(NSInteger)parentIndex {
+    
+    if(![self getDay:parentIndex]){
+        return [UIColor whiteColor];
+    }
     
     switch ([[[self getDay:parentIndex] objectForKey:@"day_ofweek"] integerValue]) {
         case 1:
@@ -484,7 +497,7 @@
 
 // @required
 - (NSInteger)numberOfChildCellsUnderParentIndex:(NSInteger)parentIndex {
-    if(self.data){
+    if(self.data && [self getDay:parentIndex]){
         return [[[self getDay:parentIndex] objectForKey:@"items"] count];
     }
     return 0;
@@ -516,11 +529,7 @@
 - (NSString *)timeLabelForCellAtChildIndex:(NSInteger)childIndex withinParentCellIndex:(NSInteger)parentIndex {
     if(self.data){
         NSDictionary* lesson = [self getItem:childIndex forDay:parentIndex];
-        if([lesson objectForKey:@"hour"]){
-            return [lesson objectForKey:@"hour"];
-        }else{
-            return [lesson objectForKey:@"start_str"];
-        }
+        return [lesson objectForKey:@"start_str"];
     }
     return @"";
 }
