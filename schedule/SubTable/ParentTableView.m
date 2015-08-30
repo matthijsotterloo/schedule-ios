@@ -158,6 +158,7 @@ NSNumber* extendedRow;
         [self deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:(row + 1) inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
         
         // TODO: will this crash the thing?
+        self.contentOffset = CGPointMake(self.contentOffset.x, 0);
         [self scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
         
         extendedRow = nil;
@@ -383,6 +384,10 @@ NSNumber* extendedRow;
     
     return [self.dataSourceDelegate timeLabelForCellAtChildIndex:childIndex withinParentCellIndex:parentIndex];
 }
+- (NSString *)durationLabelForChildIndex:(NSInteger)childIndex underParentIndex:(NSInteger)parentIndex {
+    
+    return [self.dataSourceDelegate durationLabelForCellAtChildIndex:childIndex withinParentCellIndex:parentIndex];
+}
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
@@ -402,6 +407,8 @@ NSNumber* extendedRow;
             [indicator startAnimating];
                 
             [self addSubview:indicator];
+        }else if(self.contentOffset.y < -160){
+            self.contentOffset = CGPointMake(self.contentOffset.x, -160);
         }
     }else if([self viewWithTag:10]){
         if(!self.isRefreshing){
@@ -430,6 +437,9 @@ NSNumber* extendedRow;
     self.isRefreshing = NO;
     if([self viewWithTag:10] != nil){
         [[self viewWithTag:10] removeFromSuperview];
+    }
+    if(self.contentOffset.y <= -160){
+        [self scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
     }
 }
 

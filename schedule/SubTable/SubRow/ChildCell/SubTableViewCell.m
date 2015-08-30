@@ -12,6 +12,7 @@
 @synthesize titleLabel;
 @synthesize subtitleLabel;
 @synthesize timeLabel;
+@synthesize durationLabel;
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
     
@@ -47,6 +48,13 @@
     timeLabel.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:timeLabel];
     
+    self.durationLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    durationLabel.backgroundColor = [UIColor clearColor];
+    durationLabel.opaque = YES;
+    durationLabel.textColor = [UIColor lightGrayColor];
+    durationLabel.textAlignment = NSTextAlignmentCenter;
+    [self.contentView addSubview:durationLabel];
+    
     return self;
 }
 
@@ -56,16 +64,17 @@
 }
 
 - (void)setupDisplay {
-    
     [self.contentView setAutoresizesSubviews:YES];
     
     self.titleLabel.frame = CGRectMake(118, 15, (self.contentView.frame.size.width-138), 24);
     self.subtitleLabel.frame = CGRectMake(118, 40, (self.contentView.frame.size.width-138), 20);
-    self.timeLabel.frame = CGRectMake(32, 15, 60, 24);
+    self.timeLabel.frame = CGRectMake(32, 19, 60, 24);
+    self.durationLabel.frame = CGRectMake(32, 44, 60, 16);
     
     self.titleLabel.font = [UIFont fontWithName:@"ProximaNova-SemiBold" size:17];
     self.timeLabel.font = [UIFont fontWithName:@"ProximaNova-SemiBold" size:17];
     self.subtitleLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:17];
+    self.durationLabel.font = [UIFont fontWithName:@"ProximaNova-SemiBold" size:10];
 }
 
 - (void)setCellForegroundColor:(UIColor *)foregroundColor {

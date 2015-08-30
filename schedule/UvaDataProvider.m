@@ -111,7 +111,7 @@
     
     NSCalendar* calendar = [NSCalendar currentCalendar];
     
-    [self JSONRequest:@"schedule" callback:^(SARequestResult *result) {
+    [self JSONRequest:@"schedule?limit=100" callback:^(SARequestResult *result) {
         NSLog(@"res: %@", result);
         if(result.status == SARequestStatusOK){
             NSMutableDictionary* days = [[NSMutableDictionary alloc] init];
@@ -155,27 +155,36 @@
                 [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
                 [formatter setLocale:posix];
                 NSDate *date = [formatter dateFromString:[appointment objectForKey:@"startDate"]];
-                NSLog(@"date = %@", date);
+                NSDate *endDate = [formatter dateFromString:[appointment objectForKey:@"endDate"]];
                 
                 // Get julian day
                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
                 [dateFormatter setDateFormat:@"g"];
                 NSString* dayKey = [dateFormatter stringFromDate:date];
-                NSLog(@"dk: %@", dayKey);
                 if([dayIndexes objectForKey:dayKey]){
                     // Day is part of the week, so let's parse it
                     NSString* dayIndex = [dayIndexes objectForKey:dayKey];
                     [dateFormatter setDateFormat:@"HH:mm"];
                     NSString* start_str = [dateFormatter stringFromDate:date];
+                    // Get time interval
+                    NSTimeInterval duration = [endDate timeIntervalSinceDate:date];
+                    NSString* duration_str = @"";
+                    if(fmod(duration, 3600) == 0){
+                        duration_str = [NSString stringWithFormat:@"%.00f HOURS", round(duration/3600)];
+                    }else if(fmod(duration, 1800) == 0){
+                        duration_str = [NSString stringWithFormat:@"%.01f HOURS", round(duration/3600)];
+                    }else{
+                        duration_str = [NSString stringWithFormat:@"%.00f MINS", round(duration/60)];
+                    }
                     NSNumber* start = [NSNumber numberWithDouble:[date timeIntervalSince1970]];
                     NSDictionary* location = [[appointment objectForKey:@"locations"] objectAtIndex:0];
                     NSString* subtitle = [NSString stringWithFormat:@"%@ - %@", [location objectForKey:@"name"], [appointment objectForKey:@"notes"]];
-                    NSLog(@"Dayitems: %@", [[days objectForKey:dayIndex] objectForKey:@"items"]);
                     [[[days objectForKey:dayIndex] objectForKey:@"items"] addObject:@{
                                                                                       @"title": [appointment objectForKey:@"activity"],
                                                                                       @"subtitle": subtitle,
                                                                                       @"start": start,
-                                                                                      @"start_str": start_str
+                                                                                      @"start_str": start_str,
+                                                                                      @"duration_str": duration_str
                                                                                        }];
                 }
             }

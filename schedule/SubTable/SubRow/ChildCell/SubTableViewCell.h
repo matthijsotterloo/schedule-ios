@@ -17,6 +17,7 @@
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *timeLabel;
 @property (strong, nonatomic) UILabel *subtitleLabel;
+@property (strong, nonatomic) UILabel *durationLabel;
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 - (void)setupDisplay;

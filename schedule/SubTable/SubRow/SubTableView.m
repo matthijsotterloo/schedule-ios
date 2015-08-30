@@ -148,6 +148,7 @@
         cell.titleLabel.text = [self.delegate titleLabelForChildIndex:row underParentIndex:self.parentIndex];
         cell.subtitleLabel.text = [self.delegate subtitleLabelForChildIndex:row underParentIndex:self.parentIndex];
         cell.timeLabel.text = [self.delegate timeLabelForChildIndex:row underParentIndex:self.parentIndex];
+        cell.durationLabel.text = [self.delegate durationLabelForChildIndex:row underParentIndex:self.parentIndex];
         
         [cell.titleLabel setFont:font];
         

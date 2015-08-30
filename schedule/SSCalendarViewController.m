@@ -64,16 +64,6 @@
     
     self.tableView.showsVerticalScrollIndicator = NO;
     
-    UISwipeGestureRecognizer *recognizer;
-    
-    recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeFromLeft)];
-    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
-    [self.tableView addGestureRecognizer:recognizer];
-    
-    recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeFromRight)];
-    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
-    [self.tableView addGestureRecognizer:recognizer];
-    
     NSDictionary *dict = [self getDictFromFile:@"ScheduleCache-0"];
     if(dict){
         NSLog(@"Loading base entry from cache");
@@ -86,6 +76,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    UIBarButtonItem *prevButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-prev"] style:UIBarButtonItemStyleBordered target:self action:@selector(swipeFromLeft)];
+    self.navigationItem.leftBarButtonItem = prevButton;
+    
+    UIBarButtonItem *nextButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-next"] style:UIBarButtonItemStyleBordered target:self action:@selector(swipeFromRight)];
+    self.navigationItem.rightBarButtonItem = nextButton;
     
     // TODO: temporarily disabled this, needs to be improved some more to be user friendly
     
@@ -521,6 +516,16 @@
             return [NSString stringWithFormat:@"%@ - %@", [lesson objectForKey:@"teacher"],[lesson objectForKey:@"subtitle"]];
         }else{
             return [lesson objectForKey:@"subtitle"];
+        }
+    }
+    return @"";
+}
+
+- (NSString *)durationLabelForCellAtChildIndex:(NSInteger)childIndex withinParentCellIndex:(NSInteger)parentIndex {
+    if(self.data){
+        NSDictionary* lesson = [self getItem:childIndex forDay:parentIndex];
+        if([lesson objectForKey:@"duration_str"]){
+            return [lesson objectForKey:@"duration_str"];
         }
     }
     return @"";

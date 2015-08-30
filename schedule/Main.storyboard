@@ -133,7 +133,8 @@
                                         <exclude reference="fiC-ec-D9Y"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular">
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="16" y="64" width="343" height="337"/>
                                     <mask key="subviews">
                                         <include reference="WDK-lG-ByY"/>
                                     </mask>
@@ -158,7 +159,8 @@
                                         <exclude reference="mNY-el-JRd"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular">
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="24" y="413" width="327" height="20"/>
                                     <mask key="constraints">
                                         <exclude reference="mNY-el-JRd"/>
                                     </mask>
@@ -794,12 +796,6 @@
                                 <exclude reference="bB9-r7-OGG"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="SFW-6Q-DJB"/>
-                                <exclude reference="l1V-Dn-6Zv"/>
-                                <exclude reference="5Gp-Sl-mTz"/>
-                                <exclude reference="GdX-RK-EG8"/>
-                                <exclude reference="IGo-PB-ROR"/>
-                                <exclude reference="QRT-XZ-cBY"/>
                                 <exclude reference="Qwd-cu-XVG"/>
                                 <exclude reference="bhq-EA-H0k"/>
                                 <exclude reference="fbq-EO-sTz"/>
@@ -808,10 +804,16 @@
                                 <exclude reference="RNn-wD-Imf"/>
                                 <exclude reference="mnD-qZ-hw6"/>
                                 <exclude reference="qT0-eT-Tk3"/>
+                                <exclude reference="SFW-6Q-DJB"/>
+                                <exclude reference="l1V-Dn-6Zv"/>
                                 <exclude reference="0xx-aA-XaY"/>
                                 <exclude reference="LfB-PA-Qiv"/>
                                 <exclude reference="VKD-ko-qeA"/>
                                 <exclude reference="sGI-dD-r8P"/>
+                                <exclude reference="5Gp-Sl-mTz"/>
+                                <exclude reference="GdX-RK-EG8"/>
+                                <exclude reference="IGo-PB-ROR"/>
+                                <exclude reference="QRT-XZ-cBY"/>
                                 <exclude reference="9iy-Sm-SrX"/>
                                 <exclude reference="Drf-0y-Bvw"/>
                                 <exclude reference="jAK-rf-8mn"/>
@@ -828,12 +830,6 @@
                                 <include reference="bB9-r7-OGG"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="SFW-6Q-DJB"/>
-                                <include reference="l1V-Dn-6Zv"/>
-                                <include reference="5Gp-Sl-mTz"/>
-                                <include reference="GdX-RK-EG8"/>
-                                <include reference="IGo-PB-ROR"/>
-                                <include reference="QRT-XZ-cBY"/>
                                 <include reference="Qwd-cu-XVG"/>
                                 <include reference="bhq-EA-H0k"/>
                                 <include reference="fbq-EO-sTz"/>
@@ -842,10 +838,16 @@
                                 <include reference="RNn-wD-Imf"/>
                                 <include reference="mnD-qZ-hw6"/>
                                 <include reference="qT0-eT-Tk3"/>
+                                <include reference="SFW-6Q-DJB"/>
+                                <include reference="l1V-Dn-6Zv"/>
                                 <include reference="0xx-aA-XaY"/>
                                 <include reference="LfB-PA-Qiv"/>
                                 <exclude reference="VKD-ko-qeA"/>
                                 <include reference="sGI-dD-r8P"/>
+                                <include reference="5Gp-Sl-mTz"/>
+                                <include reference="GdX-RK-EG8"/>
+                                <include reference="IGo-PB-ROR"/>
+                                <include reference="QRT-XZ-cBY"/>
                                 <include reference="9iy-Sm-SrX"/>
                                 <include reference="Drf-0y-Bvw"/>
                                 <include reference="jAK-rf-8mn"/>

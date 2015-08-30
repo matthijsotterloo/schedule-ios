@@ -20,6 +20,7 @@
 - (NSString *)titleLabelForChildIndex:(NSInteger)childIndex underParentIndex:(NSInteger)parentIndex;
 - (NSString *)subtitleLabelForChildIndex:(NSInteger)childIndex underParentIndex:(NSInteger)parentIndex;
 - (NSString *)timeLabelForChildIndex:(NSInteger)childIndex underParentIndex:(NSInteger)parentIndex;
+- (NSString *)durationLabelForChildIndex:(NSInteger)childIndex underParentIndex:(NSInteger)parentIndex;
 
 @end
 

@@ -69,7 +69,7 @@
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.controller];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:0.929 green:0.290 blue:0.392 alpha:1]];
+    [self.navigationController.navigationBar setTintColor:[UIColor colorWithWhite:0.6 alpha:1.0]];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor whiteColor]];
     
     UIView *statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, -20, self.navigationController.navigationBar.frame.size.width, 22)];
