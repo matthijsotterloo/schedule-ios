@@ -7,12 +7,19 @@
 //
 
 #import "AppDelegate.h"
+#import "iRate.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+
++ (void) initialize {
+    //configure iRate
+    [iRate sharedInstance].daysUntilPrompt = 5;
+    [iRate sharedInstance].usesUntilPrompt = 15;
+}
 
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Set Scholica consumer key & secret

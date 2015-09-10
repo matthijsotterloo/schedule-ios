@@ -3,5 +3,6 @@
 
 target 'schedule' do
    pod 'Scholica', '~> 1.0'
+   pod 'iRate', '~> 1.0'
 end
 

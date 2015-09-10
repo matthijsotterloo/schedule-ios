@@ -1,10 +1,13 @@
 PODS:
+  - iRate (1.11.4)
   - Scholica (1.0.1)
 
 DEPENDENCIES:
+  - iRate (~> 1.0)
   - Scholica (~> 1.0)
 
 SPEC CHECKSUMS:
+  iRate: 599ed07c854e0695f3c605d1b2a64c67d912acb7
   Scholica: 1d684bd0d0a1a08d7c51ea3959a00d87b53c0403
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.38.2

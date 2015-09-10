@@ -1,1446 +1,653 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>03AFD052C81EF065B0C611AC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C1E3B8F3BC33D45B5EB2F212</string>
-				<string>4812692B068AE6CEEEE1C0F8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>iOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>090EC9A8CA9DD5C104B8952C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C2E03D32A40808D20D949C4E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0BE3C8C889FBEC5039C1E393</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-schedule-Scholica.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>0E54F78779E1D7296C562AE6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6D189C8A0AF9A479BE16BEB1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0E9B403BCA0ACDD1835553AE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>Pods-schedule-Scholica</string>
-			<key>target</key>
-			<string>FFC405892DBAAF6A303FE051</string>
-			<key>targetProxy</key>
-			<string>BA3A33D335A7D7D6766DF618</string>
-		</dict>
-		<key>121CFC1EB89603AFCDF85705</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SANativeLoginController.h</string>
-			<key>path</key>
-			<string>Scholica/SANativeLoginController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>167AE2AFAC2725ACFB62AE29</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B5DFE723D129A25ECA985A0B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16CF15FD18D0DCC728696F1A</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>DCB16CAA6C17C51B81B964E1</string>
-				<string>E341BAD934674853773E903E</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>186D98B133D942A00F2413AE</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>RELEASE=1</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>268B1C0789CAAA37DF328DAC</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-schedule-environment.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2734F3ACD64FF2C9CF0F8161</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SAUserObject.h</string>
-			<key>path</key>
-			<string>Scholica/SAUserObject.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2955CA627CB8C586464943C6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SARequestResult.m</string>
-			<key>path</key>
-			<string>Scholica/SARequestResult.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2B6FB5413372D46D42736F5E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SAUtilities.h</string>
-			<key>path</key>
-			<string>Scholica/SAUtilities.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2BD2030CEE074798D1B0042E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A2D80F77E6A61D3EA116D58A</string>
-				<string>0BE3C8C889FBEC5039C1E393</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2BE615CC0AEC7EB3112B04B2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C1E3B8F3BC33D45B5EB2F212</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3571D895957DBC301FE3620B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5AA0747700E607BC01DE8D8A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>35BF0EACF9BEBE60EF7E458B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>121CFC1EB89603AFCDF85705</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>394DAA9BBE27499BC568E672</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>3C6E156E94839911BF673947</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>03AFD052C81EF065B0C611AC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>43A665066DB74591BFF153EF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>name</key>
-			<string>Podfile</string>
-			<key>path</key>
-			<string>../Podfile</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.ruby</string>
-		</dict>
-		<key>4567079FF2ED9C1659E8F602</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SAWebLoginController.m</string>
-			<key>path</key>
-			<string>Scholica/SAWebLoginController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>47A3F26127261D7B45086B1F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SAUserObject.m</string>
-			<key>path</key>
-			<string>Scholica/SAUserObject.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>47DFBEDACAF86C7794E5CE1D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A073E8A29BA3BB17CD6CF931</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>4812692B068AE6CEEEE1C0F8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>4B5A7203C373FAC2997B69BD</key>
-		<dict>
-			<key>fileRef</key>
-			<string>557408A8A90BB51008F7A651</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>51392B107665E99C696DA8C1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>DC1F54F9164DD01C3A7AD6E3</string>
-				<string>167AE2AFAC2725ACFB62AE29</string>
-				<string>35BF0EACF9BEBE60EF7E458B</string>
-				<string>D68872EF605D3FA2E23B75B6</string>
-				<string>EE38D00782E3A0D76A0B1251</string>
-				<string>5C942708D0583211DA44B188</string>
-				<string>4B5A7203C373FAC2997B69BD</string>
-				<string>9B24986E67F873B288F19A0E</string>
-				<string>CE6AAF81A42BE8AD1A87FAC2</string>
-				<string>C57A9279D1CDB58CCB7BECB4</string>
-				<string>6973D17391335C6824872F05</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5143172275C583942C00AC93</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>5CC6370E1B51FBA59329B2AD</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>OTHER_CFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_CPLUSPLUSFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>557408A8A90BB51008F7A651</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SASingleton.h</string>
-			<key>path</key>
-			<string>Scholica/SASingleton.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>56072DF147943417883372AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CC37FB1930EF4AFD13F22216</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5785B5323879377538220E9C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C1E3B8F3BC33D45B5EB2F212</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5AA0747700E607BC01DE8D8A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9D24A48014F63C129A4F7FFD</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5BCAAC586C1E86FBF2D2CB6C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C5FC46AD3519B148CC9D16FE</string>
-				<string>736644DA67B800D488FB3765</string>
-				<string>6D189C8A0AF9A479BE16BEB1</string>
-				<string>820D0DF011C5C305D2A480B9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/Pods-schedule-Scholica</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5C942708D0583211DA44B188</key>
-		<dict>
-			<key>fileRef</key>
-			<string>969EFABEDEE549734084BA2D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5CC6370E1B51FBA59329B2AD</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-schedule.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>61EC9E138019486D3F60B25C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>4567079FF2ED9C1659E8F602</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6973D17391335C6824872F05</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CE1B013BF72BB89AEAE8E2B9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6B8F3BB979EAF54351869D0B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SAConstants.h</string>
-			<key>path</key>
-			<string>Scholica/SAConstants.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BC8E757F757B8AB8840D1A9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>Scholica.m</string>
-			<key>path</key>
-			<string>Scholica/Scholica.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6BDFC37299E83853312322B6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5785B5323879377538220E9C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>6D189C8A0AF9A479BE16BEB1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-schedule-Scholica-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>736644DA67B800D488FB3765</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-schedule-Scholica-Private.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>76D2306748C92998602DD955</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-schedule.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>816F21AE4D8CF557111E7EF2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>2BE615CC0AEC7EB3112B04B2</string>
-				<string>835DDAC50DD761D61B1773F1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>820D0DF011C5C305D2A480B9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-schedule-Scholica-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>835DDAC50DD761D61B1773F1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>4812692B068AE6CEEEE1C0F8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8589BBFA6447546E5436C641</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>EB07C76A17F85155A3F596DB</string>
-				<string>CDCF73F2232C3C9A9E670134</string>
-				<string>9D24A48014F63C129A4F7FFD</string>
-				<string>268B1C0789CAAA37DF328DAC</string>
-				<string>98A3FA864FA04E2FC7344E4C</string>
-				<string>76D2306748C92998602DD955</string>
-				<string>5CC6370E1B51FBA59329B2AD</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods-schedule</string>
-			<key>path</key>
-			<string>Target Support Files/Pods-schedule</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8ACF8DD621835760988120F3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SASingleton.m</string>
-			<key>path</key>
-			<string>Scholica/SASingleton.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8CC5AD62A6E274E17EA78A43</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>43A665066DB74591BFF153EF</string>
-				<string>3C6E156E94839911BF673947</string>
-				<string>EB1532CFF9B439D44786C358</string>
-				<string>2BD2030CEE074798D1B0042E</string>
-				<string>CEFEAEBCD6C5E2B128777C95</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>91E9493EEC1FC460307E227A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6B8F3BB979EAF54351869D0B</string>
-				<string>B5DFE723D129A25ECA985A0B</string>
-				<string>A073E8A29BA3BB17CD6CF931</string>
-				<string>121CFC1EB89603AFCDF85705</string>
-				<string>C2E03D32A40808D20D949C4E</string>
-				<string>E74721285E84AA3ECDA844A8</string>
-				<string>9D75CB850698082E6D81812A</string>
-				<string>E3AC9CD175B69DEDC505B73C</string>
-				<string>2955CA627CB8C586464943C6</string>
-				<string>969EFABEDEE549734084BA2D</string>
-				<string>CC37FB1930EF4AFD13F22216</string>
-				<string>557408A8A90BB51008F7A651</string>
-				<string>8ACF8DD621835760988120F3</string>
-				<string>2734F3ACD64FF2C9CF0F8161</string>
-				<string>47A3F26127261D7B45086B1F</string>
-				<string>2B6FB5413372D46D42736F5E</string>
-				<string>ABBFE1B1D37FF3988B7FE78E</string>
-				<string>AF33211BF5263C14B47314CF</string>
-				<string>4567079FF2ED9C1659E8F602</string>
-				<string>CE1B013BF72BB89AEAE8E2B9</string>
-				<string>6BC8E757F757B8AB8840D1A9</string>
-				<string>5BCAAC586C1E86FBF2D2CB6C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Scholica</string>
-			<key>path</key>
-			<string>Scholica</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>969EFABEDEE549734084BA2D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SASession.h</string>
-			<key>path</key>
-			<string>Scholica/SASession.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>98A3FA864FA04E2FC7344E4C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-schedule-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>991CD22BBFC676A93A41C665</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6BC8E757F757B8AB8840D1A9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9B24986E67F873B288F19A0E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2734F3ACD64FF2C9CF0F8161</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9D24A48014F63C129A4F7FFD</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-schedule-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9D75CB850698082E6D81812A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SARequestError.m</string>
-			<key>path</key>
-			<string>Scholica/SARequestError.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9F8A335EBD347786F165B790</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>CDC16316DB4B5E085E7B7E1D</string>
-				<string>5143172275C583942C00AC93</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>A073E8A29BA3BB17CD6CF931</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SAJSONRequest.m</string>
-			<key>path</key>
-			<string>Scholica/SAJSONRequest.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A2D80F77E6A61D3EA116D58A</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-schedule.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>AA094CE869C764BDEA309B58</key>
-		<dict>
-			<key>fileRef</key>
-			<string>ABBFE1B1D37FF3988B7FE78E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>ABBFE1B1D37FF3988B7FE78E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SAUtilties.m</string>
-			<key>path</key>
-			<string>Scholica/SAUtilties.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF33211BF5263C14B47314CF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SAWebLoginController.h</string>
-			<key>path</key>
-			<string>Scholica/SAWebLoginController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B5DFE723D129A25ECA985A0B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SAJSONRequest.h</string>
-			<key>path</key>
-			<string>Scholica/SAJSONRequest.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BA3A33D335A7D7D6766DF618</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>DDDD7386D73E6F8BD9450D08</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>FFC405892DBAAF6A303FE051</string>
-			<key>remoteInfo</key>
-			<string>Pods-schedule-Scholica</string>
-		</dict>
-		<key>BA3F75CBD24C3FCA533DEB2C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2955CA627CB8C586464943C6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C1E3B8F3BC33D45B5EB2F212</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>C28F43B02D4DC43E170E016B</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>9F8A335EBD347786F165B790</string>
-			<key>buildPhases</key>
-			<array>
-				<string>3571D895957DBC301FE3620B</string>
-				<string>6BDFC37299E83853312322B6</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>0E9B403BCA0ACDD1835553AE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-schedule</string>
-			<key>productName</key>
-			<string>Pods-schedule</string>
-			<key>productReference</key>
-			<string>A2D80F77E6A61D3EA116D58A</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>C2E03D32A40808D20D949C4E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SANativeLoginController.m</string>
-			<key>path</key>
-			<string>Scholica/SANativeLoginController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C57A9279D1CDB58CCB7BECB4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF33211BF5263C14B47314CF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C5FC46AD3519B148CC9D16FE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-schedule-Scholica.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CC37FB1930EF4AFD13F22216</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SASession.m</string>
-			<key>path</key>
-			<string>Scholica/SASession.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDC16316DB4B5E085E7B7E1D</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>76D2306748C92998602DD955</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>CDCF73F2232C3C9A9E670134</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-schedule-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE1B013BF72BB89AEAE8E2B9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>Scholica.h</string>
-			<key>path</key>
-			<string>Scholica/Scholica.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6AAF81A42BE8AD1A87FAC2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2B6FB5413372D46D42736F5E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CEFEAEBCD6C5E2B128777C95</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8589BBFA6447546E5436C641</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CFD804EE91D82ADD28CCE3D1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>0E54F78779E1D7296C562AE6</string>
-				<string>47DFBEDACAF86C7794E5CE1D</string>
-				<string>090EC9A8CA9DD5C104B8952C</string>
-				<string>F31651223BB25A163BBD7348</string>
-				<string>BA3F75CBD24C3FCA533DEB2C</string>
-				<string>56072DF147943417883372AF</string>
-				<string>F3C20ACF1A3660D40D9097B3</string>
-				<string>E0EAB170763A61ED268CEDD2</string>
-				<string>AA094CE869C764BDEA309B58</string>
-				<string>61EC9E138019486D3F60B25C</string>
-				<string>991CD22BBFC676A93A41C665</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>D4708E0624D49C32939349A6</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>394DAA9BBE27499BC568E672</string>
-				<string>186D98B133D942A00F2413AE</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>D68872EF605D3FA2E23B75B6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E74721285E84AA3ECDA844A8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DC1F54F9164DD01C3A7AD6E3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6B8F3BB979EAF54351869D0B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DCB16CAA6C17C51B81B964E1</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>736644DA67B800D488FB3765</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-schedule-Scholica/Pods-schedule-Scholica-prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>DDDD7386D73E6F8BD9450D08</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0510</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>D4708E0624D49C32939349A6</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>8CC5AD62A6E274E17EA78A43</string>
-			<key>productRefGroup</key>
-			<string>2BD2030CEE074798D1B0042E</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>C28F43B02D4DC43E170E016B</string>
-				<string>FFC405892DBAAF6A303FE051</string>
-			</array>
-		</dict>
-		<key>E0EAB170763A61ED268CEDD2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>47A3F26127261D7B45086B1F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E341BAD934674853773E903E</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>736644DA67B800D488FB3765</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-schedule-Scholica/Pods-schedule-Scholica-prefix.pch</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>OTHER_CFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_CPLUSPLUSFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>E3AC9CD175B69DEDC505B73C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SARequestResult.h</string>
-			<key>path</key>
-			<string>Scholica/SARequestResult.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E74721285E84AA3ECDA844A8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SARequestError.h</string>
-			<key>path</key>
-			<string>Scholica/SARequestError.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EB07C76A17F85155A3F596DB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-schedule-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EB1532CFF9B439D44786C358</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>91E9493EEC1FC460307E227A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EE38D00782E3A0D76A0B1251</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E3AC9CD175B69DEDC505B73C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F31651223BB25A163BBD7348</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9D75CB850698082E6D81812A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F3C20ACF1A3660D40D9097B3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8ACF8DD621835760988120F3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FFC405892DBAAF6A303FE051</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>16CF15FD18D0DCC728696F1A</string>
-			<key>buildPhases</key>
-			<array>
-				<string>CFD804EE91D82ADD28CCE3D1</string>
-				<string>816F21AE4D8CF557111E7EF2</string>
-				<string>51392B107665E99C696DA8C1</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-schedule-Scholica</string>
-			<key>productName</key>
-			<string>Pods-schedule-Scholica</string>
-			<key>productReference</key>
-			<string>0BE3C8C889FBEC5039C1E393</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>DDDD7386D73E6F8BD9450D08</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0823ADF2B53D4570D7FDD3AC847EE78A /* SANativeLoginController.h in Headers */ = {isa = PBXBuildFile; fileRef = 56B41437857840CD739DB5FCDB676825 /* SANativeLoginController.h */; };
+		08C99D408CFE29F41F6D0CC3163316AB /* SAWebLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = A968D12E6354CF70BD52F3AE83FC492F /* SAWebLoginController.m */; };
+		09A4D966C8D1AF382A2BFB1FA71BA3DD /* SASingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CD9848FF774A0F1D0E2F8826D8E21A0 /* SASingleton.h */; };
+		0C61D84396AA3D3F9ECD7B30A6A3B86E /* SARequestResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AB6E3FABA893DD75B023D8CDBCA9C7 /* SARequestResult.m */; };
+		1513E1E4433F4B945B8C7FDF46CF4FEC /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E1B944C66FDFFEB3638D88A16850CD /* iRate.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1AE95C6A6A24B42EE713966A4B6B9A84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1156CE8684EEFFA845C66A9013B8C827 /* Foundation.framework */; };
+		20C433B99F9ECE63E84FF973CF87497C /* SAJSONRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BE0A2E928184E2701F8154F3F94B148 /* SAJSONRequest.h */; };
+		2EB64C50D4CA07C19DD7F506A1F2102A /* SASession.h in Headers */ = {isa = PBXBuildFile; fileRef = D294758092BB12FA18EA8260551D4B0D /* SASession.h */; };
+		3AB15058E9ACEFBC7F731A1606032DDD /* Scholica.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F6F92730F6A607CBA38D75630DA807E /* Scholica.h */; };
+		45C693FDECAE8FED930A07FB52A54508 /* SAWebLoginController.h in Headers */ = {isa = PBXBuildFile; fileRef = EC868F744768EDFC6D9011791B5BED6C /* SAWebLoginController.h */; };
+		47D82B2ACFACC53002B552E282206C12 /* SAUserObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFF54B2A0DD8E44CD7B9A2C2352FA85 /* SAUserObject.m */; };
+		4A2C8E2550B55398F6D9FB1F536FD82C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B2734CAFB29EB52DC24B63C6C29A9C2 /* UIKit.framework */; };
+		53A71A8C67114D30F8A9152452D8ACF0 /* SARequestResult.h in Headers */ = {isa = PBXBuildFile; fileRef = F2CBD0358D976B356B38AAF680FB6CED /* SARequestResult.h */; };
+		72D8DFE47DBE9DF18E3EBC3BA0A059C0 /* SAUtilties.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEB0D78466D15B6389BC3E183E9C8C0 /* SAUtilties.m */; };
+		8946851056B976711A66DFCA86668952 /* SARequestError.m in Sources */ = {isa = PBXBuildFile; fileRef = B43FBA1299E5AEA642EFB956F3A5E4DD /* SARequestError.m */; };
+		8F61FE8B894C1272092825D03ADEFAC3 /* Scholica-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B39DA6774A43CACEA0365C7645C33D /* Scholica-dummy.m */; };
+		9C8585024B20B2DF1B3BAE3CFA021317 /* Scholica.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E670DB48279676122205A190749804 /* Scholica.m */; };
+		9EB3F2921C945F7F2871C7674A0092FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1156CE8684EEFFA845C66A9013B8C827 /* Foundation.framework */; };
+		A53A2315F1F3902CB3DB0881F88D212D /* iRate-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 123388C79BC7BAF9BECE8F890E2F56CB /* iRate-dummy.m */; };
+		C51565C3B2F5452438A207FBDB9C8F79 /* SASession.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7113CC2F090E9BEECD57767E158E9A /* SASession.m */; };
+		C5ADD14C352A2D7162E2319E5AF7845A /* iRate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ED15A7C470EFC74BD2303427FF6FA5D /* iRate.h */; };
+		C9281F799193476C82E830291D0025F0 /* SAUserObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C86724496BBA9D2DF802EBB96462F3C /* SAUserObject.h */; };
+		CF3A7FA8AB7704D9A7B5F25A289ED745 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1156CE8684EEFFA845C66A9013B8C827 /* Foundation.framework */; };
+		D2D879E74814BE4C8C085BD1AD0EF32A /* SAUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F14E66B009E0AE47B012F162023D038 /* SAUtilities.h */; };
+		E31F724D9855A9DD433F72044A786028 /* SAJSONRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC268C12605EE084B4D5BFF80FCBA05 /* SAJSONRequest.m */; };
+		E49105EEF5D0BE3B6CD3BD21C2ECBBF6 /* SARequestError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CA7759D637831237FCE4D70CE249D6D /* SARequestError.h */; };
+		E7FB98B9BCD817C54C00831A273AFB6D /* Pods-schedule-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F387B3207835E0CD3B197418600C45B /* Pods-schedule-dummy.m */; };
+		F97AD7101AC2FFE32F6263CB541D8936 /* SAConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F6529F35A96A24E9DC42F476E717924 /* SAConstants.h */; };
+		FEF7D8CFABFBC08FC7AE7FFF29B110C3 /* SANativeLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8F2A823225D0113D88DBE01C04A61D /* SANativeLoginController.m */; };
+		FFC309111FF41E3D5EFBB614ED832F7E /* SASingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = FB55AA785893DA68411D20B73B12D755 /* SASingleton.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D437DC5209CA420300B03478F200C4B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B090755233C44E8E118A8DA48015C08;
+			remoteInfo = iRate;
+		};
+		D4C0A0F5D8C2B27A1D4D23200649A511 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12773E9B759C387ACCAD7A5731D43BB2;
+			remoteInfo = Scholica;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06B39DA6774A43CACEA0365C7645C33D /* Scholica-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Scholica-dummy.m"; sourceTree = "<group>"; };
+		07E670DB48279676122205A190749804 /* Scholica.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Scholica.m; path = Scholica/Scholica.m; sourceTree = "<group>"; };
+		0A854994F8A8DAC267EA9D6A379C3A0C /* Pods-schedule-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-schedule-resources.sh"; sourceTree = "<group>"; };
+		0BE0A2E928184E2701F8154F3F94B148 /* SAJSONRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAJSONRequest.h; path = Scholica/SAJSONRequest.h; sourceTree = "<group>"; };
+		0F14E66B009E0AE47B012F162023D038 /* SAUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAUtilities.h; path = Scholica/SAUtilities.h; sourceTree = "<group>"; };
+		1156CE8684EEFFA845C66A9013B8C827 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		123388C79BC7BAF9BECE8F890E2F56CB /* iRate-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iRate-dummy.m"; sourceTree = "<group>"; };
+		152C83B2AF532D338CB07859F5A40D04 /* Pods-schedule-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-schedule-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1AC268C12605EE084B4D5BFF80FCBA05 /* SAJSONRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SAJSONRequest.m; path = Scholica/SAJSONRequest.m; sourceTree = "<group>"; };
+		1DF50D4421A54F76EF8A035F6DEDB278 /* libPods-schedule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-schedule.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F6529F35A96A24E9DC42F476E717924 /* SAConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAConstants.h; path = Scholica/SAConstants.h; sourceTree = "<group>"; };
+		26C19D6F4E6DCE65DB35142A65E29551 /* Scholica-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Scholica-prefix.pch"; sourceTree = "<group>"; };
+		2F31D185F6B4FE19306B6129D542BD76 /* Pods-schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-schedule.release.xcconfig"; sourceTree = "<group>"; };
+		43AB6E3FABA893DD75B023D8CDBCA9C7 /* SARequestResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SARequestResult.m; path = Scholica/SARequestResult.m; sourceTree = "<group>"; };
+		4C86724496BBA9D2DF802EBB96462F3C /* SAUserObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAUserObject.h; path = Scholica/SAUserObject.h; sourceTree = "<group>"; };
+		4E7113CC2F090E9BEECD57767E158E9A /* SASession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SASession.m; path = Scholica/SASession.m; sourceTree = "<group>"; };
+		510A48A6685EA9CFCE14013BF63A05A8 /* Scholica-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Scholica-Private.xcconfig"; sourceTree = "<group>"; };
+		56B41437857840CD739DB5FCDB676825 /* SANativeLoginController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SANativeLoginController.h; path = Scholica/SANativeLoginController.h; sourceTree = "<group>"; };
+		5B2734CAFB29EB52DC24B63C6C29A9C2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		5CD9848FF774A0F1D0E2F8826D8E21A0 /* SASingleton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SASingleton.h; path = Scholica/SASingleton.h; sourceTree = "<group>"; };
+		60E1B944C66FDFFEB3638D88A16850CD /* iRate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = iRate.m; path = iRate/iRate.m; sourceTree = "<group>"; };
+		7F387B3207835E0CD3B197418600C45B /* Pods-schedule-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-schedule-dummy.m"; sourceTree = "<group>"; };
+		81809368F93127D2C218278A85E8CD42 /* libScholica.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libScholica.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B5A811E6B58570A8D37136500DBE172 /* iRate.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iRate.xcconfig; sourceTree = "<group>"; };
+		8F6F92730F6A607CBA38D75630DA807E /* Scholica.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Scholica.h; path = Scholica/Scholica.h; sourceTree = "<group>"; };
+		998EE3273042727680863DC049EDD290 /* iRate-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iRate-prefix.pch"; sourceTree = "<group>"; };
+		9CA7759D637831237FCE4D70CE249D6D /* SARequestError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SARequestError.h; path = Scholica/SARequestError.h; sourceTree = "<group>"; };
+		9ED15A7C470EFC74BD2303427FF6FA5D /* iRate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = iRate.h; path = iRate/iRate.h; sourceTree = "<group>"; };
+		A968D12E6354CF70BD52F3AE83FC492F /* SAWebLoginController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SAWebLoginController.m; path = Scholica/SAWebLoginController.m; sourceTree = "<group>"; };
+		AEC545FE4F97CC405C042D7A47FCA9D7 /* libiRate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiRate.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B43FBA1299E5AEA642EFB956F3A5E4DD /* SARequestError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SARequestError.m; path = Scholica/SARequestError.m; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BCEC671B2B088FDB6FA2B2A93A00BB15 /* iRate.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = iRate.bundle; path = iRate/iRate.bundle; sourceTree = "<group>"; };
+		C6F04C15D8A14D851D95606D0FE98A92 /* Pods-schedule-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-schedule-acknowledgements.plist"; sourceTree = "<group>"; };
+		CBDF3413005C09361A5E78E669045F92 /* Scholica.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Scholica.xcconfig; sourceTree = "<group>"; };
+		D294758092BB12FA18EA8260551D4B0D /* SASession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SASession.h; path = Scholica/SASession.h; sourceTree = "<group>"; };
+		D97802A9C3E806AD81382CC6C6EBED43 /* Pods-schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-schedule.debug.xcconfig"; sourceTree = "<group>"; };
+		DE8F2A823225D0113D88DBE01C04A61D /* SANativeLoginController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SANativeLoginController.m; path = Scholica/SANativeLoginController.m; sourceTree = "<group>"; };
+		DFEB0D78466D15B6389BC3E183E9C8C0 /* SAUtilties.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SAUtilties.m; path = Scholica/SAUtilties.m; sourceTree = "<group>"; };
+		DFFF54B2A0DD8E44CD7B9A2C2352FA85 /* SAUserObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SAUserObject.m; path = Scholica/SAUserObject.m; sourceTree = "<group>"; };
+		E6F3A5D7AB29E9CFEFFD991EFDBD3999 /* iRate-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "iRate-Private.xcconfig"; sourceTree = "<group>"; };
+		EC868F744768EDFC6D9011791B5BED6C /* SAWebLoginController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAWebLoginController.h; path = Scholica/SAWebLoginController.h; sourceTree = "<group>"; };
+		F2CBD0358D976B356B38AAF680FB6CED /* SARequestResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SARequestResult.h; path = Scholica/SARequestResult.h; sourceTree = "<group>"; };
+		FB55AA785893DA68411D20B73B12D755 /* SASingleton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SASingleton.m; path = Scholica/SASingleton.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16C6EC0833DABA9A80FC9E13A7DFBF46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EB3F2921C945F7F2871C7674A0092FA /* Foundation.framework in Frameworks */,
+				4A2C8E2550B55398F6D9FB1F536FD82C /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97F40B20139BAB76462D661C8DFE0CCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF3A7FA8AB7704D9A7B5F25A289ED745 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF4DE357068514685330702108D93A21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AE95C6A6A24B42EE713966A4B6B9A84 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0AACE94AA503107576CFF568DB0576FE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B5A811E6B58570A8D37136500DBE172 /* iRate.xcconfig */,
+				E6F3A5D7AB29E9CFEFFD991EFDBD3999 /* iRate-Private.xcconfig */,
+				123388C79BC7BAF9BECE8F890E2F56CB /* iRate-dummy.m */,
+				998EE3273042727680863DC049EDD290 /* iRate-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/iRate";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0FB9306D21AF23A056944AE037CBFFF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49DA7E0EF7430E5B875618CBDBF18DF1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BCEC671B2B088FDB6FA2B2A93A00BB15 /* iRate.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4D8E431DF48E2E041A78064ACB1CB7FC /* Scholica */ = {
+			isa = PBXGroup;
+			children = (
+				1F6529F35A96A24E9DC42F476E717924 /* SAConstants.h */,
+				0BE0A2E928184E2701F8154F3F94B148 /* SAJSONRequest.h */,
+				1AC268C12605EE084B4D5BFF80FCBA05 /* SAJSONRequest.m */,
+				56B41437857840CD739DB5FCDB676825 /* SANativeLoginController.h */,
+				DE8F2A823225D0113D88DBE01C04A61D /* SANativeLoginController.m */,
+				9CA7759D637831237FCE4D70CE249D6D /* SARequestError.h */,
+				B43FBA1299E5AEA642EFB956F3A5E4DD /* SARequestError.m */,
+				F2CBD0358D976B356B38AAF680FB6CED /* SARequestResult.h */,
+				43AB6E3FABA893DD75B023D8CDBCA9C7 /* SARequestResult.m */,
+				D294758092BB12FA18EA8260551D4B0D /* SASession.h */,
+				4E7113CC2F090E9BEECD57767E158E9A /* SASession.m */,
+				5CD9848FF774A0F1D0E2F8826D8E21A0 /* SASingleton.h */,
+				FB55AA785893DA68411D20B73B12D755 /* SASingleton.m */,
+				4C86724496BBA9D2DF802EBB96462F3C /* SAUserObject.h */,
+				DFFF54B2A0DD8E44CD7B9A2C2352FA85 /* SAUserObject.m */,
+				0F14E66B009E0AE47B012F162023D038 /* SAUtilities.h */,
+				DFEB0D78466D15B6389BC3E183E9C8C0 /* SAUtilties.m */,
+				EC868F744768EDFC6D9011791B5BED6C /* SAWebLoginController.h */,
+				A968D12E6354CF70BD52F3AE83FC492F /* SAWebLoginController.m */,
+				8F6F92730F6A607CBA38D75630DA807E /* Scholica.h */,
+				07E670DB48279676122205A190749804 /* Scholica.m */,
+				79BE5FEC8C21AB967AABB6AF7ACBCB8D /* Support Files */,
+			);
+			path = Scholica;
+			sourceTree = "<group>";
+		};
+		5C0A158CCD7690FED31A75C30D19AB37 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4343F2C39A9386202FF918A3F591BEB /* Pods-schedule */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		79BE5FEC8C21AB967AABB6AF7ACBCB8D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CBDF3413005C09361A5E78E669045F92 /* Scholica.xcconfig */,
+				510A48A6685EA9CFCE14013BF63A05A8 /* Scholica-Private.xcconfig */,
+				06B39DA6774A43CACEA0365C7645C33D /* Scholica-dummy.m */,
+				26C19D6F4E6DCE65DB35142A65E29551 /* Scholica-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Scholica";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				D2FCBE0E8E3CFABD06AC6405F6D8D8A4 /* Pods */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				5C0A158CCD7690FED31A75C30D19AB37 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A8D666780FD13118FFB2546233367DFB /* iRate */ = {
+			isa = PBXGroup;
+			children = (
+				9ED15A7C470EFC74BD2303427FF6FA5D /* iRate.h */,
+				60E1B944C66FDFFEB3638D88A16850CD /* iRate.m */,
+				49DA7E0EF7430E5B875618CBDBF18DF1 /* Resources */,
+				0AACE94AA503107576CFF568DB0576FE /* Support Files */,
+			);
+			path = iRate;
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1DF50D4421A54F76EF8A035F6DEDB278 /* libPods-schedule.a */,
+				81809368F93127D2C218278A85E8CD42 /* libScholica.a */,
+				AEC545FE4F97CC405C042D7A47FCA9D7 /* libiRate.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0FB9306D21AF23A056944AE037CBFFF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				1156CE8684EEFFA845C66A9013B8C827 /* Foundation.framework */,
+				5B2734CAFB29EB52DC24B63C6C29A9C2 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D2FCBE0E8E3CFABD06AC6405F6D8D8A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4D8E431DF48E2E041A78064ACB1CB7FC /* Scholica */,
+				A8D666780FD13118FFB2546233367DFB /* iRate */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D4343F2C39A9386202FF918A3F591BEB /* Pods-schedule */ = {
+			isa = PBXGroup;
+			children = (
+				152C83B2AF532D338CB07859F5A40D04 /* Pods-schedule-acknowledgements.markdown */,
+				C6F04C15D8A14D851D95606D0FE98A92 /* Pods-schedule-acknowledgements.plist */,
+				7F387B3207835E0CD3B197418600C45B /* Pods-schedule-dummy.m */,
+				0A854994F8A8DAC267EA9D6A379C3A0C /* Pods-schedule-resources.sh */,
+				D97802A9C3E806AD81382CC6C6EBED43 /* Pods-schedule.debug.xcconfig */,
+				2F31D185F6B4FE19306B6129D542BD76 /* Pods-schedule.release.xcconfig */,
+			);
+			name = "Pods-schedule";
+			path = "Target Support Files/Pods-schedule";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6A2207FC4802E6181FADA347E1033A87 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F97AD7101AC2FFE32F6263CB541D8936 /* SAConstants.h in Headers */,
+				20C433B99F9ECE63E84FF973CF87497C /* SAJSONRequest.h in Headers */,
+				0823ADF2B53D4570D7FDD3AC847EE78A /* SANativeLoginController.h in Headers */,
+				E49105EEF5D0BE3B6CD3BD21C2ECBBF6 /* SARequestError.h in Headers */,
+				53A71A8C67114D30F8A9152452D8ACF0 /* SARequestResult.h in Headers */,
+				2EB64C50D4CA07C19DD7F506A1F2102A /* SASession.h in Headers */,
+				09A4D966C8D1AF382A2BFB1FA71BA3DD /* SASingleton.h in Headers */,
+				C9281F799193476C82E830291D0025F0 /* SAUserObject.h in Headers */,
+				D2D879E74814BE4C8C085BD1AD0EF32A /* SAUtilities.h in Headers */,
+				45C693FDECAE8FED930A07FB52A54508 /* SAWebLoginController.h in Headers */,
+				3AB15058E9ACEFBC7F731A1606032DDD /* Scholica.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA2A177E2E75077CD528D27DA99D27C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5ADD14C352A2D7162E2319E5AF7845A /* iRate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0D7BCBB2751EA301B5775900A6F4C090 /* Pods-schedule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BC0C184FD6D300BD24BDD9FFA07977F /* Build configuration list for PBXNativeTarget "Pods-schedule" */;
+			buildPhases = (
+				4445DDC4E5F71DF6FAB6526E1715F3E2 /* Sources */,
+				97F40B20139BAB76462D661C8DFE0CCE /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0EF321199D3F2DCFB9E7F63BCCC0EB9 /* PBXTargetDependency */,
+				36E17DB5FDDAFFCC5D5B96D5FFC45495 /* PBXTargetDependency */,
+			);
+			name = "Pods-schedule";
+			productName = "Pods-schedule";
+			productReference = 1DF50D4421A54F76EF8A035F6DEDB278 /* libPods-schedule.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		12773E9B759C387ACCAD7A5731D43BB2 /* Scholica */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58732B9F425745E219EFDA6848456477 /* Build configuration list for PBXNativeTarget "Scholica" */;
+			buildPhases = (
+				3D3CA1B4A7DDC4773AE8DB26B9BF4C27 /* Sources */,
+				16C6EC0833DABA9A80FC9E13A7DFBF46 /* Frameworks */,
+				6A2207FC4802E6181FADA347E1033A87 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Scholica;
+			productName = Scholica;
+			productReference = 81809368F93127D2C218278A85E8CD42 /* libScholica.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		8B090755233C44E8E118A8DA48015C08 /* iRate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF41AD739A2B1AB6D00F631720006F71 /* Build configuration list for PBXNativeTarget "iRate" */;
+			buildPhases = (
+				D5C0966365BD45D79EA4242E155D50D2 /* Sources */,
+				FF4DE357068514685330702108D93A21 /* Frameworks */,
+				FCA2A177E2E75077CD528D27DA99D27C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iRate;
+			productName = iRate;
+			productReference = AEC545FE4F97CC405C042D7A47FCA9D7 /* libiRate.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D7BCBB2751EA301B5775900A6F4C090 /* Pods-schedule */,
+				12773E9B759C387ACCAD7A5731D43BB2 /* Scholica */,
+				8B090755233C44E8E118A8DA48015C08 /* iRate */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D3CA1B4A7DDC4773AE8DB26B9BF4C27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E31F724D9855A9DD433F72044A786028 /* SAJSONRequest.m in Sources */,
+				FEF7D8CFABFBC08FC7AE7FFF29B110C3 /* SANativeLoginController.m in Sources */,
+				8946851056B976711A66DFCA86668952 /* SARequestError.m in Sources */,
+				0C61D84396AA3D3F9ECD7B30A6A3B86E /* SARequestResult.m in Sources */,
+				C51565C3B2F5452438A207FBDB9C8F79 /* SASession.m in Sources */,
+				FFC309111FF41E3D5EFBB614ED832F7E /* SASingleton.m in Sources */,
+				47D82B2ACFACC53002B552E282206C12 /* SAUserObject.m in Sources */,
+				72D8DFE47DBE9DF18E3EBC3BA0A059C0 /* SAUtilties.m in Sources */,
+				08C99D408CFE29F41F6D0CC3163316AB /* SAWebLoginController.m in Sources */,
+				8F61FE8B894C1272092825D03ADEFAC3 /* Scholica-dummy.m in Sources */,
+				9C8585024B20B2DF1B3BAE3CFA021317 /* Scholica.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4445DDC4E5F71DF6FAB6526E1715F3E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7FB98B9BCD817C54C00831A273AFB6D /* Pods-schedule-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C0966365BD45D79EA4242E155D50D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A53A2315F1F3902CB3DB0881F88D212D /* iRate-dummy.m in Sources */,
+				1513E1E4433F4B945B8C7FDF46CF4FEC /* iRate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		36E17DB5FDDAFFCC5D5B96D5FFC45495 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iRate;
+			target = 8B090755233C44E8E118A8DA48015C08 /* iRate */;
+			targetProxy = D437DC5209CA420300B03478F200C4B4 /* PBXContainerItemProxy */;
+		};
+		A0EF321199D3F2DCFB9E7F63BCCC0EB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Scholica;
+			target = 12773E9B759C387ACCAD7A5731D43BB2 /* Scholica */;
+			targetProxy = D4C0A0F5D8C2B27A1D4D23200649A511 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		052A17875CB827423D627183396CEB60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0BCF895DD146964F49FB427B37407037 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F31D185F6B4FE19306B6129D542BD76 /* Pods-schedule.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		15ABF51539665BED56C1903C0483B8CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6F3A5D7AB29E9CFEFFD991EFDBD3999 /* iRate-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/iRate/iRate-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		524EC7CE841320DF59D3EFC57399AEC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 510A48A6685EA9CFCE14013BF63A05A8 /* Scholica-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Scholica/Scholica-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		58CC648D271EEB1F6EEC22BAB00F1C34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6F3A5D7AB29E9CFEFFD991EFDBD3999 /* iRate-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/iRate/iRate-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A9EBAC41382EDA1B0D35E342ECBA24AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D97802A9C3E806AD81382CC6C6EBED43 /* Pods-schedule.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AD4B352B9569EC70622C0D288564E7F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 510A48A6685EA9CFCE14013BF63A05A8 /* Scholica-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Scholica/Scholica-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */,
+				052A17875CB827423D627183396CEB60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58732B9F425745E219EFDA6848456477 /* Build configuration list for PBXNativeTarget "Scholica" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD4B352B9569EC70622C0D288564E7F4 /* Debug */,
+				524EC7CE841320DF59D3EFC57399AEC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7BC0C184FD6D300BD24BDD9FFA07977F /* Build configuration list for PBXNativeTarget "Pods-schedule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9EBAC41382EDA1B0D35E342ECBA24AB /* Debug */,
+				0BCF895DD146964F49FB427B37407037 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF41AD739A2B1AB6D00F631720006F71 /* Build configuration list for PBXNativeTarget "iRate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58CC648D271EEB1F6EEC22BAB00F1C34 /* Debug */,
+				15ABF51539665BED56C1903C0483B8CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
