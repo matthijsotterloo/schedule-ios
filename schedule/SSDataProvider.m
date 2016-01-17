@@ -159,7 +159,7 @@ static NSArray* schoolsList;
         }
     }
     
-    if([provider isEqual:@"somtoday"]){
+    if([provider isEqual:@"somtoday"] || [provider isEqual:@"zermelo"]){
         searchURL = @"inline-search";
     }
     
@@ -197,20 +197,19 @@ static NSArray* schoolsList;
     schoolsList = @[];
     
     if ([provider isEqualToString:@"somtoday"]) {
-        searchURL = @"https://servers.somtoday.nl/";
+        searchURL = @"http://api.lesrooster.io/somtoday/_schools";
+    }
+    if ([provider isEqualToString:@"zermelo"]) {
+        searchURL = @"http://api.lesrooster.io/zermelo/_schools";
     }
     
     if(searchURL) {
         [self JSONRequest:searchURL callback:^(SARequestResult *result) {
             NSMutableArray* items = [[NSMutableArray alloc] init];
             if (result.status == SARequestStatusOK) {
-                NSArray* resdata = (NSArray*)result.data;
-                NSArray* schools = [[resdata objectAtIndex:0] objectForKey:@"instellingen"];
-                for (NSDictionary* school in schools) {
-                    [items addObject:@{
-                       @"title": [school objectForKey:@"naam"],
-                       @"site": [NSString stringWithFormat:@"%@-%@", [school objectForKey:@"afkorting"], [school objectForKey:@"brin"]]
-                    }];
+                NSArray* sites = [result.data objectForKey:@"sites"];
+                for (NSDictionary* site in sites) {
+                    [items addObject:site];
                 }
             }
             schoolsList = items;

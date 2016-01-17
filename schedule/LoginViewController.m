@@ -25,7 +25,8 @@
                       @"Scholica",
                       @"Magister",
                       @"SOMtoday ELO",
-                      @"UvA rooster"
+                      @"Zermelo Portal",
+                      @"UvA Rooster"
                       ];
     
     self.view.backgroundColor = [UIColor colorWithRed:0.929 green:0.290 blue:0.392 alpha:1];
@@ -59,6 +60,9 @@
             cell.imageView.image = [UIImage imageNamed:@"icon-somtoday"];
             break;
         case 3:
+            cell.imageView.image = [UIImage imageNamed:@"icon-zermelo"];
+            break;
+        case 4:
             cell.imageView.image = [UIImage imageNamed:@"icon-uva"];
             break;
             
@@ -106,6 +110,14 @@
             break;
         }
         case 3: {
+            // Zermelo
+            SSSchoolViewController* controller = (SSSchoolViewController*)[appDelegate.mainStoryboard instantiateViewControllerWithIdentifier: @"SelectSchool"];
+            controller.provider = @"zermelo";
+            appDelegate.schoolController = controller;
+            [self.navigationController pushViewController:controller animated:YES];
+            break;
+        }
+        case 4: {
             // UvA
             SSWebLoginViewController* controller = (SSWebLoginViewController*)[appDelegate.mainStoryboard instantiateViewControllerWithIdentifier: @"WebLogin"];
             controller.provider = @"uva";
