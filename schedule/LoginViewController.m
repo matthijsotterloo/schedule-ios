@@ -63,7 +63,7 @@
             cell.imageView.image = [UIImage imageNamed:@"icon-zermelo"];
             break;
         case 4:
-            cell.imageView.image = [UIImage imageNamed:@"icon-uva"];
+            cell.imageView.image = [UIImage imageNamed:@"icon-UvA"];
             break;
             
     }
